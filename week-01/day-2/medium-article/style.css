@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: 'Hanalei Fill', cursive;
+}
+
+img {
+  width: 100%;
+}
+
+article {
+  width: 690px;
+  margin: auto;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+
