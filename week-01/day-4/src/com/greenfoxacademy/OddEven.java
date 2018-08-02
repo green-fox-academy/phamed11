@@ -9,8 +9,10 @@ public class OddEven {
     Scanner scanner = new Scanner(System.in);
     System.out.print("Give me a number: ");
     int num = scanner.nextInt();
-    if (num % 2) {
-
+    if (num % 2 == 0) {
+      System.out.println("This number is EVEN!");
+    } else {
+      System.out.println("This number is ODD!");
     }
   }
 }
