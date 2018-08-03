@@ -1,5 +1,7 @@
 package com.greenfoxacademy;
 
+import java.util.Scanner;
+
 public class CountFromTo {
   public static void main(String[] args) {
     // Create a program that asks for two numbers
@@ -15,5 +17,18 @@ public class CountFromTo {
     // 3
     // 4
     // 5
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Gimme the first number: ");
+    int num = scanner.nextInt();
+    System.out.print("Gimme the second number: ");
+    int num2 = scanner.nextInt();
+    if (num2 <= num) {
+      System.out.println("The second number should be bigger");
+    } else {
+      while (num2 > num) {
+        System.out.println(num);
+        ++num;
+      }
+    }
   }
 }
