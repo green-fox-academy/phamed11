@@ -24,6 +24,6 @@ public class ParametricAverage {
       summ+=numArray[a];
     }
     double ave = summ / numArray.length;
-    System.out.println("Sum: " + summ + " Average: " + ave);
+    System.out.println("\nSum: " + summ + " Average: " + ave);
   }
 }
