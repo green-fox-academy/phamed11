@@ -8,6 +8,14 @@ public class UrlFixer {
     url = new StringBuffer(url).insert(5, ":").toString();
     url = url.concat(html);
 
+    String url2 = "https//www.reddit.com/r/nevertellmethebots";
+    url2 = url2.replaceAll("https//","https://");
+    url2 = url2.concat(html);
+
+
+
+    System.out.println(url);
+    System.out.println(url2);
 
 
 
@@ -16,7 +24,7 @@ public class UrlFixer {
     // Also, the URL is missing a crutial component, find out what it is and insert it too!
     // Try to solve it more than once using different String functions!
 
-    System.out.println(url);
+
 
 
   }
