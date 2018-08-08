@@ -3,6 +3,7 @@
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.HashMap;
 
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -14,8 +15,28 @@ public class RainbowBoxFunction {
     // and draws a square of that size and color to the center of the canvas.
 
     // Create a loop that fills the canvas with rainbow colored squares.
-    String colorMy= "#ff7373";
-    fillCenterBox(graphics, 80, colorMy);
+    String colorMy= "#FF0000";
+    HashMap<Integer,String> szinek = new HashMap();
+    szinek.put(0, "#9400D3");
+    szinek.put(1, "#4B0082");
+    szinek.put(2, "#0000FF");
+    szinek.put(3, "#00FF00");
+    szinek.put(4, "#FFFF00");
+    szinek.put(5, "#FF7F00");
+    szinek.put(6, "#FF0000");
+    int size = 343;
+
+    for(int i = 0; i < szinek.size(); i++) {
+      colorMy = szinek.get(i);
+      fillCenterBox(graphics, size, colorMy);
+      size -= 60;
+
+
+    }
+
+
+
+    fillCenterBox(graphics, size, colorMy);
 
 
 
