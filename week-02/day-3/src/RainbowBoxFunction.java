@@ -33,13 +33,6 @@ public class RainbowBoxFunction {
 
 
     }
-
-
-
-    fillCenterBox(graphics, size, colorMy);
-
-
-
   }
 
   public static void fillCenterBox(Graphics center, int size, String color) {
