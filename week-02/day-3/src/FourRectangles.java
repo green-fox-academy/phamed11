@@ -6,7 +6,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class FourRectangles {
 
-  public static void mainDraw(Graphics graphics){
+  public static void mainDraw(Graphics graphics) {
     // draw four different size and color rectangles.
     // avoid code duplication.
     for (int i = 1; i <= 4; i++) {
@@ -15,10 +15,9 @@ public class FourRectangles {
       int height = i * rand;
       int width = i * rand2;
       int box = i + (2 * rand);
-      graphics.setColor(new Color(rand2,rand2,rand + 32));
+      graphics.setColor(new Color(rand2, rand2, rand + 32));
       graphics.fillRect(height, width, box, box + 10);
     }
-
 
 
   }
@@ -26,6 +25,7 @@ public class FourRectangles {
   //    Don't touch the code below
   static int WIDTH = 320;
   static int HEIGHT = 343;
+
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
     jFrame.setSize(new Dimension(WIDTH, HEIGHT));
@@ -34,7 +34,8 @@ public class FourRectangles {
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
-  static class ImagePanel extends JPanel{
+
+  static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
