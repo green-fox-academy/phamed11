@@ -15,8 +15,8 @@ public class RainbowBoxFunction {
     // and draws a square of that size and color to the center of the canvas.
 
     // Create a loop that fills the canvas with rainbow colored squares.
-    String colorMy= "#FF0000";
-    HashMap<Integer,String> szinek = new HashMap();
+    String colorMy = "";
+    HashMap<Integer,String> szinek = new HashMap<>();
     szinek.put(0, "#9400D3");
     szinek.put(1, "#4B0082");
     szinek.put(2, "#0000FF");
