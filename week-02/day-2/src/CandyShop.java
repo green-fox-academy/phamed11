@@ -29,7 +29,7 @@ public class CandyShop{
     if (sweet.contains(false)) {
       sweet.set(sweet.indexOf(false), "Ice cream");
     } else {
-      
+
     }
     return sweet;
   }
