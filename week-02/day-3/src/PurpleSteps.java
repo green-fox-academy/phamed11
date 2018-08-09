@@ -16,8 +16,6 @@ public class PurpleSteps {
       graphics.setColor(Color.magenta);
       graphics.fillRect(x,y,10,10);
     }
-
-
   }
 
   // Don't touch the code below

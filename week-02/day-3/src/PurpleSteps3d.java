@@ -15,8 +15,6 @@ public class PurpleSteps3d {
       x *= 2;
 
     }
-
-
   }
 
   // Don't touch the code below

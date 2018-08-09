@@ -26,8 +26,6 @@ public class GoToCenter {
       int param2 = i +  10 + (int) (Math.random() * 10);
       centerLine(graphics, param,param2);
     }
-
-
   }
   public static void centerLine(Graphics center, int a, int b) {
     center.setColor(Color.red);

@@ -17,8 +17,6 @@ public class CenterBoxFunction {
       int size = i * 18 + 50;
       anotherSquare(graphics, size);
     }
-
-
   }
 
   public static void anotherSquare(Graphics square, int a) {

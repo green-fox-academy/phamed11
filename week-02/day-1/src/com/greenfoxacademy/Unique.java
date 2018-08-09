@@ -26,7 +26,8 @@ public class Unique {
         if (uni[i] == uni[i + 1]) {
           res[i] = uni[i];
         } else {
-          kuka[] = uni[i];
+          int t = 0;
+          kuka[t] = uni[i];
         }
     }
     return Arrays.toString(kuka);
