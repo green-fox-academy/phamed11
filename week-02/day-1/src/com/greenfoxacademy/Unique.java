@@ -23,13 +23,11 @@ public class Unique {
     int[] kuka = new int[uni.length];
     Arrays.sort(uni);
     for (int i = 0; i < uni.length - 1; i++) {
-      for (int j = 1; j < uni.length - 1; j++) {
-        if (uni[i] == uni[j]) {
-          kuka[i] = uni[i];
+        if (uni[i] == uni[i + 1]) {
+          res[i] = uni[i];
         } else {
-          res[j] = uni[j];
+          kuka[] = uni[i];
         }
-      }
     }
     return Arrays.toString(kuka);
   }
