@@ -16,22 +16,20 @@ public class RainbowBoxFunction {
 
     // Create a loop that fills the canvas with rainbow colored squares.
     String colorMy = "";
-    HashMap<Integer, String> szinek = new HashMap<>();
-    szinek.put(0, "#9400D3");
-    szinek.put(1, "#4B0082");
-    szinek.put(2, "#0000FF");
-    szinek.put(3, "#00FF00");
-    szinek.put(4, "#FFFF00");
-    szinek.put(5, "#FF7F00");
-    szinek.put(6, "#FF0000");
+    HashMap<Integer, String> colors = new HashMap<>();
+    colors.put(0, "#9400D3");
+    colors.put(1, "#4B0082");
+    colors.put(2, "#0000FF");
+    colors.put(3, "#00FF00");
+    colors.put(4, "#FFFF00");
+    colors.put(5, "#FF7F00");
+    colors.put(6, "#FF0000");
     int size = 343;
 
-    for (int i = 0; i < szinek.size(); i++) {
-      colorMy = szinek.get(i);
+    for (int i = 0; i < colors.size(); i++) {
+      colorMy = colors.get(i);
       fillCenterBox(graphics, size, colorMy);
-      size -= 60;
-
-
+      size -= 50;
     }
   }
 
