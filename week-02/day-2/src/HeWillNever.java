@@ -18,7 +18,8 @@ public class HeWillNever {
     map.put(3, "say goodbye ");
 
     for (int i = 0; i < notSoCrypticMessage.length; i++) {
-      System.out.println(map.get(notSoCrypticMessage[i]));
+      String quote = map.get(notSoCrypticMessage[i]);
+      out += quote;
 
     }
 
