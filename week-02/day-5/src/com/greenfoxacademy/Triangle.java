@@ -12,18 +12,29 @@ public class Triangle {
     int x = 150;
     int y = 0;
     int size = 10;
-
-    for (int i = 0; i < 3; i++) {
-      graphics.drawLine(x, y, x - size / 2, y + size);
-      graphics.drawLine(x - size / 2, y + size, x + size / 2, y + size);
-      graphics.drawLine(x + size / 2, y + size, x, y);
-      x = x - size /2;
+    int occurance = 1;
+    int lineNumber = 20;
+    for (int j = 0; j < lineNumber; j++) {
+      trianglerow(graphics, x, y, size, occurance);
+      x -= size / 2;
       y += size;
+      occurance++;
+
     }
-
-
   }
 
+  static void triangleObj(Graphics triangles, int x, int y, int size) {
+    triangles.drawLine(x, y, x - size / 2, y + size);
+    triangles.drawLine(x - size / 2, y + size, x + size / 2, y + size);
+    triangles.drawLine(x + size / 2, y + size, x, y);
+  }
+
+  static void trianglerow(Graphics row, int x, int y, int size, int occu) {
+    for (int j = 0; j < occu; j++) {
+      triangleObj(row, x, y, size);
+      x += size;
+    }
+  }
 
   // Don't touch the code below
   static int WIDTH = 320;
@@ -46,7 +57,6 @@ public class Triangle {
     }
   }
 }
-
 
 
 
