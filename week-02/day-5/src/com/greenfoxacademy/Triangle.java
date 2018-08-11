@@ -8,19 +8,20 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Triangle {
   public static void mainDraw(Graphics graphics) {
-    int steps = 10;
-    graphics.setColor(Color.BLACK);
-    triangle(graphics, 10);
+
+    int x = 150;
+    int y = 0;
+    int size = 10;
+
+    for (int i = 0; i < 3; i++) {
+      graphics.drawLine(x, y, x - size / 2, y + size);
+      graphics.drawLine(x - size / 2, y + size, x + size / 2, y + size);
+      graphics.drawLine(x + size / 2, y + size, x, y);
+      x = x - size /2;
+      y += size;
+    }
 
 
-  }
-
-  public static void triangle(Graphics triangle, int size) {
-    size = 10;
-    int height = 9;
-    triangle.drawLine(WIDTH / 2, HEIGHT - HEIGHT, WIDTH / 2 - size / 2, HEIGHT - HEIGHT + height);
-    triangle.drawLine(WIDTH / 2 - size / 2, HEIGHT - HEIGHT + height, WIDTH / 2 + size / 2, HEIGHT - HEIGHT + height);
-    triangle.drawLine(WIDTH / 2 + size / 2, HEIGHT - HEIGHT + height, WIDTH / 2, HEIGHT - HEIGHT);
   }
 
 
