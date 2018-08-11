@@ -9,19 +9,20 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Triangle {
   public static void mainDraw(Graphics graphics) {
 
-    int x = 150;
-    int y = 0;
-    int size = 10;
-    int occurance = 1;
-    int lineNumber = 20;
-    for (int j = 0; j < lineNumber; j++) {
-      trianglerow(graphics, x, y, size, occurance);
-      x -= size / 2;
-      y += size;
-      occurance++;
+//    int x = 150;
+//    int y = 0;
+//    int size = 10;
+//    int occurance = 1;
+//    int lineNumber = 20;
+//    for (int j = 0; j < lineNumber; j++) {
+//      trianglerow(graphics, x, y, size, occurance);
+//      x -= size / 2;
+//      y += size;
+//      occurance++;
+    dothis(graphics, 150, 0, 10, 1, 22);
 
-    }
   }
+
 
   static void triangleObj(Graphics triangles, int x, int y, int size) {
     triangles.drawLine(x, y, x - size / 2, y + size);
@@ -30,9 +31,19 @@ public class Triangle {
   }
 
   static void trianglerow(Graphics row, int x, int y, int size, int occu) {
-    for (int j = 0; j < occu; j++) {
+    for (int i = 0; i < occu; i++) {
       triangleObj(row, x, y, size);
       x += size;
+    }
+  }
+
+
+  static void dothis(Graphics piramid, int x, int y, int size, int startsWith, int linenumber) {
+    for (int j = 0; j < linenumber; j++) {
+      trianglerow(piramid, x, y, size, startsWith);
+      x -= size / 2;
+      y += size;
+      startsWith++;
     }
   }
 
@@ -57,6 +68,7 @@ public class Triangle {
     }
   }
 }
+
 
 
 
