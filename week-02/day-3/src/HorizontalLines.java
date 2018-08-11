@@ -22,7 +22,7 @@ public class HorizontalLines {
 
   public static void centerLine(Graphics center, int a, int b) {
     center.setColor(Color.red);
-    center.drawLine(a, b, a + 50, b);
+    center.drawLine(a, b, a + 150, b);
   }
 
 
@@ -47,3 +47,4 @@ public class HorizontalLines {
     }
   }
 }
+
