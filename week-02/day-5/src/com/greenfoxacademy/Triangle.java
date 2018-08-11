@@ -22,8 +22,6 @@ public class Triangle {
     dothis(graphics, 150, 0, 10,5);
 
   }
-
-
   static void triangleObj(Graphics triangles, int x, int y, int size) {
     triangles.drawLine(x, y, x - size / 2, y + size);
     triangles.drawLine(x - size / 2, y + size, x + size / 2, y + size);
