@@ -46,7 +46,7 @@ public class StudentCounter {
     //  - Who has got more candies than 4 candies
     //  - Sum the age of people who have lass than 5 candies
 
- 
+
   for (int i = 0; i < map.size(); i++) {
       if ((int) map.get(i).get("candies") > 4) {
         System.out.println(map.get(i).get("name"));
