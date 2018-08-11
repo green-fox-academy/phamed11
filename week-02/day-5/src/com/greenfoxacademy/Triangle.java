@@ -19,7 +19,7 @@ public class Triangle {
 //      x -= size / 2;
 //      y += size;
 //      occurance++;
-    dothis(graphics, 150, 0, 10, 1, 22);
+    dothis(graphics, 150, 0, 10,5);
 
   }
 
@@ -38,7 +38,8 @@ public class Triangle {
   }
 
 
-  static void dothis(Graphics piramid, int x, int y, int size, int startsWith, int linenumber) {
+  static void dothis(Graphics piramid, int x, int y, int size, int linenumber) {
+    int startsWith = 1;
     for (int j = 0; j < linenumber; j++) {
       trianglerow(piramid, x, y, size, startsWith);
       x -= size / 2;
