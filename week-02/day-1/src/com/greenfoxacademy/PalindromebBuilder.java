@@ -14,7 +14,7 @@ public class PalindromebBuilder {
 //    ""	""
 //    "greenfox"	"greenfoxxofneerg"
 //    "123"	"123321"
-    String pali = "greenfox";
+    String pali = "palidrome";
     palidrome(pali);
 
   }

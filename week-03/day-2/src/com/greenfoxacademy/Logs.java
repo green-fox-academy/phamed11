@@ -17,19 +17,22 @@ public class Logs {
     Path path = Paths.get("log.txt");
     try {
       List<String> logData = Files.readAllLines(path);
-      List<String> uniqueIp = new ArrayList<>();
-      for (int i = 0; i <logData.size() ; i++) {
-        String[] splitIp = logData.get(i).split("   ");
-        if (!uniqueIp.contains(splitIp[1])) {
-          uniqueIp.add(splitIp[1]);
-        }
-      }
-      System.out.println(uniqueIp);
-
+      uniqueIp(logData);
     } catch (IOException e) {
       e.printStackTrace();
     }
 
 
+  }
+
+  public static void uniqueIp(List<String> data) {
+    List<String> uniqueIp = new ArrayList<>();
+    for (int i = 0; i < data.size(); i++) {
+      String[] splitIp = data.get(i).split("   ");
+      if (!uniqueIp.contains(splitIp[1])) {
+        uniqueIp.add(splitIp[1]);
+      }
+    }
+    System.out.print(uniqueIp);
   }
 }
