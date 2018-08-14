@@ -1,5 +1,7 @@
 package com.greenfoxacademy;
 
+import com.sun.image.codec.jpeg.TruncatedFileException;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -15,9 +17,12 @@ public class CopyFile {
     String from = "copyFromHere.txt";
     String toCopy = "filesWillbeInHere.txt";
 
+    copy(from, toCopy);
 
   }
+
   public static Boolean copy(String first, String second) {
+    Boolean result = true;
     Path fromCopy = Paths.get(first);
     Path toCopy = Paths.get(second);
     List<String> writeThis = new ArrayList<>();
@@ -28,15 +33,11 @@ public class CopyFile {
       }
       Files.write(toCopy, firstContent);
       List<String> toCheckFirst = Files.readAllLines(toCopy);
-      if (toCheckFirst.contains(fromCopy)) {
-        return true;
-      }
+      List<String> secondChanged = Files.readAllLines(fromCopy);
+      System.out.println(result = second.contains(first));
     } catch (IOException e) {
       e.printStackTrace();
     }
-
-
-
-
+    return result;
   }
 }
