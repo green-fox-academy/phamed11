@@ -17,12 +17,11 @@ public class CopyFile {
     String from = "copyFromHere.txt";
     String toCopy = "filesWillbeInHere.txt";
 
-    copy(from, toCopy);
+    System.out.println(copy(from, toCopy));
 
   }
 
   public static Boolean copy(String first, String second) {
-    Boolean result = false;
     Path fromCopy = Paths.get(first);
     Path toCopy = Paths.get(second);
     List<String> writeThis = new ArrayList<>();
@@ -32,10 +31,9 @@ public class CopyFile {
         writeThis.add(firstContent.get(i));
       }
       Files.write(toCopy, firstContent);
-      System.out.println(result = second.contains(first));
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return result;
+    return true;
   }
 }
