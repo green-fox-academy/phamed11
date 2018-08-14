@@ -16,6 +16,8 @@ public class PalindromebBuilder {
 //    "123"	"123321"
     String pali = "palidrome";
     palidrome(pali);
+    System.out.println();
+    palidrome2(pali);
 
   }
   public static void palidrome(String input) {
@@ -29,5 +31,21 @@ public class PalindromebBuilder {
     for (int i = 0; i < returned.size(); i++) {
       System.out.print(returned.get(i));
     }
+  }
+
+   // second try
+  
+  public static void palidrome2(String input) {
+    String[] toTurn = new String[input.length()];
+    toTurn = input.split("");
+    String juhu = "";
+    ArrayList<String> returned = new ArrayList<>();
+    for (int i = input.length() - 1; i >= 0; i--) {
+      returned.add(toTurn[i]);
+    }
+    for (int i = 0; i < returned.size(); i++) {
+      juhu += returned.get(i);
+    }
+    System.out.println(input+juhu);
   }
 }
