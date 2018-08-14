@@ -1,9 +1,11 @@
 package com.greenfoxacademy;
 
+import javax.print.DocFlavor;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Logs {
@@ -15,6 +17,11 @@ public class Logs {
     Path path = Paths.get("log.txt");
     try {
       List<String> logData = Files.readAllLines(path);
+      List<String> lines = new ArrayList<>();
+      for (int i = 0; i < logData.size(); i++) {
+        lines.add(logData.get(i));
+      }
+      List<String> ipAddress = new ArrayList<>();
       
     } catch (IOException e) {
       e.printStackTrace();
