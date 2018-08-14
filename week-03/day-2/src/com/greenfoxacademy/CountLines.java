@@ -12,16 +12,22 @@ public class CountLines {
     // then returns the number of lines the file contains.
     // It should return zero if it can't open the file, and
     // should not raise any error.
+    fileLines("day-2.iml");
 
 
   }
   public static void fileLines(String fileName) {
     Path path = Paths.get(fileName);
+    int sum = 0;
     try {
       List<String> numberOf = Files.readAllLines(path);
+      for (String num : numberOf) {
+        String[] lines = num.split("\r\n|\r|\n");
+        sum++;
+      }
+      System.out.println(sum);
     } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("0");
     }
-
   }
 }
