@@ -18,11 +18,10 @@ public class Logs {
     try {
       List<String> logData = Files.readAllLines(path);
       List<String> uniqueIp = new ArrayList<>();
-//     ^^ List<String> ipAddress = new ArrayList<>();
       for (int i = 0; i <logData.size() ; i++) {
-        String[] jancsi = logData.get(i).split("   ");
-        if (!uniqueIp.contains(jancsi[1])) {
-          uniqueIp.add(jancsi[1]);
+        String[] splitIp = logData.get(i).split("   ");
+        if (!uniqueIp.contains(splitIp[1])) {
+          uniqueIp.add(splitIp[1]);
         }
       }
       System.out.println(uniqueIp);
