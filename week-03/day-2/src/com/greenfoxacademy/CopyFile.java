@@ -22,7 +22,7 @@ public class CopyFile {
   }
 
   public static Boolean copy(String first, String second) {
-    Boolean result = true;
+    Boolean result = false;
     Path fromCopy = Paths.get(first);
     Path toCopy = Paths.get(second);
     List<String> writeThis = new ArrayList<>();
@@ -32,8 +32,6 @@ public class CopyFile {
         writeThis.add(firstContent.get(i));
       }
       Files.write(toCopy, firstContent);
-      List<String> toCheckFirst = Files.readAllLines(toCopy);
-      List<String> secondChanged = Files.readAllLines(fromCopy);
       System.out.println(result = second.contains(first));
     } catch (IOException e) {
       e.printStackTrace();
