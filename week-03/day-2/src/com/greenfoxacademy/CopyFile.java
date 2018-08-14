@@ -24,11 +24,18 @@ public class CopyFile {
     try {
       List<String> firstContent = Files.readAllLines(fromCopy);
       for (int i = 0; i < firstContent.size(); i++) {
-        Files.write(second, firstContent.get(i));
+        writeThis.add(firstContent.get(i));
+      }
+      Files.write(toCopy, firstContent);
+      List<String> toCheckFirst = Files.readAllLines(toCopy);
+      if (toCheckFirst.contains(fromCopy)) {
+        return true;
       }
     } catch (IOException e) {
       e.printStackTrace();
     }
+
+
 
 
   }
