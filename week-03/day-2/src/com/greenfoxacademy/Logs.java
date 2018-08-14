@@ -17,7 +17,8 @@ public class Logs {
     Path path = Paths.get("log.txt");
     try {
       List<String> logData = Files.readAllLines(path);
-//      uniqueIp(logData);
+      uniqueIp(logData);
+      System.out.println();
       getPostReturn(logData);
     } catch (IOException e) {
       e.printStackTrace();
