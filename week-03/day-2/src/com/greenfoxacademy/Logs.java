@@ -17,12 +17,16 @@ public class Logs {
     Path path = Paths.get("log.txt");
     try {
       List<String> logData = Files.readAllLines(path);
-      List<String> lines = new ArrayList<>();
-      for (int i = 0; i < logData.size(); i++) {
-        lines.add(logData.get(i));
+      List<String> uniqueIp = new ArrayList<>();
+//     ^^ List<String> ipAddress = new ArrayList<>();
+      for (int i = 0; i <logData.size() ; i++) {
+        String[] jancsi = logData.get(i).split("   ");
+        if (!uniqueIp.contains(jancsi[1])) {
+          uniqueIp.add(jancsi[1]);
+        }
       }
-      List<String> ipAddress = new ArrayList<>();
-      
+      System.out.println(uniqueIp);
+
     } catch (IOException e) {
       e.printStackTrace();
     }
