@@ -17,7 +17,8 @@ public class Logs {
     Path path = Paths.get("log.txt");
     try {
       List<String> logData = Files.readAllLines(path);
-      uniqueIp(logData);
+//      uniqueIp(logData);
+      getPostReturn(logData);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -34,5 +35,24 @@ public class Logs {
       }
     }
     System.out.print(uniqueIp);
+  }
+
+  public static void getPostReturn(List<String> data) {
+    double numOfGet = 0.;
+    double numOfPost = 0.;
+    List<String> getPostNumbers = new ArrayList<>();
+    for (int i = 0; i < data.size(); i++) {
+      String[] splitIp = data.get(i).split("   ");
+      getPostNumbers.add(splitIp[2]);
+    }
+    for (int i = 0; i < getPostNumbers.size(); i++) {
+      if (getPostNumbers.get(i).startsWith("G")) {
+        numOfGet++;
+      } else {
+        numOfPost++;
+      }
+    }
+    double result = numOfGet / numOfPost;
+    System.out.print(result);
   }
 }
