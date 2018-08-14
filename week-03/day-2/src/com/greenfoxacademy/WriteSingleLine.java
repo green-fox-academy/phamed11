@@ -16,7 +16,7 @@ public class WriteSingleLine {
     // then it should print an error message like: "Unable to write file: my-file.txt"
     List<String> myFile = new ArrayList<>();
     myFile.add("My name is the NAME");
-    Path path = Paths.get("../../my-file.txt");
+    Path path = Paths.get("my-file.txt");
     try {
       Files.write(path, myFile);
     } catch (IOException e) {
