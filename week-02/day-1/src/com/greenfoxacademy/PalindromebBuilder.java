@@ -34,7 +34,7 @@ public class PalindromebBuilder {
   }
 
    // second try
-  
+
   public static void palidrome2(String input) {
     String[] toTurn = new String[input.length()];
     toTurn = input.split("");
