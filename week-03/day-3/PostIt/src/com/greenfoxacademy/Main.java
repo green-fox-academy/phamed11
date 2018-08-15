@@ -19,7 +19,7 @@ public class Main {
     yellow.PostIt("Yellow", "What the fuck", "black");
 
     yellow.BackGroundColor();
-    
+
     System.out.println(pink.text);
 
 
