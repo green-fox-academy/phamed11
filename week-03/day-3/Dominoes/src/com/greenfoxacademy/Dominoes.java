@@ -9,8 +9,17 @@ public class Dominoes {
     // You have the list of Dominoes
     // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
     // eg: [2, 4], [4, 3], [3, 5] ...
+    List<Domino> newDomino = new ArrayList<>();
+    newDomino.add(dominoes.get(0));
+    for (int i = 0; i < initializeDominoes().size(); i++) {
+      for (int j = 0; j < initializeDominoes().size(); j++) {
+        if (newDomino.get(i).getValues()[1] == dominoes.get(j).getValues()[0]) {
+            newDomino.add(dominoes.get(j));
+        }
+      }
+    }
 
-    System.out.println(dominoes);
+    System.out.println(newDomino);
   }
 
   static List<Domino> initializeDominoes() {
