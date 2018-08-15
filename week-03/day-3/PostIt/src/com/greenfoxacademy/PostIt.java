@@ -10,5 +10,7 @@ public class PostIt {
     this.textColor = text;
     this.textColor = textColor;
   }
-
+  public void BackGroundColor() {
+    System.out.println("My background color is: " + backgroundColor);
+  }
 }
