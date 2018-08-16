@@ -14,17 +14,7 @@ public class Strings {
     input = input.toLowerCase();
     int charPo = 0;
     String result = "";
-    int len = input.length();
-    if (charPo > input.length()) {
-      return input;
-    } else {
-      if (input.substring(charPo).equals('x')) {
-        result += strings(input.substring(0, charPo + 1));
-      } else {
-        result += strings(input.substring(0, charPo + 1));
-      }
-    }
-    return result;
+
   }
 }
 
