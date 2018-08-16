@@ -11,10 +11,14 @@ public class Strings {
   }
 
   public static String strings(String input) {
-    input = input.toLowerCase();
-    int charPo = 0;
-    String result = "";
-
+    int num = 0;
+    if (input.length() > 0) {
+      return input;
+    } else {
+      if (input.substring(0) == "x") {
+        input.charAt(0) = 'y';
+      }
+    }
   }
 }
 
