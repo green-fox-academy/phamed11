@@ -10,6 +10,11 @@ public class Main {
 //        Every sharpie is created with a default 100 as inkAmount
 //        We can use() the sharpie objects
 //        which decreases inkAmount
+      Sharpie first = new Sharpie("green", 56);
+      first.use(4);
+      System.out.println(first.inkAmount);
+
+
 
 
     }
