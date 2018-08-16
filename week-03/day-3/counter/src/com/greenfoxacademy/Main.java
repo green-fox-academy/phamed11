@@ -13,7 +13,8 @@ public class Main {
 //        Download CounterTest.java and place it next to your solution
 //        If something's red in it, ALT+Enter Add JUnit5 to classpath (5 aka JUnit FIVE not 4 or 3)
 //        Then run the tests with the green play button before the lines (run all of them before the classname)
-
+    Counter joe = new Counter(4);
+      System.out.println(joe);
 
     }
 }

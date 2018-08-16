@@ -2,7 +2,7 @@ package com.greenfoxacademy;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by aze on 2017.03.29..

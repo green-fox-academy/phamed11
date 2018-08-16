@@ -12,18 +12,26 @@ public class Counter {
 //        If something's red in it, ALT+Enter Add JUnit5 to classpath (5 aka JUnit FIVE not 4 or 3)
 //        Then run the tests with the green play button before the lines (run all of them before the classname)
     int counter;
+    int startingCounter;
 
-    public Counter(int counter) {
+    public Counter() {
       this.counter = 0;
+    }
+    public Counter(int counter) {
+      this.counter = counter;
+      startingCounter = counter;
     }
     public void add(int counter) {
+      this.counter = this.counter + counter;
+    }
+    public int get() {
+      return this.counter;
+    }
+    public void reset() {
+      this.counter = startingCounter ;
+    }
+    public void add() {
       this.counter++;
-    }
-    public void get(int counter) {
-      System.out.println(counter);
-    }
-    public void reset(int counter) {
-      this.counter = 0;
-    }
+   }
 
 }
