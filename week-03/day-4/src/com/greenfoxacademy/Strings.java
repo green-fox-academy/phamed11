@@ -4,7 +4,7 @@ public class Strings {
   public static void main(String[] args) {
     // Given a string, compute recursively (no loops) a new string where all the
     // lowercase 'x' chars have been changed to 'y' chars.
-    String test = "matrix is the BEST MATRIX even if X is not a matrix";
+    String test = "Xanax";
     System.out.println(strings(test));
 
 
@@ -12,13 +12,20 @@ public class Strings {
 
   public static String strings(String input) {
     input = input.toLowerCase();
+    int charPo = 0;
     String result = "";
-    if (input.length() == 0) {
+    int len = input.length();
+    if (charPo > input.length()) {
       return input;
     } else {
-      return 
-    }
+      if (input.substring(charPo).equals('x')) {
+        result += strings(input.substring(0, charPo + 1));
+      } else {
+        result += strings(input.substring(0, charPo + 1));
+      }
     }
     return result;
   }
 }
+
+
