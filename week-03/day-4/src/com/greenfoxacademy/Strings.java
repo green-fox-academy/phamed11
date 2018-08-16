@@ -16,13 +16,8 @@ public class Strings {
     if (input.length() == 0) {
       return input;
     } else {
-      for (int i = 0; i < input.length(); i++) {
-        if (input.charAt(i) == 'x') {
-          result += 'y';
-        } else {
-          result += input.charAt(i);
-        }
-      }
+      return 
+    }
     }
     return result;
   }
