@@ -12,9 +12,9 @@ public class Main {
 //        answer()
 
         Student jancsi = new Student();
-        Teacher teacher = new Teacher();
+        Teacher marika = new Teacher();
 
-        String question = jancsi.question("What is this?");
-      
+        marika.teach(jancsi);
+        jancsi.question(marika);
     }
 }

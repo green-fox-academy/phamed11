@@ -3,12 +3,16 @@ package com.greenfoxacademy;
 public class Teacher {
   String answer;
 
-  public void teach() {
+  public Teacher() {
+    this.answer = answer;
+  }
+
+  public void teach(Student student) {
+    student.learn();
 
   }
 
-  public String answer(String answer) {
-    this.answer = answer;
-    return answer;
+  public void answer() {
+    System.out.println("this is my answer.");
   }
 }

@@ -9,12 +9,11 @@ public class Student {
   }
 
   public void learn() {
-
+    System.out.println("i am learning");
   }
 
-  public String question(String question) {
-    this.question = question;
-    return question;
+  public void question(Teacher teacher) {
+    teacher.answer();
   }
 
 }
