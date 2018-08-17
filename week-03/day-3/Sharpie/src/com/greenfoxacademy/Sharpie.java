@@ -9,15 +9,15 @@ public class Sharpie {
       //        We can use() the sharpie objects
       //        which decreases inkAmount
   public String color;
-  public int width;
-  public int inkAmount;
+  public float width;
+  public float inkAmount;
 
-  public Sharpie(String color, int width) {
-    inkAmount = 100;
+  public Sharpie(String color, float width) {
+    inkAmount = 100f;
     this.width = width;
     this.color = color;
   }
-  public void use(int inkAmoundDecrease) {
+  public void use(float inkAmoundDecrease) {
     inkAmount -= inkAmoundDecrease;
   }
 
