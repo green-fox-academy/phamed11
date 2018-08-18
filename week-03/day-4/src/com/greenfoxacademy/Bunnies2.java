@@ -23,10 +23,3 @@ public class Bunnies2 {
     return totalEars;
   }
 }
-/* 1 = 2
-2 = 5
-3 = 7
-4 = 10
-5 = 12
-6 = 15
- */
