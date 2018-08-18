@@ -34,10 +34,7 @@ public class Main {
     myFarm.list.get(3).eat();
     myFarm.list.get(1).eat();
     myFarm.list.get(4).eat();
-    myFarm.list.get(3).eat();
-    myFarm.list.get(3).eat();
-    myFarm.list.get(3).eat();
-    myFarm.list.get(3).eat();
+
 
 
     for (int i = 0; i < myFarm.list.size() ; i++) {
@@ -47,9 +44,19 @@ public class Main {
     System.out.println("This farm has : " + myFarm.list.size() + " animals");
     System.out.println();
     myFarm.slaughter();
+    for (int i = 0; i < myFarm.list.size() ; i++) {
+      System.out.println((i + 1) + ". The " + myFarm.list.get(i).name + "'s hunger level is: " + myFarm.list.get(i).hunger);
+    }
+    myFarm.slaughter();
+
+    myFarm.slaughter();
+
+    myFarm.slaughter();
 
 
-    System.out.println();
+
+
+      System.out.println();
     System.out.println("This farm has : " + myFarm.list.size() + " animals");
   }
 }
