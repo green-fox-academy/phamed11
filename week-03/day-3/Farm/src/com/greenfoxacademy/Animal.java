@@ -3,10 +3,12 @@ package com.greenfoxacademy;
 public class Animal {
   int hunger;
   int thirst;
+  String name;
 
-  public Animal() {
+  public Animal(String name) {
     hunger = 50;
     thirst = 50;
+    this.name = name;
   }
 
   public void eat() {
