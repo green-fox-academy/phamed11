@@ -7,27 +7,28 @@ public class Farm {
   ArrayList<Animal> list = new ArrayList<>();
   int slots;
 
-  public Farm(){
-    this.slots = 10;
-
+  public Farm(int slots) {
+    this.slots = slots;
   }
-  public void breed(Animal newAnimal) {
+
+
+  public void breed(Animal newAnimal, String name) {
     if (list.size() < slots) {
-      newAnimal = new Animal();
+      newAnimal = new Animal(name);
       list.add(newAnimal);
     } else {
-      System.out.println("There is space for a new animal");
+      System.out.println("There is NO space for a new animal");
     }
 
   }
 
   public void slaughter() {
     int[] hungerValues = new int[list.size()];
-    for (int i = 0; i < list.size(); i++) {
+    for (int i = 0; i < list.size() - 1; i++) {
       hungerValues[i] = list.get(i).hunger;
     }
     Arrays.sort(hungerValues);
-    list.remove(list.get(hungerValues[hungerValues.length]));
+    list.remove(list.get(hungerValues[0]));
   }
 
 }
