@@ -12,7 +12,7 @@ public class Main {
 //        breed() -> creates a new animal if there's place for it
 //        slaughter() -> removes the least hungry animal
 
-    Farm myFarm = new Farm(10);
+    Farm myFarm = new Farm(6);
     Animal cow = new Animal("Marci the cow");
     Animal sheep = new Animal("Gyuri the sheep");
     Animal chicken = new Animal("Etel the chicken");
@@ -35,28 +35,24 @@ public class Main {
     myFarm.list.get(1).eat();
     myFarm.list.get(4).eat();
 
+    myFarm.breed(chicken, "Janos the chicken");
 
-
-    for (int i = 0; i < myFarm.list.size() ; i++) {
-      System.out.println((i + 1) +  ". The " + myFarm.list.get(i).name + "'s hunger level is: " + myFarm.list.get(i).hunger);
-    }
-    System.out.println();
-    System.out.println("This farm has : " + myFarm.list.size() + " animals");
-    System.out.println();
+    myFarm.hungerLevels();
+    myFarm.numberOfAnimals();
     myFarm.slaughter();
-    for (int i = 0; i < myFarm.list.size() ; i++) {
-      System.out.println((i + 1) + ". The " + myFarm.list.get(i).name + "'s hunger level is: " + myFarm.list.get(i).hunger);
-    }
+    myFarm.numberOfAnimals();
     myFarm.slaughter();
 
-    myFarm.slaughter();
-
-    myFarm.slaughter();
-
-
+    myFarm.breed(sheep, "Otto a birka");
+    myFarm.breed(cow, "jjj");
+    myFarm.breed(chicken, "dsf");
 
 
-      System.out.println();
-    System.out.println("This farm has : " + myFarm.list.size() + " animals");
+
+
+
+
+
+
   }
 }
