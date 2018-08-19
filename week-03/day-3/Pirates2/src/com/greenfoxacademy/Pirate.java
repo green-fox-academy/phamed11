@@ -14,6 +14,10 @@ public class Pirate {
     thirst = 4;
     this.name = name;
   }
+  public Pirate() {
+    health = 100;
+    thirst = 4;
+  }
 
 
   public void drinkSomeRum() {
@@ -27,13 +31,13 @@ public class Pirate {
     thirst--;
   }
 
-  public void die(Pirate pirate) {
+  public static void die(Pirate pirate) {
     pirate.health = 0;
     System.out.println(pirate.name + " is dead! :(");
     System.out.println();
   }
 
-  public void brawl(Pirate one, Pirate two) {
+  public static void brawl(Pirate one, Pirate two) {
     Random random = new Random();
     int luck = random.nextInt(3);
     if (luck == 0 && one.health > 0 && two.health > 0) {

@@ -1,15 +1,21 @@
 package com.greenfoxacademy;
 
+import java.security.PublicKey;
+import java.util.Arrays;
+
 public class Main {
 
   public static void main(String[] args) {
 
     Pirate pirate = new Pirate("Steve");
     Pirate pirate2 = new Pirate("Joseph");
-    pirate.die(pirate2);
-    pirate.die(pirate);
+    Pirate piri = new Pirate();
+    Ship jianSeng = new Ship();
 
-    pirate.brawl(pirate, pirate2);
+    jianSeng.fillShip();
+
+    System.out.println(jianSeng.ourShip.get(2).name);
+
 
   }
 }
