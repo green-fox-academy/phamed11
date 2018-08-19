@@ -5,7 +5,7 @@ import com.sun.imageio.plugins.png.PNGImageReader;
 import java.security.PublicKey;
 import java.util.Arrays;
 
-public class Main {
+public class Battleapp {
 
   public static void main(String[] args) {
 
