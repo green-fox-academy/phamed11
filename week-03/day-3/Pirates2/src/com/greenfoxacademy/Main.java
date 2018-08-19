@@ -11,10 +11,11 @@ public class Main {
 
 
     Ship jianSeng = new Ship();
+    Ship blackRose = new Ship();
     jianSeng.fillShip();
     Pirate joe = new Pirate();
     Pirate manok = new Pirate();
-
+    jianSeng.statusOfOurShip();
 
 
 

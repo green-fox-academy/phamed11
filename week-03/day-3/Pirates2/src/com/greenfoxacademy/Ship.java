@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Ship {
-  ArrayList<Pirate> ourShip = new ArrayList<>();
+  static ArrayList<Pirate> ourShip = new ArrayList<>();
   Pirate captain = new Pirate();
   Pirate slave = new Pirate();
+  Ship enemy = new Ship();
+
 
   public Ship() {
     captain.health = 100;
@@ -35,7 +37,7 @@ public class Ship {
   public void statusOfOurShip() {
     System.out.println("We have " + (ourShip.size() - 1) + " pirates on board plus our captain");
     System.out.println();
-    System.out.println("Our captain drank RUM " + ((10 - ourShip.get(0).thirst)) + " times. His health is " + ourShip.get(0).health + " %.");
+    System.out.println("Our captain drank RUM " + ((20 - ourShip.get(0).thirst)) + " times. His health is " + ourShip.get(0).health + " %.");
     System.out.println();
     int dead = 0;
     for (int i = 0; i < ourShip.size(); i++) {
@@ -44,9 +46,9 @@ public class Ship {
       }
     }
     System.out.println("We have " + dead + " dead pirates.");
-    System.out.println();
+    System.out.println("We have " +alivePirates() + " alive pirates");
   }
-  public int alivePirates() {
+  public static int alivePirates() {
     int alive = 0;
     for (int i = 0; i < ourShip.size(); i++) {
       if (ourShip.get(i).health > 0) {
@@ -56,13 +58,20 @@ public class Ship {
     return alive;
   }
 
-  public int consumedRumbyTheCaptain() {
+  public static int consumedRumbyTheCaptain() {
     int rum = 20 - ourShip.get(0).thirst;
     return rum;
 
   }
 
   public static boolean battle(Ship other) {
+   if (alivePirates() - consumedRumbyTheCaptain() >
+
+      }
+    }
+
+
+
 
 
 
