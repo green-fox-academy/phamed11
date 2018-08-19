@@ -33,18 +33,8 @@ public class Ship {
 //    return name;
 //  }
   public void statusOfOurShip() {
-    System.out.println("We have " + (ourShip.size() - 1) + " pirates on board plus our captain");
-    System.out.println();
-    System.out.println("Our captain drank RUM " + ((20 - ourShip.get(0).thirst)) + " times. His health is " + ourShip.get(0).health + " %.");
-    System.out.println();
-    int dead = 0;
-    for (int i = 0; i < ourShip.size(); i++) {
-      if (ourShip.get(i).health == 0) {
-        dead++;
-      }
-    }
-    System.out.println("We have " + dead + " dead pirates.");
     System.out.println("We have " + alivePirates() + " alive pirates");
+    System.out.println("Our captain drank " + consumedRumbyTheCaptain() + "rums.");
   }
 
   public int alivePirates() {
@@ -64,34 +54,29 @@ public class Ship {
   }
 
   public boolean battle(Ship other) {
-    boolean result = true;
+    boolean result;
     Random random = new Random();
     int theirLoss = random.nextInt(other.ourShip.size() - 1);
     int outLoss = random.nextInt(ourShip.size() - 1);
-    int rum = random.nextInt(3);
-    if (alivePirates() - consumedRumbyTheCaptain() > other.alivePirates() - consumedRumbyTheCaptain()) {
-      result = true;
-    } else {
-      result = false;
-    }
-    if (result = true) {
+    int rum = random.nextInt(5);
+    if (alivePirates() - consumedRumbyTheCaptain() > other.alivePirates() - other.consumedRumbyTheCaptain()) {
       for (int i = 0; i < other.ourShip.size(); i++) {
         other.ourShip.remove(i);
       }
       for (int i = 0; i < rum ; i++) {
-        other.captain.drinkSomeRum();
-        other.slave.drinkSomeRum();
+        captain.drinkSomeRum();
+        slave.drinkSomeRum();
       }
     } else {
       for (int i = 0; i < ourShip.size(); i++) {
         ourShip.remove(i);
       }
       for (int i = 0; i < rum ; i++) {
-        captain.drinkSomeRum();
-        slave.drinkSomeRum();
+        other.captain.drinkSomeRum();
+        other.slave.drinkSomeRum();
       }
     }
-    return result;
+    return (alivePirates() - consumedRumbyTheCaptain() < other.alivePirates() - other.consumedRumbyTheCaptain());
   }
 }
 
