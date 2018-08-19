@@ -1,48 +1,36 @@
 package com.greenfoxacademy;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static jdk.nashorn.internal.objects.NativeMath.random;
+public class Pirate {
+  int thirst;
+  String name;
+  int health;
 
-public class PirateList {
-  ArrayList<Pirate> pirates = new ArrayList<Pirate>();
-  ArrayList<Pirate> deadPirates = new ArrayList<Pirate>();
 
-  public PirateList() {
-
+  public Pirate(String name) {
+    health = 100;
+    thirst = 4;
+    this.name = name;
   }
 
-  public void shout() {
-    System.out.println("Ima Pirate");
-  }
 
-  public void whoIsAlive() {
-    for (int i = 0; i < pirates.size(); i++) {
-      System.out.println(pirates.get(i).name + " is alive!");
+  public void drinkSomeRum() {
+    if (thirst > 0 && health > 0) {
+      System.out.println("Pour me anudder!");
+    } else if (health == 0) {
+      System.out.println("he is dead, he doesn't need a drink :(");
+    } else {
+      System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
     }
-    System.out.println();
+    thirst--;
   }
 
   public void die(Pirate pirate) {
     pirate.health = 0;
-    deadPirates.add(pirate);
-    pirates.remove(pirate);
     System.out.println(pirate.name + " is dead! :(");
     System.out.println();
-
-  }
-
-  public void whoIsDead() {
-    if (deadPirates.size() > 0) {
-      for (int i = 0; i < deadPirates.size(); i++) {
-        System.out.println("\n" + deadPirates.get(i).name + " is dead!");
-      }
-    } else {
-      System.out.println("\n Nobody is dead! Horray");
-      System.out.println();
-    }
   }
 
   public void brawl(Pirate one, Pirate two) {
