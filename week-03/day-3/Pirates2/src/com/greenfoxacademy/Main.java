@@ -13,8 +13,10 @@ public class Main {
     Ship jianSeng = new Ship();
 
     jianSeng.fillShip();
-
-    System.out.println(jianSeng.ourShip.get(2).name);
+    System.out.println(jianSeng.ourShip.size());
+    for (int i = 0; i < jianSeng.ourShip.size(); i++) {
+      System.out.println(jianSeng.ourShip.get(i).name);
+    }
 
 
   }

@@ -9,31 +9,30 @@ public class Ship {
   Pirate slave = new Pirate();
 
   public Ship() {
-//    slave.health = 90;
-//    slave.thirst = 5;
-//    slave.name = "Nobody";
-//    captain.health = 1000;
-//    captain.thirst = 10;
-//    captain.name = "Black Eye";
-
+  captain.health = 1000;
   }
 
 
-//  public Ship(Pirate captain) {
-//    this.captain = captain;
-//    captain.health = 1000;
-//    captain.thirst = 10;
-//
-//  }
 
   public ArrayList fillShip() {
     Random random = new Random();
     int ran = random.nextInt(100);
-    ourShip.add(captain);
-    for (int i = 0; i < ran; i++) {
+    ourShip.add(0, captain);
+    for (int i = 1; i < 4; i++) {
       ourShip.add(i, slave);
+      ourShip.get(0).name = "The Captain";
     }
     return ourShip;
+  }
+
+  public String randomName() {
+    String name = "";
+    Random random = new Random();
+    int ran = random.nextInt(344);
+    for (int i = 1; i < ourShip.size(); i++) {
+      name = "Pirate " + ran;
+    }
+    return name;
   }
 }
 
