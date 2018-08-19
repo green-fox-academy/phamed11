@@ -50,10 +50,12 @@ public class PirateList {
     int luck = random.nextInt(3);
     if (luck == 0 && one.health > 0) {
       die(one);
+      System.out.println(one.name + " was killed by " + two.name);
     } else if (luck == 0 && one.health == 0) {
       System.out.println(one.name + " is already dead");
     } else if (luck == 1 && two.health > 0) {
       die(two);
+      System.out.println(two.name + " was killed by " + one.name);
     } else if (luck == 1 && two.health == 0) {
       System.out.println(two.name + " is already dead");
     } else if (luck == 2 && one.health > 0 && two.health > 0) {
