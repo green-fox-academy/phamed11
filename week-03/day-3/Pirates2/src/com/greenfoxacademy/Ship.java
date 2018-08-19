@@ -56,11 +56,17 @@ public class Ship {
     return alive;
   }
 
+  public int consumedRumbyTheCaptain() {
+    int rum = 20 - ourShip.get(0).thirst;
+    return rum;
 
-//  public static boolean battle(Ship other) {
-//
-//
-//  }
+  }
+
+  public static boolean battle(Ship other) {
+
+
+
+  }
 
 }
 

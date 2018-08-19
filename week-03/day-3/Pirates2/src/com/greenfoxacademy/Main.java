@@ -12,12 +12,12 @@ public class Main {
 
     Ship jianSeng = new Ship();
     jianSeng.fillShip();
+    Pirate joe = new Pirate();
+    Pirate manok = new Pirate();
 
 
-    Pirate pirate = new Pirate();
-    Pirate pirate1 = new Pirate();
 
-    pirate.brawl(pirate, pirate1);
+
 
 
 
