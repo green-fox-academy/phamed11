@@ -16,7 +16,7 @@ public class Pirate {
   }
   public Pirate() {
     health = 100;
-    thirst = 4;
+    thirst = 10;
   }
 
 
