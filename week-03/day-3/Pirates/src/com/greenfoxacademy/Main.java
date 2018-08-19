@@ -13,11 +13,13 @@ public class Main {
     SmartOnes.pirates.add(pirate2);
     SmartOnes.pirates.add(pirate3);
 
-    SmartOnes.die(pirate);
-    SmartOnes.die(pirate2);
+
     System.out.println(pirate.health);
     System.out.println(pirate2.health);
+
     SmartOnes.brawl(pirate, pirate2);
+    System.out.println(pirate.health);
+    System.out.println(pirate2.health);
 
 
 
