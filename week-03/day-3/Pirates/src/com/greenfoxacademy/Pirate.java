@@ -9,17 +9,17 @@ public class Pirate {
 
 
   public Pirate(String name) {
-    health = 10;
+    health = 100;
     thirst = 4;
     this.name = name;
   }
 
 
   public void drinkSomeRum() {
-    if (thirst > 0) {
+    if (thirst > 0 && health > 0) {
       System.out.println("Pour me anudder!");
     } else if (health == 0) {
-      System.out.println("is dead :(");
+      System.out.println("he is dead, he doesn't need a drink :(");
     } else {
       System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
     }

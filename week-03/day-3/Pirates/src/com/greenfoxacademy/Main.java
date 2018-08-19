@@ -12,7 +12,13 @@ public class Main {
     SmartOnes.pirates.add(pirate);
     SmartOnes.pirates.add(pirate2);
     SmartOnes.pirates.add(pirate3);
-    SmartOnes.whoIsDead();
+
+    SmartOnes.die(pirate);
+    pirate.drinkSomeRum();
+    pirate2.drinkSomeRum();
+    SmartOnes.whoIsAlive();
+
+
 
 
   }
