@@ -1,5 +1,7 @@
 package com.greenfoxacademy;
 
+import com.sun.imageio.plugins.png.PNGImageReader;
+
 import java.security.PublicKey;
 import java.util.Arrays;
 
@@ -10,20 +12,12 @@ public class Main {
 
     Ship jianSeng = new Ship();
     jianSeng.fillShip();
-    jianSeng.captain.drinkSomeRum();
-    jianSeng.slave.drinkSomeRum();
-    jianSeng.slave.drinkSomeRum();
-    jianSeng.ourShip.get(3).drinkSomeRum();
-    jianSeng.slave.drinkSomeRum();
-    jianSeng.slave.drinkSomeRum();
-    jianSeng.slave.drinkSomeRum();
-
-    jianSeng.statusOfOurShip();
 
 
+    Pirate pirate = new Pirate();
+    Pirate pirate1 = new Pirate();
 
-
-
+    pirate.brawl(pirate, pirate1);
 
 
 
