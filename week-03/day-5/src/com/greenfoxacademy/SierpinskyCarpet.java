@@ -16,7 +16,7 @@ public class SierpinskyCarpet {
 
     int x = WIDTH / 3;
     int y = HEIGHT / 3;
-    int size = WIDTH / 3;
+    int size = HEIGHT /3;
     Random random = new Random(255);
     drawMeThis(graphics, x, y, size);
 
