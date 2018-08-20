@@ -23,8 +23,8 @@ public class Sponsor {
   }
 
   public void introduce() {
-    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender  + " who represents " +
-                      company + " and hired " + hiredStudents + " students so far.");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " who represents " +
+        company + " and hired " + hiredStudents + " students so far.");
   }
 
   public int hire() {
