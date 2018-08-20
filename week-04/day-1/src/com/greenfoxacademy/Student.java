@@ -24,7 +24,7 @@ public class Student {
   }
 
   public void introduce() {
-    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + ". From" + previousOrganization
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + ". From " + previousOrganization
         + " who skipped " + skippedDays + " days from the course already.");
   }
 

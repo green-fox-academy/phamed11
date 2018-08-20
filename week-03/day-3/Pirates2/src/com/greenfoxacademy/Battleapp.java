@@ -15,9 +15,9 @@ public class Battleapp {
     jianSeng.fillShip();
     blackRose.fillShip();
 
-//    jianSeng.statusOfOurShip();
-//    System.out.println();
-//    blackRose.statusOfOurShip();
+    jianSeng.statusOfOurShip();
+    System.out.println();
+    blackRose.statusOfOurShip();
 
     jianSeng.battle(blackRose);
 

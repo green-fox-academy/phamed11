@@ -15,7 +15,7 @@ public class Ship {
 
   public ArrayList fillShip() {
     Random random = new Random();
-    int ran = random.nextInt(100);
+    int ran = 30 + random.nextInt((100 - 30) + 1);
     ourShip.add(0, captain);
     for (int i = 1; i < ran; i++) {
       ourShip.add(i, slave);
@@ -34,7 +34,7 @@ public class Ship {
 //  }
   public void statusOfOurShip() {
     System.out.println("We have " + alivePirates() + " alive pirates");
-    System.out.println("Our captain drank " + consumedRumbyTheCaptain() + "rums.");
+    System.out.println("Our captain drank " + consumedRumbyTheCaptain() + " rums.");
   }
 
   public int alivePirates() {
@@ -56,11 +56,10 @@ public class Ship {
   public boolean battle(Ship other) {
     boolean result;
     Random random = new Random();
-    int theirLoss = random.nextInt(other.ourShip.size() - 1);
-    int outLoss = random.nextInt(ourShip.size() - 1);
+    int loss = random.nextInt(20);
     int rum = random.nextInt(5);
     if (alivePirates() - consumedRumbyTheCaptain() > other.alivePirates() - other.consumedRumbyTheCaptain()) {
-      for (int i = 0; i < other.ourShip.size(); i++) {
+      for (int i = 1; i < loss; i++) {
         other.ourShip.remove(i);
       }
       for (int i = 0; i < rum ; i++) {
@@ -68,7 +67,7 @@ public class Ship {
         slave.drinkSomeRum();
       }
     } else {
-      for (int i = 0; i < ourShip.size(); i++) {
+      for (int i = 1; i < loss; i++) {
         ourShip.remove(i);
       }
       for (int i = 0; i < rum ; i++) {
