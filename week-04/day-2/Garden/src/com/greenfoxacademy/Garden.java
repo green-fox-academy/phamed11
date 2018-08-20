@@ -11,6 +11,7 @@ public class Garden {
   double thirstLevel;
   List<Flowers> myGardenFlowers = new ArrayList<>();
   List<Trees> myGardenTrees = new ArrayList<>();
+
   public Garden() {
 
   }
@@ -43,6 +44,7 @@ public class Garden {
       }
     }
   }
+
   public void thirstGarden() {
     for (int i = 0; i < myGardenFlowers.size(); i++) {
       System.out.println("The " + myGardenFlowers.get(i).color + " Flower has " + myGardenFlowers.get(i).thirstLevel + " thirstlevel.");
@@ -51,5 +53,4 @@ public class Garden {
       System.out.println("The " + myGardenTrees.get(i).color + " Tree has " + myGardenTrees.get(i).thirstLevel + " thirstlevel.");
     }
   }
-
 }

@@ -8,19 +8,20 @@ public class Main {
     Trees purple = new Trees("purple");
     Trees orange = new Trees("orange");
 
-    Garden beauty = new Garden();
+    System.out.println(blue.Ff.get(0).color);
 
-    beauty.myGardenTrees.add(purple);
-    beauty.myGardenTrees.add(orange);
-    beauty.myGardenFlowers.add(yellow);
-    beauty.myGardenFlowers.add(blue);
-
-    beauty.status();
-    System.out.println();
-    beauty.watering(40);
-    System.out.println();
-    beauty.watering(70);
-    System.out.println();
-    beauty.thirstGarden();
+//    Garden beauty = new Garden();
+//
+//    beauty.myGardenTrees.add(purple);
+//    beauty.myGardenTrees.add(orange);
+//    beauty.myGardenFlowers.add(yellow);
+//    beauty.myGardenFlowers.add(blue);
+//
+//    beauty.status();
+//    System.out.println();
+//    beauty.watering(40);
+//    System.out.println();
+//    beauty.watering(70);
+//    System.out.println();
   }
 }
