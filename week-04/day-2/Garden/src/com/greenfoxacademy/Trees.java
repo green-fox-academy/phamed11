@@ -9,7 +9,10 @@ public class Trees extends Flowers{
     public Trees(String color, int thirstLevel) {
     this.color = color;
     this.thirstLevel = thirstLevel;
-    thirstLevel = 9;
+    thirstLevel = 0;
+      if (this.thirstLevel < 10) {
+        thirsty = true;
+      }
   }
 
   public Trees() {
