@@ -3,11 +3,15 @@ package com.greenfoxacademy;
 public class GardeningApp extends Garden {
 
   public GardeningApp() {
-    String name;
+
   }
 
   public void start(Garden name) {
-    name = new Garden();
-
+    name.status();
+    System.out.println();
+    name.watering(40);
+    System.out.println();
+    name.watering(70);
+    System.out.println();
   }
 }

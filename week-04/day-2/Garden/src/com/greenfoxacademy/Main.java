@@ -3,25 +3,21 @@ package com.greenfoxacademy;
 public class Main {
 
   public static void main(String[] args) {
+    // Garden with flowers and trees created
+
+    Garden beauty = new Garden();
     Flowers yellow = new Flowers("yellow");
     Flowers blue = new Flowers("blue");
     Trees purple = new Trees("purple");
     Trees orange = new Trees("orange");
+    beauty.myGardenTrees.add(purple);
+    beauty.myGardenTrees.add(orange);
+    beauty.myGardenFlowers.add(yellow);
+    beauty.myGardenFlowers.add(blue);
+    GardeningApp gardenningApp = new GardeningApp();
 
-    System.out.println(blue.Ff.get(0).color);
+    // program start
+    gardenningApp.start(beauty);
 
-//    Garden beauty = new Garden();
-//
-//    beauty.myGardenTrees.add(purple);
-//    beauty.myGardenTrees.add(orange);
-//    beauty.myGardenFlowers.add(yellow);
-//    beauty.myGardenFlowers.add(blue);
-//
-//    beauty.status();
-//    System.out.println();
-//    beauty.watering(40);
-//    System.out.println();
-//    beauty.watering(70);
-//    System.out.println();
   }
 }
