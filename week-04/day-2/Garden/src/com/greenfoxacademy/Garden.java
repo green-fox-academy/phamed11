@@ -6,25 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Garden {
-  int wateringAmount;
+  private int wateringAmount;
   String color;
-  int thirstLevel;
+  double thirstLevel;
   boolean thirsty;
   List<Flowers> myGardenFlowers = new ArrayList<>();
   List<Trees> myGardenTrees = new ArrayList<>();
-  int numberOfPlants = myGardenFlowers.size() - 1 + myGardenTrees.size() - 1;
-
   public Garden() {
 
   }
 
   public void watering(int wateringAmount) {
+    double numberOfPlants = myGardenFlowers.size() + myGardenTrees.size();
+    System.out.println("Watering with " + wateringAmount);
     for (int i = 0; i < myGardenFlowers.size(); i++) {
-      myGardenFlowers.get(i).thirstLevel += (wateringAmount / numberOfPlants);
+      myGardenFlowers.get(i).thirstLevel += (wateringAmount / numberOfPlants * 0.75);
     }
-    for (int i = 0; i < myGardenFlowers.size(); i++) {
-      myGardenTrees.get(i).thirstLevel += (wateringAmount / numberOfPlants);
+    for (int i = 0; i < myGardenTrees.size(); i++) {
+      myGardenTrees.get(i).thirstLevel += (wateringAmount / numberOfPlants * 0.4);
     }
+    status();
   }
 
   public void status() {
@@ -36,7 +37,7 @@ public class Garden {
       }
     }
     for (int i = 0; i < myGardenTrees.size(); i++) {
-      if (myGardenTrees.get(i).thirstLevel < 5) {
+      if (myGardenTrees.get(i).thirstLevel < 10) {
         System.out.println("The " + myGardenTrees.get(i).color + " Tree needs water.");
       } else {
         System.out.println("The " + myGardenTrees.get(i).color + " Tree doesn't need water.");

@@ -16,8 +16,9 @@ public class Main {
     beauty.myGardenFlowers.add(blue);
 
     beauty.status();
-
-
-
+    System.out.println();
+    beauty.watering(40);
+    System.out.println();
+    beauty.watering(70);
   }
 }
