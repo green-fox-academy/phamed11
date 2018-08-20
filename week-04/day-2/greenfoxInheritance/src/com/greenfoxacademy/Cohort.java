@@ -9,6 +9,8 @@ public class Cohort {
 
   public Cohort(String name) {
   this.name = name;
+  students.clear();
+  mentors.clear();
   }
 
   public ArrayList<Student> addStudent(Student name) {
@@ -21,8 +23,8 @@ public class Cohort {
     return mentors;
   }
 
-  public String info() {
-  return "The " + name + " cohort has " + students.size() + " students and " + mentors.size() + " mentors.";
+  public void info() {
+    System.out.println("The " + name + " cohort has " + students.size() + " students and " + mentors.size() + " mentors.");
   }
 
 }
