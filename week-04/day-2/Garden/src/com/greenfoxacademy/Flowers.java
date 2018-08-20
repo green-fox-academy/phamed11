@@ -11,6 +11,7 @@ public class Flowers {
   public Flowers(String color, int thirstLevel) {
     this.color = color;
     this.thirstLevel = thirstLevel;
+    thirstLevel = 4;
   }
 
   public Flowers() {
