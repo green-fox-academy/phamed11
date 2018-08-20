@@ -1,14 +1,21 @@
 package com.greenfoxacademy;
 
+import com.sun.tools.javac.comp.Flow;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Garden {
-  ArrayList<Garden> myGarden = new ArrayList<>();
+  int wateringAmount;
+  String color;
+  int thirstLevel;
+  boolean thirsty;
 
 
-  public Garden(ArrayList<Flowers> flowersArrayList, ArrayList<Trees> treesArrayList ) {
-    flowersArrayList = new ArrayList<>();
-    treesArrayList = new ArrayList<>();
+  public Garden() {
+    List<Flowers> myGardenFlowers = new ArrayList<>();
+    List<Trees> myGardenTrees = new ArrayList<>();
   }
+
 
 }
