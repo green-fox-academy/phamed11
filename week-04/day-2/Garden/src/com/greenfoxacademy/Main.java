@@ -3,10 +3,19 @@ package com.greenfoxacademy;
 public class Main {
 
   public static void main(String[] args) {
-    Flowers one = new Flowers("Yellow");
-    Flowers two = new Flowers("Blue");
+    Flowers yellow = new Flowers("yellow");
+    Flowers blue = new Flowers("blue");
+    Trees purple = new Trees("purple");
+    Trees orange = new Trees("orange");
 
+    Garden beauty = new Garden();
 
+    beauty.myGardenTrees.add(purple);
+    beauty.myGardenTrees.add(orange);
+    beauty.myGardenFlowers.add(yellow);
+    beauty.myGardenFlowers.add(blue);
+
+    beauty.status();
 
 
 
