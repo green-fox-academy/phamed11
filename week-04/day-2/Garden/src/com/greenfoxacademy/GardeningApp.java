@@ -3,7 +3,6 @@ package com.greenfoxacademy;
 public class GardeningApp extends Garden {
 
   public GardeningApp() {
-
   }
 
   public void start(Garden name) {
