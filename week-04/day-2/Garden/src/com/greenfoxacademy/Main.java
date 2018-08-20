@@ -20,5 +20,7 @@ public class Main {
     beauty.watering(40);
     System.out.println();
     beauty.watering(70);
+    System.out.println();
+    beauty.thirstGarden();
   }
 }

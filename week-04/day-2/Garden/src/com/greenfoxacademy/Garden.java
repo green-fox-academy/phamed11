@@ -9,7 +9,6 @@ public class Garden {
   private int wateringAmount;
   String color;
   double thirstLevel;
-  boolean thirsty;
   List<Flowers> myGardenFlowers = new ArrayList<>();
   List<Trees> myGardenTrees = new ArrayList<>();
   public Garden() {
@@ -42,6 +41,14 @@ public class Garden {
       } else {
         System.out.println("The " + myGardenTrees.get(i).color + " Tree doesn't need water.");
       }
+    }
+  }
+  public void thirstGarden() {
+    for (int i = 0; i < myGardenFlowers.size(); i++) {
+      System.out.println("The " + myGardenFlowers.get(i).color + " Flower has " + myGardenFlowers.get(i).thirstLevel + " thirstlevel.");
+    }
+    for (int i = 0; i < myGardenTrees.size(); i++) {
+      System.out.println("The " + myGardenTrees.get(i).color + " Tree has " + myGardenTrees.get(i).thirstLevel + " thirstlevel.");
     }
   }
 
