@@ -57,13 +57,5 @@ public class Main {
     roosevelt.fill();
     roosevelt.getStatus();
     System.out.println();
-
-
-
-
-
-
-
-
   }
 }

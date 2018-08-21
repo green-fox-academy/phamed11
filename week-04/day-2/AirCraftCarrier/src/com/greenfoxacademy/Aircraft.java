@@ -51,5 +51,4 @@ public class Aircraft {
       return false;
     }
   }
-
 }

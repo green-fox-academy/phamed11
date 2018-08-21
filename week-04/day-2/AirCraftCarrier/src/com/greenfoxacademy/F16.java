@@ -6,6 +6,4 @@ public class F16 extends Aircraft {
     super(0, 30, 8);
     type = "F-16";
   }
-
-
 }
