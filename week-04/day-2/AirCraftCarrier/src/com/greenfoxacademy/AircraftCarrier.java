@@ -15,22 +15,24 @@ public class AircraftCarrier {
   public void addAircraft(Aircraft aircraft) {
     carrier.add(aircraft);
   }
-// this is not good yet!!!
+
+  // this is not good yet!!!
   public void fill() {
-    if (totalAmmoNeeded() > ammoStorageSize) {
+    if (this.totalAmmoNeeded() > ammoStorageSize) {
       for (int i = 0; i < carrier.size(); i++) {
         if (carrier.get(i).isPriority()) {
           carrier.get(i).reFill(ammoStorageSize);
-          ammoStorageSize -= carrier.get(i).ammoNeeded();
+          ammoStorageSize -= this.carrier.get(i).ammoNeeded();
         } else {
           carrier.get(i).reFill(ammoStorageSize);
-          ammoStorageSize -= carrier.get(i).ammoNeeded();
+          ammoStorageSize -= this.carrier.get(i).ammoNeeded();
         }
       }
     } else {
       for (int i = 0; i < carrier.size(); i++) {
         carrier.get(i).reFill(ammoStorageSize);
-        ammoStorageSize -= carrier.get(i).ammoNeeded();
+        ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
+//        ammoStorageSize -= this.carrier.get(i).ammoNeeded();
       }
     }
   }

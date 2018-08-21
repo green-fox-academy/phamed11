@@ -6,13 +6,14 @@ public class Main {
 
     F16 f16 = new F16();
     F35 f35 = new F35();
-    AircraftCarrier roosevelt = new AircraftCarrier(444, 500);
+    AircraftCarrier roosevelt = new AircraftCarrier(80, 500);
     roosevelt.addAircraft(f16);
     roosevelt.addAircraft(f35);
 
     roosevelt.listOfAircraftsOnCarrier();
     System.out.println();
 
+    System.out.println(roosevelt.ammoStorageSize);
     roosevelt.fill();
     System.out.println();
     roosevelt.listOfAircraftsOnCarrier();
