@@ -1,5 +1,6 @@
 package com.greenfoxacademy;
 
+import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 
 public class AircraftCarrier {
@@ -47,5 +48,25 @@ public class AircraftCarrier {
     for (int i = 0; i < carrier.size(); i++) {
       System.out.println(carrier.get(i).getStatus());
     }
+  }
+
+  public int fight(AircraftCarrier enemy) {
+    int damage = 0;
+    for (int i = 0; i < carrier.size(); i++) {
+      damage = enemy.healthPoints -= carrier.get(i).fight();
+    }
+    return damage;
+  }
+
+  public void getStatus() {
+    int totalDamage = 0;
+    for (int i = 0; i < carrier.size(); i++) {
+      totalDamage += carrier.get(i).fight();
+    }
+
+    System.out.println("HP: " + this.healthPoints + ", Aircraft count: " + carrier.size() + ", Ammo Storage: " + this.ammoStorageSize +
+                      ", Total damage: " + totalDamage);
+    System.out.println("Aircrafts: ");
+    listOfAircraftsOnCarrier();
   }
 }
