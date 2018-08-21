@@ -5,17 +5,12 @@ public class Sponsor extends Person {
   int hiredStudents;
 
   public Sponsor(String name, int age, String gender, String company) {
-//    this.name = name;
-//    this.age = age;
-//    this.gender = gender;
+
     super(name, age, gender);
     this.company = company;
   }
 
   public Sponsor() {
-//    name = "Jane Doe";
-//    age = 30;
-//    gender = "female";
     company = "Google";
     hiredStudents = 0;
   }
