@@ -16,17 +16,17 @@ public class AircraftCarrier {
     carrier.add(aircraft);
   }
 // this is not good yet!!!
-//  public void fill(Aircraft aircraft) {
-//    if (totalAmmoNeeded() < ammoStorageSize) {
-//      for (int i = 0; i < carrier.size(); i++) {
-//        if (carrier.get(i).isPriority()) {
-//          carrier.get(i).reFill(ammoStorageSize);
-//        }
-//      }
-//    }
-//
-//
-//  }
+  public void fill(Aircraft aircraft) {
+    if (totalAmmoNeeded() < ammoStorageSize) {
+      for (int i = 0; i < carrier.size(); i++) {
+        for (int j = 1; j < carrier.size(); j++) {
+
+        }
+      }
+    }
+
+
+  }
 
   public int totalAmmoNeeded() {
     int totalNeeded = 0;
@@ -34,6 +34,12 @@ public class AircraftCarrier {
       totalNeeded += carrier.get(i).ammoNeeded();
     }
     return totalNeeded;
+  }
+
+  public void listOfAircraftsOnCarrier() {
+    for (int i = 0; i < carrier.size(); i++) {
+      System.out.println(carrier.get(i).getStatus());
+    }
   }
 
 
