@@ -20,6 +20,7 @@ public class Garden {
     for (int i = 0; i < garden.size(); i++) {
       if (garden.get(i).thirstyOrNot()) {
         garden.get(i).thirstLevel += (double) wateringAmount / numberOfThirstyPlants;
+
       }
     }
     statusOfTheGarden();

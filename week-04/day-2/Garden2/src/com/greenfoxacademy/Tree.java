@@ -6,12 +6,6 @@ public class Tree extends Plants {
     super(color, 10);
   }
 
-  public double watering(double wateringAmount) {
-    if (this.thirsty) {
-      super.thirstLevel += wateringAmount * 0.4;
-    }
-    return thirstLevel;
-  }
 
 }
 

@@ -12,20 +12,16 @@ int thirstyIfsmaller = 0;
 
   }
 
-
-  public double watering(double wateringAmount) {
-    if (this.thirsty) {
-      this.thirstLevel += wateringAmount;
-    }
-    return thirstLevel;
-  }
-
   public boolean thirstyOrNot() {
     if (this.thirstLevel < thirstyIfsmaller) {
       thirsty = true;
+    } else {
+      thirsty = false;
     }
     return thirsty;
   }
+
+
 
 
 

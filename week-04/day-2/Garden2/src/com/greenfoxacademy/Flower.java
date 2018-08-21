@@ -6,12 +6,7 @@ public class Flower extends Plants {
     super (color, 5);
   }
 
-  public double watering(double wateringAmount) {
-    if (this.thirsty) {
-      super.thirstLevel += wateringAmount * 0.75;
-    }
-    return thirstLevel;
-  }
+
 
 
 }
