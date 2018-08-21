@@ -22,10 +22,13 @@ public class AircraftCarrier {
       for (int i = 0; i < carrier.size(); i++) {
         if (carrier.get(i).isPriority()) {
           ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
-        } else {
-//          ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
+        }
+      } if (ammoStorageSize > 0) {
+        for (int i = 0; i < carrier.size() ; i++) {
+          ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
         }
       }
+
     } else {
       for (int i = 0; i < carrier.size(); i++) {
         ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
