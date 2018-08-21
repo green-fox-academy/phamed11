@@ -20,8 +20,13 @@ public class Aircraft {
   public int reFill(int ammoToAdd) {
     int ammoToFill = maxAmmo - ammo;
     if (ammo < maxAmmo) {
-      ammo = maxAmmo;
-      ammoToAdd = ammoToAdd - ammoToFill;
+      if (ammoToAdd < ammoToFill) {
+        ammo += ammoToAdd;
+        ammoToAdd = 0;
+      } else {
+        ammo = maxAmmo;
+        ammoToAdd = ammoToAdd - ammoToFill;
+      }
     }
     return ammoToAdd;
   }
@@ -34,6 +39,11 @@ public class Aircraft {
     return "Type " + getType() + ", Ammo: " + this.ammo + ", Base Damage: " + this.baseDamage + ", All Damage: " + fight();
   }
 
+  public int ammoNeeded() {
+    int ammoNeeded = this.maxAmmo - this.ammo;
+    return ammoNeeded;
+  }
+
   public boolean isPriority() {
     if (type.equals("F-16")) {
       return false;
@@ -41,9 +51,5 @@ public class Aircraft {
       return true;
     }
   }
-
-
-
-
 
 }
