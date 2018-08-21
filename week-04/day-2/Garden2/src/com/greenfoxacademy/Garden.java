@@ -6,6 +6,10 @@ public class Garden {
 ArrayList<Plants> garden = new ArrayList<>();
 
   public Garden() {
-    
+
+  }
+
+  public double watering(double wateringAmount) {
+
   }
 }
