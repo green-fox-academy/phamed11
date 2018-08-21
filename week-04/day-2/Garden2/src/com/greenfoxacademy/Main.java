@@ -17,6 +17,8 @@ public class Main {
     System.out.println();
     paradise.watering(40);
     System.out.println();
+    paradise.watering(70);
+    System.out.println();
     paradise.thirstLevelOfGarden();
 
 

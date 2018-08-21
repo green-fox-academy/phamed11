@@ -1,5 +1,7 @@
 package com.greenfoxacademy;
 
+import com.sun.tools.javac.comp.Flow;
+
 import java.util.ArrayList;
 
 public class Garden {
@@ -18,9 +20,10 @@ public class Garden {
     }
     System.out.println("Watering with " + wateringAmount);
     for (int i = 0; i < garden.size(); i++) {
-      if (garden.get(i).thirstyOrNot()) {
-        garden.get(i).thirstLevel += (double) wateringAmount / numberOfThirstyPlants;
-
+      if (garden.get(i).thirstyOrNot() && (garden.get(i) instanceof Flower)) {
+        garden.get(i).thirstLevel += (double) wateringAmount / numberOfThirstyPlants * 0.75;
+      } else {
+        garden.get(i).thirstLevel += (double) wateringAmount / numberOfThirstyPlants * 0.4;
       }
     }
     statusOfTheGarden();

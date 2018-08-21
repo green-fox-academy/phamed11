@@ -4,7 +4,7 @@ public class Plants {
 String color;
 Boolean thirsty = true;
 double thirstLevel;
-int thirstyIfsmaller = 0;
+double thirstyIfsmaller = 0;
 
   public Plants(String color, int thirstyIfsmaller){
     this.color = color;
