@@ -17,9 +17,12 @@ public class AircraftCarrier {
   }
 
   public void fill(Aircraft aircraft) {
+    if (totalAmmoNeeded() < ammoStorageSize) {
+      for (int i = 0; i < carrier.size(); i++) {
+        carrier.get(i).reFill(ammoStorageSize);
+      }
+    }
 
-    aircraft.reFill(ammoStorageSize);
-    ammoStorageSize -= aircraft.reFill(ammoStorageSize);
 
   }
 
@@ -30,5 +33,6 @@ public class AircraftCarrier {
     }
     return totalNeeded;
   }
+
 
 }
