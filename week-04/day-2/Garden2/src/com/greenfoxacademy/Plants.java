@@ -7,6 +7,7 @@ double thirstLevel;
 
   public Plants(String color) {
     this.color = color;
+
   }
 
   public Plants() {
