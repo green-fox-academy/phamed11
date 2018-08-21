@@ -34,4 +34,16 @@ public class Aircraft {
     return "Type " + getType() + ", Ammo: " + this.ammo + ", Base Damage: " + this.baseDamage + ", All Damage: " + fight();
   }
 
+  public boolean isPriority() {
+    if (type.equals("F-16")) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  
+
+
+
 }
