@@ -6,7 +6,6 @@ import java.util.Random;
 public class Ship {
   ArrayList<Pirate> ourShip = new ArrayList<>();
   Pirate captain = new Pirate();
-  Pirate slave = new Pirate();
 
   public Ship() {
     captain.health = 100;
@@ -18,7 +17,7 @@ public class Ship {
     int ran = 30 + random.nextInt((100 - 30) + 1);
     ourShip.add(0, captain);
     for (int i = 1; i < ran; i++) {
-      ourShip.add(i, slave);
+      ourShip.add(i, new Pirate()); // this is important to remember
     }
     return ourShip;
   }
@@ -64,7 +63,7 @@ public class Ship {
       }
       for (int i = 0; i < rum ; i++) {
         captain.drinkSomeRum();
-        slave.drinkSomeRum();
+        ourShip.get(i).drinkSomeRum();
       }
     } else {
       for (int i = 1; i < loss; i++) {
@@ -72,7 +71,7 @@ public class Ship {
       }
       for (int i = 0; i < rum ; i++) {
         other.captain.drinkSomeRum();
-        other.slave.drinkSomeRum();
+        other.ourShip.get(i).drinkSomeRum();
       }
     }
     return (alivePirates() - consumedRumbyTheCaptain() < other.alivePirates() - other.consumedRumbyTheCaptain());
