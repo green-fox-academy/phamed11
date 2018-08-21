@@ -21,18 +21,14 @@ public class AircraftCarrier {
     if (this.totalAmmoNeeded() > ammoStorageSize) {
       for (int i = 0; i < carrier.size(); i++) {
         if (carrier.get(i).isPriority()) {
-          carrier.get(i).reFill(ammoStorageSize);
-          ammoStorageSize -= this.carrier.get(i).ammoNeeded();
+          ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
         } else {
-          carrier.get(i).reFill(ammoStorageSize);
-          ammoStorageSize -= this.carrier.get(i).ammoNeeded();
+//          ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
         }
       }
     } else {
       for (int i = 0; i < carrier.size(); i++) {
-        carrier.get(i).reFill(ammoStorageSize);
         ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
-//        ammoStorageSize -= this.carrier.get(i).ammoNeeded();
       }
     }
   }
