@@ -5,17 +5,18 @@ public class Student extends Person {
   int skippedDays;
 
   public Student(String name, int age, String gender, String previousOrganization) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+//    this.name = name;
+//    this.age = age;
+//    this.gender = gender;
+    super(name, age, gender);
     this.previousOrganization = previousOrganization;
     skippedDays = 0;
   }
 
   public Student() {
-    name = "Jane Doe";
-    age = 30;
-    gender = "female";
+//    name = "Jane Doe";
+//    age = 30;
+//    gender = "female";
     previousOrganization = "The School of Life";
     skippedDays = 0;
   }
