@@ -16,8 +16,9 @@ public class Main {
     paradise.statusOfTheGarden();
     System.out.println();
     paradise.watering(40);
+    System.out.println();
+    paradise.thirstLevelOfGarden();
 
-    System.out.println(paradise.garden.get(0).thirstLevel);
 
 
   }
