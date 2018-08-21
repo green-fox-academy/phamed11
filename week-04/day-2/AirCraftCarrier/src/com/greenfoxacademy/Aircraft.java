@@ -45,7 +45,7 @@ public class Aircraft {
   }
 
   public boolean isPriority() {
-    if (type.equals("F-16")) {
+    if (this.type.equals("F-16")) {
       return false;
     } else {
       return true;
