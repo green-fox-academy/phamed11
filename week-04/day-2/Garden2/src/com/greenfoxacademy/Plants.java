@@ -2,7 +2,7 @@ package com.greenfoxacademy;
 
 public class Plants {
 String color;
-Boolean thirsty;
+Boolean thirsty = true;
 double thirstLevel;
 
   public Plants(String color) {

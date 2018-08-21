@@ -13,6 +13,12 @@ public class Main {
     paradise.garden.add(purple);
     paradise.garden.add(orange);
 
+    paradise.statusOfTheGarden();
+    System.out.println();
+    paradise.watering(40);
+
+
+
 
 
 

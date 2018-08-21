@@ -9,13 +9,20 @@ public class Garden {
 
   }
 
-  public void watering(double wateringAmount) {
-    int numberOfPlants = garden.size();
+  public void watering(int wateringAmount) {
+    int numberOfThirstyPlants = 0;
     for (int i = 0; i < garden.size(); i++) {
       if (garden.get(i).thirsty) {
-        garden.get(i).thirstLevel += wateringAmount / numberOfPlants;
+        numberOfThirstyPlants++;
       }
     }
+    System.out.println("Watering with " + wateringAmount);
+    for (int i = 0; i < garden.size(); i++) {
+      if (garden.get(i).thirsty) {
+        garden.get(i).thirstLevel += wateringAmount / numberOfThirstyPlants;
+      }
+    }
+    statusOfTheGarden();
   }
 
   public void statusOfTheGarden() {

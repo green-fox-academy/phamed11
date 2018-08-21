@@ -12,7 +12,10 @@ public class Flower extends Plants {
 
   public double watering(double wateringAmount) {
     if (this.thirsty) {
-      super.thirstLevel += wateringAmount * 0.75;
+      this.thirstLevel += wateringAmount * 0.75;
+    }
+    if (this.thirstLevel > 5) {
+      this.thirsty = false;
     }
     return thirstLevel;
   }

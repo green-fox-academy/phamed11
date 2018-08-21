@@ -12,7 +12,10 @@ public class Tree extends Plants {
 
   public double watering(double wateringAmount) {
     if (this.thirsty) {
-      super.thirstLevel += wateringAmount * 0.4;
+      this.thirstLevel += wateringAmount * 0.4;
+    }
+    if (this.thirstLevel > 10) {
+      this.thirsty = false;
     }
     return thirstLevel;
   }
