@@ -5,10 +5,6 @@ public abstract class StringedInstrument extends Instrument {
 
  public abstract void sound();
 
-  public StringedInstrument() {
-    this.name = name;
-  }
-
   public StringedInstrument(int numberOfStrings, String name) {
     super(name);
     this.numberOfStrings = numberOfStrings;
