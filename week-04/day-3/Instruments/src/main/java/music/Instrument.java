@@ -10,8 +10,7 @@ public abstract class Instrument {
   public Instrument() {
   }
 
-  public String play() {
-    String result = instrument.name;
-    return result;
-  }
+  public abstract void play();
+
+
 }
