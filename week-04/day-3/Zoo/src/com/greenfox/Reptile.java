@@ -4,18 +4,12 @@ public class Reptile extends Animal {
 
 
   public Reptile(String name) {
-    super("Crocodile");
+    super(name);
   }
 
   @Override
   public String breed() {
-    String breedi = "laying eggs";
+    String breedi = "laying eggs.";
     return breedi;
   }
-
-
-
-
-
-
 }
