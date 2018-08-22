@@ -1,6 +1,6 @@
 package com.greenfoxacademy;
 
-public class Student extends Person {
+public class Student extends Person implements Cloneable {
   String previousOrganization;
   int skippedDays;
 
@@ -29,5 +29,11 @@ public class Student extends Person {
     return skippedDays;
   }
 
-
+  public Student clone() {
+    Student George = new Student(name, age, gender, previousOrganization);
+    return George;
+  }
 }
+
+
+
