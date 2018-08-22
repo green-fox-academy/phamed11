@@ -9,6 +9,8 @@ public class Main {
 
     System.out.println(test.charAt(1));
 
+    Shifter shifter = new Shifter("Example");
 
+    System.out.println(shifter.charAt(0));
   }
 }
