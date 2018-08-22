@@ -1,13 +1,15 @@
 package com.greenfox;
 
 public class Bird extends Animal {
+  boolean fly;
 
   public Bird(String name) {
-    super("Dr. Bubo");
+    super("Ostrich");
   }
 
   @Override
-  public void breed() {
-
+  public String  breed() {
+    String breedi ="laying eggs";
+    return breedi;
   }
 }

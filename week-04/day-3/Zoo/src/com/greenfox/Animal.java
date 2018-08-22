@@ -16,5 +16,7 @@ public abstract class Animal {
     return name;
   }
 
-  public abstract void breed();
+  public abstract String breed();
+
+
 }

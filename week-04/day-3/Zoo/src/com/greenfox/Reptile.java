@@ -1,15 +1,21 @@
 package com.greenfox;
 
 public class Reptile extends Animal {
-  @Override
-  public void breed() {
 
-  }
 
   public Reptile(String name) {
-    super("Lizi");
+    super("Crocodile");
   }
 
-  public Reptile() {
+  @Override
+  public String breed() {
+    String breedi = "laying eggs";
+    return breedi;
   }
+
+
+
+
+
+
 }
