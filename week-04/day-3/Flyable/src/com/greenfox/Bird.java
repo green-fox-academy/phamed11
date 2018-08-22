@@ -1,4 +1,5 @@
 package com.greenfox;
+
 import com.greenfoxacademy.*;
 
 public class Bird extends Animal implements Flyable {
@@ -15,17 +16,17 @@ public class Bird extends Animal implements Flyable {
   }
 
   @Override
-  public void land() {
-
+  public String land() {
+    return "Lands on feet";
   }
 
   @Override
-  public void fly() {
-
+  public String fly() {
+    return "flies high";
   }
 
   @Override
-  public void takeoff() {
-
+  public String takeoff() {
+    return "takes of fast";
   }
 }

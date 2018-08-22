@@ -2,9 +2,9 @@ package com.greenfoxacademy;
 
 public interface Flyable {
 
-  public void land();
+  public String land();
 
-  public void fly();
+  public String fly();
 
-  public void takeoff();
+  public String takeoff();
 }

@@ -3,17 +3,17 @@ package com.greenfoxacademy;
 public class Helicopter extends Vehicle implements Flyable {
 
   @Override
-  public void land() {
-
+  public String land() {
+    return "on helipad";
   }
 
   @Override
-  public void fly() {
-
+  public String fly() {
+    return "Flies with rotors";
   }
 
   @Override
-  public void takeoff() {
-
+  public String takeoff() {
+    return "takes off from helipad";
   }
 }
