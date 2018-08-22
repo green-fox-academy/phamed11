@@ -12,5 +12,6 @@ public class Main {
     Shifter shifter = new Shifter("Example");
 
     System.out.println(shifter.charAt(0));
+
   }
 }
