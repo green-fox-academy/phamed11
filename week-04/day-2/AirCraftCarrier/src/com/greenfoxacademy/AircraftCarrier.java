@@ -1,5 +1,9 @@
 package com.greenfoxacademy;
 
+import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
+import com.sun.xml.internal.ws.api.model.ExceptionType;
+import org.omg.IOP.ExceptionDetailMessage;
+
 import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 
@@ -18,21 +22,25 @@ public class AircraftCarrier {
   }
 
   public void fill() {
-    if (this.totalAmmoNeeded() > ammoStorageSize) {
-      for (int i = 0; i < carrier.size(); i++) {
-        if (carrier.get(i).isPriority()) {
-          ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
+    if (ammoStorageSize > 0) {
+      if (this.totalAmmoNeeded() > ammoStorageSize) {
+        for (int i = 0; i < carrier.size(); i++) {
+          if (carrier.get(i).isPriority()) {
+            ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
+          }
         }
-      }
-      if (ammoStorageSize > 0) {
+        if (ammoStorageSize > 0) {
+          for (int i = 0; i < carrier.size(); i++) {
+            ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
+          }
+        }
+      } else {
         for (int i = 0; i < carrier.size(); i++) {
           ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
         }
       }
     } else {
-      for (int i = 0; i < carrier.size(); i++) {
-        ammoStorageSize = carrier.get(i).reFill(ammoStorageSize);
-      }
+//      throw new ArithmeticException();
     }
   }
 
