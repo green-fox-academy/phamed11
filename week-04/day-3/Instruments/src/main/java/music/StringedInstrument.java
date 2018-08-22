@@ -4,10 +4,14 @@ public abstract class StringedInstrument extends Instrument {
  int numberOfStrings;
  String name;
 
- public abstract sound();
+ public abstract String sound();
+
+  public StringedInstrument() {
+
+  }
 
   public StringedInstrument(int numberOfStrings, String name) {
+    super(name);
     this.numberOfStrings = numberOfStrings;
-    this.name = name;
   }
 }

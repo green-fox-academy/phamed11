@@ -6,4 +6,8 @@ public class ElectricGuitar extends StringedInstrument {
     super(6, "Twang");
   }
 
+  public ElectricGuitar(int numberOf) {
+    numberOfStrings = numberOf;
+  }
+
 }
