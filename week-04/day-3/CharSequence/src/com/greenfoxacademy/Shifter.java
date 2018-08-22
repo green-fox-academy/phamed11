@@ -4,6 +4,7 @@ import java.util.stream.IntStream;
 
 public class Shifter implements CharSequence{
   String string;
+  int shifter = 2;
 
   public Shifter(String string) {
     this.string = string;
@@ -15,7 +16,7 @@ public class Shifter implements CharSequence{
 
   @Override
   public char charAt(int index) {
-    char result = string.charAt(index + 2);
+    char result = string.charAt(index + shifter);
     return result;
   }
 
