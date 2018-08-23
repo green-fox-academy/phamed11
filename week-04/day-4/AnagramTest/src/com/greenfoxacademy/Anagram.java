@@ -4,32 +4,33 @@ import java.util.Arrays;
 
 public class Anagram {
   public static void main(String[] args) {
-    String first = "doguoij";
-    String second = "jiougod";
-    Anagram(first,second);
+    String first = "Dog";
+    String second = "god";
 
-
+    System.out.println(anagram(first, second));
   }
 
-  public static void Anagram(String first, String second) {
+  public static Boolean anagram(String first, String second) {
+    String f = first.toLowerCase();
+    String s = second.toLowerCase();
     String[] splitfirst = {""};
     String[] splitsecond = {""};
     String toCheck1 = "";
     String toCheck2 = "";
-    splitfirst = first.split("");
-    splitsecond = second.split("");
+    splitfirst = f.split("");
+    splitsecond = s.split("");
     Arrays.sort(splitfirst);
     Arrays.sort(splitsecond);
-    for (String s : splitfirst) {
-      toCheck1 += s;
+    for (String ss : splitfirst) {
+      toCheck1 += ss;
     }
     for (String d : splitsecond) {
       toCheck2 += d;
     }
     if (toCheck1.equals(toCheck2)) {
-      System.out.println("true");
+      return true;
     } else {
-      System.out.println("false");
+      return false;
     }
   }
 }
