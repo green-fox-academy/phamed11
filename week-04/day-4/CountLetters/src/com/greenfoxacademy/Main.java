@@ -3,6 +3,9 @@ package com.greenfoxacademy;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+      CountLetters test = new CountLetters();
+
+      System.out.println(test.countLetters("kecske"));
     }
 }
