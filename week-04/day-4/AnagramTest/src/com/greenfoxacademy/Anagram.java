@@ -7,14 +7,14 @@ public class Anagram {
     String first = "Dog";
     String second = "god";
 
-    System.out.println(anagram(first, second));
+
   }
 
-  public static Boolean anagram(String first, String second) {
+  public  Boolean anagram(String first, String second) {
     String f = first.toLowerCase();
     String s = second.toLowerCase();
-    String[] splitfirst = {""};
-    String[] splitsecond = {""};
+    String[] splitfirst;
+    String[] splitsecond;
     String toCheck1 = "";
     String toCheck2 = "";
     splitfirst = f.split("");

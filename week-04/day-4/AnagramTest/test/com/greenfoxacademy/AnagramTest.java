@@ -11,7 +11,7 @@ public class AnagramTest {
     String one = "dog";
     String two = "god";
     Anagram test = new Anagram();
-    assertEquals(true, test.anagram(one, two));
+    assertTrue(test.anagram(one, two));
 
 
   }
