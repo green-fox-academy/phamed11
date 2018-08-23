@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class CountLetters {
 
-  public ArrayList<String> countLetters(String test) {
-    Map<String, Integer> dictionary = new HashMap<>();
+  public HashMap<String, Integer> countLetters(String test) {
+    HashMap<String, Integer> dictionary = new HashMap<>();
     ArrayList<String> splitted = new ArrayList<>(Arrays.asList(test.split("")));
     ArrayList<String> unique = new ArrayList<>();
     int value = 0;
@@ -17,7 +17,16 @@ public class CountLetters {
         unique.add(splitted.get(i));
       }
     }
-    return unique;
+    int num = 1;
+    for (int i = 0; i < unique.size() ; i++) {
+      for (int j = 0; j < splitted.size(); j++) {
+        if (unique.get(i).equals(splitted.get(j))) {
+          num++;
+        }
+      }
+
+    }
+
   }
 }
 

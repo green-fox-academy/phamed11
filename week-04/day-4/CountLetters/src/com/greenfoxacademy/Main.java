@@ -6,6 +6,5 @@ public class Main {
 
       CountLetters test = new CountLetters();
 
-      System.out.println(test.countLetters("kecske"));
     }
 }
