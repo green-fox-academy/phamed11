@@ -11,8 +11,8 @@ public class SumTest {
   @Test
   public void testingTheSumMethod() {
     Sum basic = new Sum();
-    ArrayList<Integer> testList = new ArrayList<>(Arrays.asList(11, 33));
-    assertEquals(44, basic.sum(testList));
+    ArrayList<Integer> testList = new ArrayList<>(Arrays.asList(33, 33));
+    assertEquals(66, basic.sum(testList));
   }
 
 
