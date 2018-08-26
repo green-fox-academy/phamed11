@@ -40,7 +40,7 @@ public class AircraftCarrier {
         }
       }
     } else {
-//      throw new ArithmeticException();
+      throw new ArithmeticException();
     }
   }
 

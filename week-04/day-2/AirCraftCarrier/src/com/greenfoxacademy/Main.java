@@ -9,7 +9,7 @@ public class Main {
     F35 f35First = new F35();
     F35 f35Second = new F35();
     F35 f35Third = new F35();
-    AircraftCarrier roosevelt = new AircraftCarrier(44, 5000);
+    AircraftCarrier roosevelt = new AircraftCarrier(44444, 5000);
     AircraftCarrier fuji = new AircraftCarrier(1500, 5000);
     F16 f16Fuji1 = new F16();
     F16 f16Fuji2 = new F16();
