@@ -7,26 +7,18 @@ import java.util.Map;
 
 public class CountLetters {
 
-  public HashMap<String, Integer> countLetters(String test) {
-    HashMap<String, Integer> dictionary = new HashMap<>();
-    ArrayList<String> splitted = new ArrayList<>(Arrays.asList(test.split("")));
-    ArrayList<String> unique = new ArrayList<>();
-    int value = 0;
-    for (int i = 0; i < splitted.size(); i++) {
-      if (!unique.contains(splitted.get(i))) {
-        unique.add(splitted.get(i));
+  public HashMap<Character, Integer> countLetters(String test) {
+    HashMap<Character, Integer> dictionary = new HashMap<>();
+    for (int i = 0; i < test.length(); i++) {
+      Character character = test.charAt(i);
+      if (!dictionary.containsKey(character)) {
+        dictionary.put(character, 1);
+      } else {
+        dictionary.put(character, dictionary.get(character) + 1);
       }
     }
-    int num = 1;
-    for (int i = 0; i < unique.size() ; i++) {
-      for (int j = 0; j < splitted.size(); j++) {
-        if (unique.get(i).equals(splitted.get(j))) {
-          num++;
-        }
-      }
-
-    }
-
+    return dictionary;
   }
 }
+
 
