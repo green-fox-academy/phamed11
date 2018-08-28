@@ -5,7 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Lottery {
 
@@ -18,6 +20,7 @@ public class Lottery {
   public static void commonNumbers(String path) {
     Path myPath = Paths.get(path);
     List<String> lotteryNumbers = new ArrayList<>();
+    Map<String, Integer> allTheNums = new HashMap<>();
     try {
       List<String> lottery = Files.readAllLines(myPath);
       for (int i = 0; i < lottery.size(); i++) {
@@ -28,9 +31,15 @@ public class Lottery {
         lotteryNumbers.add(numbers[14]);
         lotteryNumbers.add(numbers[15]);
       }
-      System.out.println(lotteryNumbers);
     } catch (IOException e) {
       e.printStackTrace();
+    }
+    for (int i = 0; i < lotteryNumbers.size(); i++) {
+      if (!allTheNums.containsKey(lotteryNumbers.get(i))) {
+        allTheNums.put(lotteryNumbers.get(i), 1);
+      } else {
+        allTheNums.put(lotteryNumbers.get(i), allTheNums.get(lotteryNumbers.get(i)) +1);
+      }
     }
   }
 }
