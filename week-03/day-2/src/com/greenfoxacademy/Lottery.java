@@ -38,8 +38,15 @@ public class Lottery {
       if (!allTheNums.containsKey(lotteryNumbers.get(i))) {
         allTheNums.put(lotteryNumbers.get(i), 1);
       } else {
-        allTheNums.put(lotteryNumbers.get(i), allTheNums.get(lotteryNumbers.get(i)) +1);
+        allTheNums.put(lotteryNumbers.get(i), allTheNums.get(lotteryNumbers.get(i)) + 1);
       }
     }
+    int biggest = 0;
+    for (String eachValue : allTheNums.keySet()) {
+      if (allTheNums.get(eachValue) > biggest) {
+        biggest = allTheNums.get(eachValue);
+      }
+    }
+    System.out.println(biggest);
   }
 }
