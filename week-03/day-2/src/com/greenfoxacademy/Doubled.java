@@ -18,7 +18,7 @@ public class Doubled {
   public static void decryptDuplicated(String path) {
     Path myPath = Paths.get(path);
     int need = 0;
-    List<Character> decryptedText = new ArrayList<>();
+    List<String> decryptedText = new ArrayList<>();
     try {
       List<String> eachLines = Files.readAllLines(myPath);
       for (int i = 0; i < eachLines.size(); i++) {
