@@ -11,7 +11,6 @@ public class UniqueChars {
     // ["n", "g", "r", "m"]
 
 
-
   }
 
   public static ArrayList<String> uniqueCharacters(String text) {
