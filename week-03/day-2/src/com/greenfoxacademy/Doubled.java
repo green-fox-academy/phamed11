@@ -31,5 +31,4 @@ public class Doubled {
       e.printStackTrace();
     }
   }
-
 }
