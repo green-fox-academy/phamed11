@@ -17,6 +17,17 @@ public class Exercise4 {
         .collect(Collectors.toList());
 
     System.out.println(biggerThan20);
+    System.out.println(whichBigger20(numbers));
 
+  }
+
+  public static List<Integer> whichBigger20(ArrayList<Integer> list) {
+    List<Integer> result = new ArrayList<>();
+    for (Integer number : list) {
+      if (number * number > 20) {
+        result.add(number);
+      }
+    }
+    return result;
   }
 }
