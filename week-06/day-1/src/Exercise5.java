@@ -1,4 +1,4 @@
-import java.awt.*;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class Exercise5 {
@@ -15,8 +15,21 @@ public class Exercise5 {
         .collect(Collectors.joining());
 
     System.out.println(onlyUpper);
+    System.out.println(uppercase(testString));
 
+  }
 
-
+  public static String uppercase(String string) {
+    String result = "";
+    ArrayList<Character> letters = new ArrayList<>();
+    for (int i = 0; i < string.length(); i++) {
+      letters.add(string.charAt(i));
+    }
+    for (int j = 0; j < letters.size(); j++) {
+      if (Character.isUpperCase(letters.get(j))) {
+        result += letters.get(j);
+      }
+    }
+    return result;
   }
 }
