@@ -21,7 +21,7 @@ public class Exercise6 {
         .filter(s -> s.startsWith("A") && s.endsWith("I"))
         .collect(Collectors.joining());
 
-    
+
     System.out.println(result);
     System.out.println(filteredList);
     System.out.println(startsWith(cities));
