@@ -18,5 +18,16 @@ public class Exercise3 {
         .collect(Collectors.toList());
 
     System.out.println(squared);
+    System.out.println(squaredNumbers(numbers));
+  }
+
+  public static List<Integer> squaredNumbers(ArrayList<Integer> list) {
+    List<Integer> result = new ArrayList<>();
+    for (Integer number : list) {
+      if (number > 0) {
+        result.add(number * number);
+      }
+    }
+    return result;
   }
 }
