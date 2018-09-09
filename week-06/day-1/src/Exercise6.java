@@ -17,6 +17,23 @@ public class Exercise6 {
         .filter(s -> s.startsWith("A") && s.endsWith("I"))
         .collect(Collectors.toList());
 
+    String result = cities.stream()
+        .filter(s -> s.startsWith("A") && s.endsWith("I"))
+        .collect(Collectors.joining());
+
+    
+    System.out.println(result);
     System.out.println(filteredList);
+    System.out.println(startsWith(cities));
+  }
+
+  public static String startsWith(ArrayList<String> list) {
+    String result = "";
+    for (String word : list) {
+      if (word.startsWith("A") && word.endsWith("I")) {
+        result = word;
+      }
+    }
+    return result;
   }
 }
