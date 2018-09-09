@@ -13,5 +13,16 @@ public class Exercise1 {
 
     List<Integer> evenNumbers = numbers.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
     System.out.println(evenNumbers);
+    System.out.println(evenNumbersMethod(numbers));
+  }
+
+  public static List<Integer> evenNumbersMethod(ArrayList<Integer> list) {
+    List<Integer> evens = new ArrayList<>();
+    for (Integer numbers : list) {
+      if (numbers % 2 == 0) {
+        evens.add(numbers);
+      }
+    }
+    return evens;
   }
 }
