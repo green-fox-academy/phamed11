@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Exercise9 {
   public static void main(String[] args) {
@@ -10,9 +11,8 @@ public class Exercise9 {
 
     String result = new String(charList);
 
-    String strResult = Arrays.asList(charList)
-        .stream()
-        .map(x -> String.valueOf(x))
+    String strResult = Stream.of(charList)
+        .map(String::valueOf)
         .collect(Collectors.joining());
 
     System.out.println(result);
