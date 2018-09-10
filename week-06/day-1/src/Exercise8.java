@@ -14,7 +14,7 @@ public class Exercise8 {
         numbers.stream()
             .collect(Collectors.groupingBy(n -> n, Collectors.counting()));
 
-    
+
     System.out.println(frequencyNum);
     System.out.println(frequencyNumbers(numbers));
   }
