@@ -13,7 +13,7 @@ public class Exercise7 {
 
     Map<Character, Integer> frequency =
         test.chars()
-            .mapToObj(c -> (char)c)
+            .mapToObj(c -> (char) c)
             .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(c -> 1)));
 
     System.out.println(frequency);
@@ -25,7 +25,7 @@ public class Exercise7 {
     for (int i = 0; i < word.length(); i++) {
       if (!result.containsKey(word.charAt(i))) {
         result.put(word.charAt(i), 1);
-    } else {
+      } else {
         result.put(word.charAt(i), result.get(word.charAt(i)) + 1);
       }
     }
