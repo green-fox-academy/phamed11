@@ -34,7 +34,7 @@ public class Exercise10 {
         .map(Fox::getName)
         .collect(Collectors.toList());
 
-
+    System.out.println(one.toString());
     System.out.println(onlyGreen);
     System.out.println(pallidaAndGreen);
     System.out.println("\nThis is the method result: ");
