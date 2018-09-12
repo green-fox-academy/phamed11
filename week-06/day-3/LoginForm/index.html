@@ -12,12 +12,16 @@
 <body>
 
   <form id="my_form">
-      <h1>account login</h1>
-      <div>
+    <h1>account login</h1>
+    <div>
       <label for="username">Username</label> <br />
-      <input type="text" id="username" name="user_name" autofocus><br />
+      <input type="text" id="username" name="user_name" autofocus required><br />
+    </div>
+    <div>
       <label for="passw">Password</label> <br />
-      <input type="text" id=passw passw="password" placeholder="Password"><br />
+      <input type="text" id=passw passw="password" placeholder="Password" required><br />
+    </div>
+    <div>
       <p>forgot password?</p>
       <input type="submit" value="Login">
     </div>
