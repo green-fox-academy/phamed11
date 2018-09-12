@@ -1,0 +1,33 @@
+table {
+  width: 600px;
+  background-color: whitesmoke;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif; 
+  vertical-align: 5px;
+  font-size: 25px;
+
+}
+
+td,th {
+  border: 2px solid rgb(78, 77, 77);
+  padding: 10px;
+  vertical-align: middle;
+  height: 40px;
+  color: rgb(95, 94, 94);
+
+}
+
+tbody tr:nth-child(odd) {
+  background: rgb(194, 191, 191);
+}
+
+
+th {
+  background-color: black;
+  border-bottom: 3px;
+  text-align: left;
+  font-weight: normal;
+}
+
+
+
