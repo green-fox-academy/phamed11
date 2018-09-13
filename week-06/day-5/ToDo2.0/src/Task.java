@@ -20,6 +20,7 @@ public class Task {
   }
 
   public String toString() {
-    return String.format("The %s task " + "is %s", name, (isDone ? "done!" : "not done!"));
+//    return String.format("The %s task " + "is %s", name, (isDone ? "done!" : "not done!"));
+    return String.format(" - " + "%s" , (isDone ? "[X] " + getName() : "[ ] " + getName()));
   }
 }
