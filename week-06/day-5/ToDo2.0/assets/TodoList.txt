@@ -1,0 +1,6 @@
+ - [ ] make dinner
+ - [ ] fuck somebody
+ - [X] eat food
+ - [ ] do more
+ - [ ] eat more
+ - [X] do this

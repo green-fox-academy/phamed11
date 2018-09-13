@@ -51,6 +51,8 @@ input {
   width: 300px;
   margin-left: 40px;
   border-radius: 5px;
+  font-size: 18px;
+  text-indent: 10px;
 }
 
 div {
@@ -68,8 +70,12 @@ div :last-child {
   width: 100px;
   height: 40px;
   padding-top: 0px;
+  text-align: center;
 }
 
+passw {
+  background-color: aquamarine;
+}
 
 
 
