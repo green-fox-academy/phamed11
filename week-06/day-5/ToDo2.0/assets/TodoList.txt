@@ -1,1 +1,5 @@
-
+ - [ ] walk the dog
+ - [ ] buy beer
+ - [X] eat food
+ - [ ] buy groceries
+ - [X] eat your breakfast
