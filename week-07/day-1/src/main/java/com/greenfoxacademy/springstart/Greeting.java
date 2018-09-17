@@ -3,9 +3,9 @@ package com.greenfoxacademy.springstart;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Greeting {
-private long id;
-private String content;
-private static AtomicLong NUMBER = new AtomicLong(1);
+  private long id;
+  private String content;
+  private static AtomicLong NUMBER = new AtomicLong(1);
 
 
   public Greeting(String content) {
