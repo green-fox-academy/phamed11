@@ -19,16 +19,18 @@
         </thead>
         <tbody>
         <tr>
-            <td th:text="${bankAccount.getName()}"></td>
-            <td th:text="${bankAccount.getBalance()}"></td>
-            <td th:text="${bankAccount.getAnimalType()}"></td>
+            <td>
+                <tr th:each="accounts : ${bank}">
+            <td> <a th:text="${accounts.getName()}"></a> </td>
+                  <td> <a th:text="${accounts.getBalance()}"></a><td>
+                  <td>  <a th:text="${accounts.getAnimalType()}"></a>
+                   </td>
+                </tr>
+            </td>
         </tr>
         </tbody>
     </table>
-    <div>
-        <p th:utext="${hello}"></p>
-        <p th:text="${hello}"></p>
-    </div>
 </div>
 </body>
 </html>
+

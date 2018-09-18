@@ -1,21 +1,43 @@
 package com.greenfoxacademy.bankofsimba.Controllers;
 
+import com.greenfoxacademy.bankofsimba.Model.Bank;
 import com.greenfoxacademy.bankofsimba.Model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 public class AccountController {
 
+  private Bank zooBank = new Bank();
+
+
   BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
+
+
 
   @GetMapping("/show")
   public String showsBankAccount(Model model) {
-    model.addAttribute("name", bankAccount.getName());
-    model.addAttribute("balance", bankAccount.getBalance());
-    model.addAttribute("animalType", bankAccount.getAnimalType());
+    model.addAttribute("bankAccount", bankAccount);
     return "show";
   }
+
+  @GetMapping("/hello")
+  public String hello(Model model) {
+    String message = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
+    model.addAttribute("hello", message);
+    model.addAttribute("bankAccount", bankAccount);
+    return "show";
+  }
+
+  @GetMapping("/bank")
+  public String showAllBankAccounts(Model model) {
+    model.addAttribute("bank", zooBank.getBankAccountList());
+    return "bank";
+  }
+
 
 }
