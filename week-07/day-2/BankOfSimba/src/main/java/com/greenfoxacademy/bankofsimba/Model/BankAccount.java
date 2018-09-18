@@ -7,6 +7,7 @@ public class BankAccount {
   private String name;
   private double balance;
   private String animalType;
+  private boolean isAKing;
 
   public BankAccount() {
   }
@@ -35,11 +36,26 @@ public class BankAccount {
     this.animalType = animalType;
   }
 
-  public BankAccount(String name, double balance, String animalType) {
+  public BankAccount(String name, double balance, String animalType, boolean isAKing) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+    this.isAKing = isAKing;
+  }
+
+  public String isAKing() {
+    if (isAKing) {
+      return "King";
+    }
+    return "Food";
+  }
+
+  public boolean getIsKing() {
+    return isAKing;
+  }
 
 
+  public void setAKing(boolean AKing) {
+    isAKing = AKing;
   }
 }

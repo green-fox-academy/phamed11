@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AccountController {
 
   private Bank zooBank = new Bank();
-  private BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
+  private BankAccount bankAccount = new BankAccount("Simba", 2000, "lion", true);
 
 
   @GetMapping("/show")

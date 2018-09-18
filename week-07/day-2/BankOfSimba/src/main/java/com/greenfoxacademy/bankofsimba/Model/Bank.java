@@ -10,10 +10,10 @@ public class Bank {
 
   public Bank() {
     bankAccountList = new ArrayList<>();
-    bankAccountList.add(new BankAccount("Scar", 322, "lion"));
-    bankAccountList.add(new BankAccount("Zazu", 3000, "parrot"));
-    bankAccountList.add( new BankAccount("Nala", 234, "lion"));
-    bankAccountList.add(new BankAccount("Simba", 10000, "lion"));
+    bankAccountList.add(new BankAccount("Scar", 322, "lion", false));
+    bankAccountList.add(new BankAccount("Zazu", 3000, "parrot", false));
+    bankAccountList.add( new BankAccount("Nala", 234, "lion", false));
+    bankAccountList.add(new BankAccount("Simba", 10000, "lion", true));
   }
 
   public List<BankAccount> getBankAccountList() {
