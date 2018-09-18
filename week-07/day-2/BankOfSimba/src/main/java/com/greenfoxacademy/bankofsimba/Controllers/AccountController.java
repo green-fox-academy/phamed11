@@ -6,17 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.Arrays;
-import java.util.List;
-
 @Controller
 public class AccountController {
 
   private Bank zooBank = new Bank();
-
-
-  BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
-
+  private BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
 
 
   @GetMapping("/show")

@@ -3,6 +3,29 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Bank account</title>
+    <link rel="stylesheet" th:href="@{/static/style.css}" />
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+        }
+
+        td, th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        th {
+            background-color: chocolate;
+        }
+    </style>
 </head>
 <body>
 <div>
@@ -12,21 +35,18 @@
     <table>
         <thead>
         <tr>
+            <th>Index</th>
             <th>Name</th>
             <th>Balance</th>
             <th>AnimalType</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>
-                <tr th:each="accounts : ${bank}">
-            <td> <a th:text="${accounts.getName()}"></a> </td>
-                  <td> <a th:text="${accounts.getBalance()}"></a><td>
-                  <td>  <a th:text="${accounts.getAnimalType()}"></a>
-                   </td>
-                </tr>
-            </td>
+        <tr th:each="accounts : ${bank}">
+            <td th:text="${accountsStat.count}"></td>
+            <td th:text="${accounts.getName()}"></td>
+            <td th:text="${accounts.getBalance()}"></td>
+            <td th:text="${accounts.getAnimalType()}"></td>
         </tr>
         </tbody>
     </table>
