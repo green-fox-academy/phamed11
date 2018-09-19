@@ -7,7 +7,10 @@
 
 </head>
 <body>
-<p th:text="${code}"></p>
+<h1 style="color: blue;">Ceasar DeCODE</h1>
+<h2  th:text="'Your original text is: ' + ${originalWord}"></h2>
+</br>
+<h3 th:text="'Decoded text: ' + ${code}" style="color: red"></h3>
 
 </body>
 </html>

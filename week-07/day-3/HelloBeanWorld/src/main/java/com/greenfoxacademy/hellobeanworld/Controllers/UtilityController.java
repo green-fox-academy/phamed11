@@ -46,6 +46,7 @@ public class UtilityController {
 
   @GetMapping("useful/{text}/{number}")
   public String ceasarCode(@PathVariable(value = "text") String text, @PathVariable(value = "number") int number, Model model) {
+    model.addAttribute("originalWord", text);
     model.addAttribute("code", utilityService.caesar(text,number));
     return "ceasar_encode";
   }
@@ -53,6 +54,7 @@ public class UtilityController {
   @GetMapping("useful/decode/{text}/{number}")
   public String ceasarCodeDecode(@PathVariable(value = "text") String text, @PathVariable(value = "number") int number, Model model) {
     model.addAttribute("code", utilityService.caesar(text,- number));
+    model.addAttribute("originalWord", text);
     return "ceasar_decode";
   }
 }
