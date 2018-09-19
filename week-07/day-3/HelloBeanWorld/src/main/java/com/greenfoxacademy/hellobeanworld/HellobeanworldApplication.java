@@ -1,5 +1,6 @@
 package com.greenfoxacademy.hellobeanworld;
 
+import com.greenfoxacademy.hellobeanworld.Services.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,7 +17,10 @@ public class HellobeanworldApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
+    System.out.println("SOME SPRING INFO");
     printer.log("Hello");
+    System.out.println("SOME SPRING INFO");
+
   }
 
 }
