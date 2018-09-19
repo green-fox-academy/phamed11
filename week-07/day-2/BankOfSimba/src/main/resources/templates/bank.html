@@ -41,6 +41,7 @@
             <th>Balance</th>
             <th>AnimalType</th>
             <th>King</th>
+            <th>Is A Good guy?</th>
         </tr>
         </thead>
         <tbody>
@@ -53,6 +54,7 @@
                 <td th:case="false" style="color: black" th:text="${accounts.isAKing()}"></td>
                 <td th:case="true" style="color: dodgerblue; font-weight: bold" th:text="${accounts.isAKing()}"></td>
             </div>
+            <td th:text="${accounts.isAGoodGuy()}"></td>
         </tr>
         </tbody>
     </table>

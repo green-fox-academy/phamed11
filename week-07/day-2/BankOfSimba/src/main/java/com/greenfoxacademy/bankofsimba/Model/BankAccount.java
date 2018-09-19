@@ -8,6 +8,7 @@ public class BankAccount {
   private double balance;
   private String animalType;
   private boolean isAKing;
+  private boolean isAGoodGuy;
 
   public BankAccount() {
   }
@@ -36,11 +37,12 @@ public class BankAccount {
     this.animalType = animalType;
   }
 
-  public BankAccount(String name, double balance, String animalType, boolean isAKing) {
+  public BankAccount(String name, double balance, String animalType, boolean isAKing, boolean isAGoodGuy) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
     this.isAKing = isAKing;
+    this.isAGoodGuy= isAGoodGuy;
   }
 
   public String isAKing() {
@@ -57,5 +59,16 @@ public class BankAccount {
 
   public void setAKing(boolean AKing) {
     isAKing = AKing;
+  }
+
+  public String isAGoodGuy() {
+    if (isAGoodGuy) {
+      return "He is a Good guy!";
+    }
+    return "He is EVIL!!!";
+  }
+
+  public void setAGoodGuy(boolean AGoodGuy) {
+    isAGoodGuy = AGoodGuy;
   }
 }
