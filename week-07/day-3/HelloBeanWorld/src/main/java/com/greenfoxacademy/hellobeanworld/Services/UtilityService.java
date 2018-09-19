@@ -20,6 +20,10 @@ public class UtilityService {
     random = new Random();
   }
 
+  public ArrayList<String> getColors() {
+    return colors;
+  }
+
   public String randomColor() {
     return colors.get(random.nextInt(colors.size()));
   }

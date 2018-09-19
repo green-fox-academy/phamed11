@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Colors</title>
+    <meta charset="UTF-8"/>
+    <title>COLORED</title>
+
 </head>
+    <body>
+        <table>
+            <tr th:each="color : ${colors}">
+                <td>
+                <a th:href="'/useful/' + ${color}" th:text="${color}"></a>
+                </td>
 
-<body>
-<a href="/useful/colored/">Colored Background</a>
-
-</body>
+            </tr>
+            <td>
+                <a href=/useful/colored>random color</a>
+            </td>
+        </table>
+    </body>
 </html>
