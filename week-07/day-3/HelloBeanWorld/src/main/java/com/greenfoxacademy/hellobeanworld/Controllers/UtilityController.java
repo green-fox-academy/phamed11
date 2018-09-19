@@ -8,9 +8,13 @@ public class UtilityController {
 
   @GetMapping("/useful")
   public String allAvailableUtilities() {
-    
 
     return "useful";
   }
 
+  @GetMapping("/useful/colored")
+  public String randomColorBackground() {
+
+    return "colored";
+  }
 }
