@@ -43,4 +43,16 @@ public class UtilityController {
     model.addAttribute("email", utilityService.validateEmail(emailAddress));
     return "email";
   }
+
+  @GetMapping("useful/{text}/{number}")
+  public String ceasarCode(@PathVariable(value = "text") String text, @PathVariable(value = "number") int number, Model model) {
+    model.addAttribute("code", utilityService.caesar(text,number));
+    return "ceasar_encode";
+  }
+
+  @GetMapping("useful/decode/{text}/{number}")
+  public String ceasarCodeDecode(@PathVariable(value = "text") String text, @PathVariable(value = "number") int number, Model model) {
+    model.addAttribute("code", utilityService.caesar(text,- number));
+    return "ceasar_decode";
+  }
 }

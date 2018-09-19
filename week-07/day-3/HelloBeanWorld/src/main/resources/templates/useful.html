@@ -6,17 +6,26 @@
     <title>COLORED</title>
 
 </head>
-    <body>
-        <table>
-            <tr th:each="color : ${colors}">
-                <td>
-                <a th:href="'/useful/' + ${color}" th:text="${color}"></a>
-                </td>
+<body>
+<table>
+    <tr th:each="color : ${colors}">
+        <td>
+            <a th:href="'/useful/' + ${color}" th:text="${color}"></a>
+        </td>
 
-            </tr>
-            <td>
-                <a href=/useful/colored>random color</a>
-            </td>
-        </table>
-    </body>
+    </tr>
+    <td>
+        <a href=/useful/colored>random color</a>
+    </td>
+</table>
+</br>
+<a href="/useful/email?email=sdfkjf@asd.">Try This!</a>
+</br>
+</br>
+<a href="/useful/apple/1">Try This! Its APPLE</a>
+</br>
+<a href="/useful/decode/bqqmf/1">Try This! Its APPLE</a>
+
+
+</body>
 </html>
