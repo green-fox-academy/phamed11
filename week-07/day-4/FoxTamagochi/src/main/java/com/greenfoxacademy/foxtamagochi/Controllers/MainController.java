@@ -1,6 +1,7 @@
 package com.greenfoxacademy.foxtamagochi.Controllers;
 
 import com.greenfoxacademy.foxtamagochi.Modells.Fox;
+import com.greenfoxacademy.foxtamagochi.Services.FoxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
-  Fox fox;
+
 
   @GetMapping("/")
-  public String getHome(){
+  public String getHome(@RequestParam(value = "name", required = false) String name, Model model){
+    model.addAttribute("name", name);
     return "index";
   }
 
