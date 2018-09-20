@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8"/>
     <title>FOX TAMAGOCHI</title>
+    <style>
+        html {
+            background-color: darkgreen;
+        }
+        body {
+            text-align: center;
+            font-size: larger;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -13,12 +23,18 @@
 
 <img src="greenfox.png">
 
-<p th:text="'This is ' + ${name} +  '. Currently living on ' + ${food} + ' and ' + ${drink} + ' . He knows ' + ${trick} + ' two tricks.'"></p>
+<p th:text="'This is ' + ${name} +  '. Currently living on ' + ${food} + ' and ' + ${drink} + ' . He knows ' + ${trick} + ' tricks.'"></p>
 
 <h1>Known Tricks</h1>
-<ul th:each="tricks : ${trickname}">
-    <li th:text="${tricks}"></li>
-</ul>
-</ul>
+<div th:if="${knowstricks}">
+    <ul th:each="tricks : ${trickname}">
+        <li th:text="${tricks}"></li>
+    </ul>
+
+</div>
+<div th:unless="${knowstricks}">
+    <div>You dont know any tricks, go and learn some!!!</div>
+</div>
+
 </body>
 </html>

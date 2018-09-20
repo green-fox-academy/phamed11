@@ -57,5 +57,9 @@ public class Fox {
     return listOfTricks.size();
   }
 
+  public boolean knowsTricks() {
+    return !(listOfTricks.size() == 0);
+  }
+
 
 }

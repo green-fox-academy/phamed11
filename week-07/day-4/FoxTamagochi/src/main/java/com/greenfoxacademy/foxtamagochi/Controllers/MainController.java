@@ -18,6 +18,7 @@ public class MainController {
     model.addAttribute("trickname", foxHorde.getFoxByName(name).getListOfTricks());
     model.addAttribute("drink", foxHorde.getFoxByName(name).getDrink());
     model.addAttribute("food", foxHorde.getFoxByName(name).getFood());
+    model.addAttribute("knowstricks", foxHorde.getFoxByName(name).knowsTricks());
     model.addAttribute("name", name);
     return "index";
   }
