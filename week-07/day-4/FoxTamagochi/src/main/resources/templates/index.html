@@ -13,7 +13,7 @@
 
 <img src="greenfox.png">
 
-<p th:text="'This is ' + ${name} +  '. Currently living on pizza and lemonade. He knows ' + ${trick} + ' two tricks.'"></p>
+<p th:text="'This is ' + ${name} +  '. Currently living on ' + ${food} + ' and ' + ${drink} + ' . He knows ' + ${trick} + ' two tricks.'"></p>
 
 <h1>Known Tricks</h1>
 <ul th:each="tricks : ${trickname}">

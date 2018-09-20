@@ -22,7 +22,8 @@ public class FoxHorde {
     foxes = new ArrayList<>();
     foxes.add(new Fox("Karak"));
     foxes.add(new Fox("Vuk"));
-    foxes.add(new Fox("Smarty"));
+    foxes.add(new Fox("Makaroka"));
+
   }
 
   public FoxHorde(List<Fox> foxes) {

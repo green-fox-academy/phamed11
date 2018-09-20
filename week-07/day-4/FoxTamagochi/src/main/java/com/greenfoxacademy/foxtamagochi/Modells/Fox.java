@@ -18,10 +18,13 @@ public class Fox {
   List<String> listOfTricks;
 
   public Fox() {
+    listOfTricks = new ArrayList<>();
   }
 
   public Fox(String name) {
     this.name = name;
+    this.food = "salad";
+    this.drink = "water";
     listOfTricks = new ArrayList<>();
     listOfTricks = Arrays.asList("Watch tv", "Eat well");
   }
