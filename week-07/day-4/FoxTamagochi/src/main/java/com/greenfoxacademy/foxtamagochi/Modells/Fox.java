@@ -26,7 +26,7 @@ public class Fox {
     this.food = "salad";
     this.drink = "water";
     listOfTricks = new ArrayList<>();
-    listOfTricks = Arrays.asList("Watch tv", "Eat well");
+    listOfTricks = Arrays.asList("Watch tv", "Eat well", "Go to the woods", "bark");
   }
 
   public String getName() {

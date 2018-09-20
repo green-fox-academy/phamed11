@@ -14,12 +14,10 @@ public class MainController {
 
   @GetMapping("/")
   public String getHome(@RequestParam(value = "name", required = false) String name, Model model) {
-    model.addAttribute("trick", foxHorde.getFoxByName(name).getNumberOfTricks());
-    model.addAttribute("trickname", foxHorde.getFoxByName(name).getListOfTricks());
-    model.addAttribute("drink", foxHorde.getFoxByName(name).getDrink());
-    model.addAttribute("food", foxHorde.getFoxByName(name).getFood());
-    model.addAttribute("knowstricks", foxHorde.getFoxByName(name).knowsTricks());
-    model.addAttribute("name", name);
+    model.addAttribute("name", foxHorde.getFoxByName(name));
+    if (name == null) {
+      return "login";
+    }
     return "index";
   }
 
@@ -29,7 +27,7 @@ public class MainController {
   }
 
   @PostMapping("/login/{name}")
-  public String postLoginPage(@RequestParam(value = "name", required = true) String name, Model model) {
+  public String postLoginPage(@RequestParam(value = "name") String name, Model model) {
     model.addAttribute("name", name);
     for (Fox fox : foxHorde.getFoxes()) {
       if (fox.getName().equals(name)) {

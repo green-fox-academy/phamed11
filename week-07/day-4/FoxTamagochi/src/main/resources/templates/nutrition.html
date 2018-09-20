@@ -2,24 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>NutritionStore</title>
 </head>
 <body>
+<h1 th:text="${name.getName()} + '\'s nutrition Store'"></h1>
 <ul>
     <li><a href="information">information</a></li>
     <li><a href="NutritionStore">Nutrition Store</a></li>
     <li><a href="Trick Center">Trick Center</a></li>
     <li><a href="Action History">Action History</a></li>
 </ul>
-
+<p th:text="'This fox is called ' + ${name.getName()}"></p>
 <div>
     Food
-    <select name="Food">
+    <select>
         Food
         <option value="bronx">Bronx</option>
     </select>
     Drink
-    <select name="Drink">
+    <select>
         <option value="bronx">Bronx</option>
     </select>
     <input type="submit" value="Change">

@@ -17,22 +17,23 @@
 
 </head>
 <body>
-<ul style="list-style-type: disc">
-    <li><a href="dontknowyet">Information</a> </li>
+<ul>
+    <li><a href= "">Information</a> </li>
+    <li><a th:href="'/nutritionStore/?name=' + ${name.getName()}">Nutrition Store</a></li>
 </ul>
 
 <img src="greenfox.png">
 
-<p th:text="'This is ' + ${name} +  '. Currently living on ' + ${food} + ' and ' + ${drink} + ' . He knows ' + ${trick} + ' tricks.'"></p>
+<p th:text="'This is ' + ${name.getName()} +  '. Currently living on ' + ${name.getFood()} + ' and ' + ${name.getDrink()} + ' . He knows ' + ${name.getNumberOfTricks()} + ' tricks.'"></p>
 
 <h1>Known Tricks</h1>
-<div th:if="${knowstricks}">
-    <ul th:each="tricks : ${trickname}">
+<div th:if="${name.knowsTricks()}">
+    <ul th:each="tricks : ${name.getListOfTricks()}">
         <li th:text="${tricks}"></li>
     </ul>
 
 </div>
-<div th:unless="${knowstricks}">
+<div th:unless="${name.getNumberOfTricks()}">
     <div>You dont know any tricks, go and learn some!!!</div>
 </div>
 
