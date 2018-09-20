@@ -13,12 +13,12 @@
 
 <img src="greenfox.png">
 
-<p th:text="'This is ' + ${name} +  '. Currently living on pizza and lemonade. He knows two tricks.'"></p>
+<p th:text="'This is ' + ${name} +  '. Currently living on pizza and lemonade. He knows ' + ${trick} + ' two tricks.'"></p>
 
 <h1>Known Tricks</h1>
-<ul style="list-style-type: disc">
-    <li>write HTML</li>
-    <li>code in Java</li>
+<ul th:each="tricks : ${trickname}">
+    <li th:text="${tricks}"></li>
+</ul>
 </ul>
 </body>
 </html>

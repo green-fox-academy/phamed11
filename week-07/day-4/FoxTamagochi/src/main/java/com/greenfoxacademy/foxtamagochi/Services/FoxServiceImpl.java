@@ -1,12 +1,13 @@
 package com.greenfoxacademy.foxtamagochi.Services;
 
 import com.greenfoxacademy.foxtamagochi.Modells.Fox;
+import com.greenfoxacademy.foxtamagochi.Repositories.FoxHorde;
+import org.springframework.beans.factory.annotation.Autowired;
 
-public class FoxServiceImpl implements FoxService{
+public class FoxServiceImpl implements FoxService {
+  FoxHorde foxHorde;
 
 
-  @Override
-  public void addFox(Fox fox) {
-    
-  }
+
+
 }

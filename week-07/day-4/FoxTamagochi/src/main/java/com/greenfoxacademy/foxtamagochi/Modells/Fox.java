@@ -2,13 +2,20 @@ package com.greenfoxacademy.foxtamagochi.Modells;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
 
 public class Fox {
   private String name;
   private String food;
   private String drink;
-  List<Tricks> listOfTricks;
+
+  public List<String> getListOfTricks() {
+    return listOfTricks;
+  }
+
+  List<String> listOfTricks;
 
   public Fox() {
   }
@@ -16,6 +23,7 @@ public class Fox {
   public Fox(String name) {
     this.name = name;
     listOfTricks = new ArrayList<>();
+    listOfTricks = Arrays.asList("Watch tv", "Eat well");
   }
 
   public String getName() {
@@ -42,11 +50,9 @@ public class Fox {
     this.drink = drink;
   }
 
-  public List<Tricks> getListOfTricks() {
-    return listOfTricks;
+  public int getNumberOfTricks() {
+    return listOfTricks.size();
   }
 
-  public void setListOfTricks(List<Tricks> listOfTricks) {
-    this.listOfTricks = listOfTricks;
-  }
+
 }
