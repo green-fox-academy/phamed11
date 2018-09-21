@@ -61,8 +61,12 @@ public class Fox {
   }
 
   public List<String> addTrick(String trick) {
+    if (listOfTricks.contains(trick)) {
+      return getListOfTricks();
+    }
     listOfTricks.add(trick);
     return getListOfTricks();
   }
+
 
 }

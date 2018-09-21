@@ -28,15 +28,14 @@ public class MainController {
     return "login";
   }
 
-  @PostMapping("/login/{name}")
+  @PostMapping("/login/")
   public String postLoginPage(@RequestParam(value = "name") String name, Model model) {
     model.addAttribute("name", name);
-    for (Fox fox : foxHorde.getFoxes()) {
-      if (fox.getName().equals(name)) {
-        return "redirect:/?name=" + name;
-      }
+    if (foxHorde.getFoxByName(name).getName().equals(name)) {
+      return "redirect:/?name=" + name;
     }
-    return "redirect:/login";
+    foxHorde.createFoxaddToFoxHorde(name);
+    return "redirect:/?name=" + name;
   }
 }
 

@@ -20,9 +20,9 @@ public class FoxHorde {
 
   public FoxHorde() {
     foxes = new ArrayList<>();
-    foxes.add(new Fox("Karak"));
+//    foxes.add(new Fox("Karak"));
     foxes.add(new Fox("Vuk"));
-    foxes.add(new Fox("Makaroka"));
+//    foxes.add(new Fox("Makaroka"));
 
   }
 
@@ -42,5 +42,11 @@ public class FoxHorde {
       }
     }
     return foxes.get(index);
+  }
+
+  public Fox createFoxaddToFoxHorde(String name) {
+    Fox fox = new Fox(name);
+    foxes.add(fox);
+    return fox;
   }
 }
