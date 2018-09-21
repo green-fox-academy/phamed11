@@ -14,7 +14,21 @@
 </ul>
 <p th:text="'This fox is called ' + ${name.getName()}"></p>
 <div>
-
+    <form method="POST">
+        Food
+        <select name="food">
+            <option value="Rabbit">Rabbit</option>
+            <option value="Deer">Deer</option>
+            <option value="Monkey">Monkey</option>
+        </select>
+        Drink
+        <select name="drink">
+            <option value="Beer">Beer</option>
+            <option value="Water">Water</option>
+            <option value="Coke">Coke</option>
+        </select>
+        <button type="submit">CHANGE</button>
+    </form>
 
 </div>
 

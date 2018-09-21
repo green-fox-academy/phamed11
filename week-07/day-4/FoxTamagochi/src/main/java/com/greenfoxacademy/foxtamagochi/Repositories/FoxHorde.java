@@ -1,12 +1,12 @@
 package com.greenfoxacademy.foxtamagochi.Repositories;
 
 import com.greenfoxacademy.foxtamagochi.Modells.Fox;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class FoxHorde {
   List<Fox> foxes;
 
@@ -35,13 +35,12 @@ public class FoxHorde {
   }
 
   public Fox getFoxByName(String name) {
-    Fox result = new Fox();
-    for(Fox fox : getFoxes()) {
-      if (fox.getName().equals(name)) {
-        result = fox;
+    int index = 0;
+    for (int i = 0; i < foxes.size(); i++) {
+      if (foxes.get(i).getName().equals(name)) {
+        index = i;
       }
     }
-    return result;
+    return foxes.get(index);
   }
-
 }
