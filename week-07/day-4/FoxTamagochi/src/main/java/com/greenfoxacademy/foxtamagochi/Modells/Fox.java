@@ -23,10 +23,9 @@ public class Fox {
 
   public Fox(String name) {
     this.name = name;
-    food = "alapfood";
-    drink = "alapdrink";
+    food = "Minimal wage";
+    drink = "water";
     listOfTricks = new ArrayList<>();
-    listOfTricks = Arrays.asList("Watch tv", "Eat well", "Go to the woods", "bark");
   }
 
   public String getName() {
@@ -61,5 +60,9 @@ public class Fox {
     return !(listOfTricks.size() == 0);
   }
 
+  public List<String> addTrick(String trick) {
+    listOfTricks.add(trick);
+    return getListOfTricks();
+  }
 
 }

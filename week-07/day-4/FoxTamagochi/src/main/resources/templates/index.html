@@ -9,9 +9,9 @@
 </head>
 <body>
 <ul>
-    <li><a href="">Information</a></li>
+    <li><a th:href="'/?name=' + ${name.getName()}">Information</a></li>
     <li><a th:href="'/nutritionStore?name=' + ${name.getName()}">Nutrition Store</a></li>
-    <li><a href="Trick Center">Trick Center</a></li>
+    <li><a th:href="'/trickCenter?name=' + ${name.getName()}">Trick Center</a></li>
     <li><a href="Action History">Action History</a></li>
 
 </ul>
@@ -32,4 +32,17 @@
 </div>
 
 </body>
+<footer>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="/login">Go Back to Login page</a>
+</footer>
 </html>

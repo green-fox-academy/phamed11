@@ -23,9 +23,21 @@ public class FoxController {
 
   @PostMapping("/nutritionStore")
   public String nutritionStorePerFox(@RequestParam(value = "name", required = false) String name,
-                                     @ModelAttribute(value = "food") String food, @ModelAttribute(value = "drink") String drink){
+                                     @ModelAttribute(value = "food") String food, @ModelAttribute(value = "drink") String drink) {
     foxHorde.getFoxByName(name).setDrink(drink);
     foxHorde.getFoxByName(name).setFood(food);
+    return "redirect:/?name=" + name;
+  }
+
+  @GetMapping("/trickCenter")
+  public String trickCenter(@RequestParam(value = "name", required = false) String name, Model model) {
+    model.addAttribute("name", foxHorde.getFoxByName(name));
+    return "trickcenter";
+  }
+
+  @PostMapping("/trickCenter")
+  public String trickCenterAddTrick(@RequestParam(value = "name", required = false) String name, Model model, @ModelAttribute(value = "trick") String trick) {
+    foxHorde.getFoxByName(name).addTrick(trick);
     return "redirect:/?name=" + name;
   }
 }

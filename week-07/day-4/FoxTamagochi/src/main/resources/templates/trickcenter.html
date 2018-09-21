@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>NutritionStore</title>
+    <title>Trick Center</title>
 </head>
 <body>
-<h1 th:text="${name.getName()} + '\'s nutrition Store'"></h1>
+<h1 th:text="${name.getName()} + '\'s Trick Center'"></h1>
 <ul>
     <li><a th:href="'/?name=' + ${name.getName()}">Information</a></li>
     <li><a th:href="'/nutritionStore?name=' + ${name.getName()}">Nutrition Store</a></li>
@@ -15,17 +15,11 @@
 <p th:text="'This fox is called ' + ${name.getName()}"></p>
 <div>
     <form method="POST">
-        Food
-        <select name="food">
-            <option value="Rabbit">Rabbit</option>
-            <option value="Deer">Deer</option>
-            <option value="Monkey">Monkey</option>
-        </select>
-        Drink
-        <select name="drink">
-            <option value="Beer">Beer</option>
-            <option value="Water">Water</option>
-            <option value="Coke">Coke</option>
+        Trick
+        <select name="trick">
+            <option value="hunting">Hunting</option>
+            <option value="soccer">Soccer</option>
+            <option value="iceskating">Ice Skating</option>
         </select>
         <button type="submit">CHANGE</button>
     </form>
