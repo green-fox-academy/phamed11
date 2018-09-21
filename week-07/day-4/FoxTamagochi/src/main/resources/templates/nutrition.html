@@ -7,8 +7,8 @@
 <body>
 <h1 th:text="${name.getName()} + '\'s nutrition Store'"></h1>
 <ul>
-    <li><a href="information">information</a></li>
-    <li><a href="NutritionStore">Nutrition Store</a></li>
+    <li><a href="">Information</a></li>
+    <li><a th:href="'/nutritionStore?name=' + ${name.getName()}">Nutrition Store</a></li>
     <li><a href="Trick Center">Trick Center</a></li>
     <li><a href="Action History">Action History</a></li>
 </ul>
