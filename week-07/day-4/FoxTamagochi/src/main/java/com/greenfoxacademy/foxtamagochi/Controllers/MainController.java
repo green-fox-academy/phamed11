@@ -1,7 +1,5 @@
 package com.greenfoxacademy.foxtamagochi.Controllers;
 
-import com.greenfoxacademy.foxtamagochi.Modells.Fox;
-import com.greenfoxacademy.foxtamagochi.Repositories.FoxHorde;
 import com.greenfoxacademy.foxtamagochi.Services.FoxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

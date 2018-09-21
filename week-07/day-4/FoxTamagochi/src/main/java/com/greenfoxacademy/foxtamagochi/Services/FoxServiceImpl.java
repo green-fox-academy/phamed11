@@ -6,8 +6,6 @@ import com.greenfoxacademy.foxtamagochi.Repositories.FoxHorde;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class FoxServiceImpl implements FoxService {
 
@@ -23,7 +21,7 @@ public class FoxServiceImpl implements FoxService {
   public Fox loginFox(String name) {
     Integer index = null;
     for (int i = 0; i < foxHorde.getFoxes().size(); i++) {
-      if (foxHorde.getFoxes().get(i).getName().equals(name)) {
+      if (name.equals(foxHorde.getFoxes().get(i).getName())) {
         index = i;
       }
     }
@@ -33,12 +31,11 @@ public class FoxServiceImpl implements FoxService {
     return foxHorde.getFoxes().get(index);
   }
 
-  @Override
+
   public Fox createFoxaddToFoxHorde(String name) {
     Fox fox = new Fox(name);
     foxHorde.getFoxes().add(fox);
     return fox;
   }
-
 
 }
