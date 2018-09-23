@@ -22,7 +22,7 @@ public class MainController {
   public String getHome(@RequestParam(value = "name", required = false) String name, Model model) {
     model.addAttribute("name", foxService.loginFox(name));
     if (name == null) {
-      return "login";
+      return "redirect:/login";
     }
     return "index";
   }
