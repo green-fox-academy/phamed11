@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,9 +17,9 @@ public class ClassController {
     this.studentService = studentService;
   }
 
-  @GetMapping("/gfa")
+  @GetMapping("/")
   public String listOfAllStudents(Model model) {
-    model.addAttribute("index", studentService.numberOfStudents());
+    model.addAttribute("number", studentService.numberOfStudents());
     return "index";
   }
 
@@ -35,10 +34,21 @@ public class ClassController {
     return "add";
   }
 
-
   @PostMapping("/save")
   public String save(@RequestParam(value = "name") String name) {
     studentService.save(name);
     return "redirect:/gfa/list";
   }
+
+  @GetMapping("/check")
+  public String checkMain() {
+    return "check";
+  }
+
+  @PostMapping("/info")
+  public String checkStudent(Model model, @RequestParam(value = "name") String name) {
+    model.addAttribute("isMember", studentService.isAStudent(name));
+    return "redirect:/check";
+  }
+
 }

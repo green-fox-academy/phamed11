@@ -34,4 +34,9 @@ public class StudentService {
   public int numberOfStudents() {
     return names.size();
   }
-}
+
+  public boolean isAStudent(String name) {
+    return names.contains(name);
+  }
+
+ }

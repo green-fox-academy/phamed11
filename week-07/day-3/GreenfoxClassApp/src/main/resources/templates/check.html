@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>GreenFox Class</title>
+
+</head>
+<body>
+<div>
+    <form action="/info" method="post">
+        <input type="text" name="name" required>
+        <input type="submit" value="Check student">
+    </form>
+<p th:if="${isMember}? 'This Student is already a member' : 'This Student is not a member of the School'"></p>
+</div>
+</body>
+</html>
