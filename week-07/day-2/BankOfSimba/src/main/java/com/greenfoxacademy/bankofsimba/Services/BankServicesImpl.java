@@ -19,25 +19,38 @@ public class BankServicesImpl implements BankServices {
 
 
   @Override
-  public void increaseBalance(BankAccount account) {
-    if (account.getIsKing()) {
-      account.setBalance(Integer.parseInt(account.getBalance()) + 100);
+  public void increaseBalance(int number) {
+    if (nationalZooBank.getBankAccountList().get(number).getIsKing()) {
+      nationalZooBank.getBankAccountList().get(number).setBalance(nationalZooBank.getBankAccountList().get(number).getDoubleBalance() + 100);
     } else {
-      account.setBalance(Integer.parseInt(account.getBalance() + 10));
+      nationalZooBank.getBankAccountList().get(number).setBalance(nationalZooBank.getBankAccountList().get(number).getDoubleBalance() + 10);
+
     }
   }
 
+  @Override
   public List<BankAccount> getAccounts() {
     return nationalZooBank.getBankAccountList();
   }
 
+  @Override
   public void addBankAccount(BankAccount account) {
     getAccounts().add(account);
   }
 
+  @Override
   public void removeBankAccount(BankAccount account) {
     getAccounts().remove(account);
   }
 
-
+  @Override
+  public BankAccount getAccountByName(String name) {
+    int index = 0;
+    for (int i = 0; i < nationalZooBank.getBankAccountList().size(); i++) {
+      if (name.equals(nationalZooBank.getBankAccountList().get(i).getName())) {
+        index = i;
+      }
+    }
+    return nationalZooBank.getBankAccountList().get(index);
+  }
 }

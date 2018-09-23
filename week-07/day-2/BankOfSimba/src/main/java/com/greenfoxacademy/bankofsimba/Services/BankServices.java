@@ -9,12 +9,14 @@ import java.util.List;
 @Service
 public interface BankServices {
 
-  void increaseBalance(BankAccount account);
+  void increaseBalance(int number);
 
   List<BankAccount> getAccounts();
 
   void addBankAccount(BankAccount account);
 
   void removeBankAccount(BankAccount account);
+
+  BankAccount getAccountByName(String name);
 
 }

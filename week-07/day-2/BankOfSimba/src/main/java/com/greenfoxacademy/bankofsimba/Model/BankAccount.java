@@ -31,7 +31,11 @@ public class BankAccount {
     return String.format("%.2f", balance) + " zebra";
   }
 
-  public void setBalance(int balance) {
+  public double getDoubleBalance() {
+    return balance;
+  }
+
+  public void setBalance(double balance) {
     this.balance = balance;
   }
 

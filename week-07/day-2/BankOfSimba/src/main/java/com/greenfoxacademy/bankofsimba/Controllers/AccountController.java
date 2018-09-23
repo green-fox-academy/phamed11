@@ -1,12 +1,12 @@
 package com.greenfoxacademy.bankofsimba.Controllers;
 
-import com.greenfoxacademy.bankofsimba.Model.Bank;
-import com.greenfoxacademy.bankofsimba.Model.BankAccount;
 import com.greenfoxacademy.bankofsimba.Services.BankServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AccountController {
@@ -25,7 +25,11 @@ public class AccountController {
     return "bank";
   }
 
-
+  @PostMapping("/increase")
+  public String addToBalance(@RequestParam(value = "index", required = false) int index) {
+  bankServices.increaseBalance(index);
+    return ("redirect:/bank");
+  }
 
 
 //  @GetMapping("/show")

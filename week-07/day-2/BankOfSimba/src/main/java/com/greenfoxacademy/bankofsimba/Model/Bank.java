@@ -23,9 +23,4 @@ public class Bank {
     return bankAccountList;
   }
 
-  public void setBankAccountList(List<BankAccount> bankAccountList) {
-    this.bankAccountList = bankAccountList;
-  }
-
-
 }
