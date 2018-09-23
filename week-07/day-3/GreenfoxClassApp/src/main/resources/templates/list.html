@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>GreenFox Class</title>
+
+</head>
+<body>
+<div>
+    list of students:
+    <ul th:each="name : ${allStudents}">
+        <li th:text="${name}"></li>
+    </ul>
+</div>
+</body>
+</html>

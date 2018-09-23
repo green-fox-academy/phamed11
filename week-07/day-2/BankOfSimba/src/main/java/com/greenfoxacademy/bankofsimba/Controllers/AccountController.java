@@ -52,7 +52,7 @@ public class AccountController {
 //  public String hello(Model model) {
 //    String message = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
 //    model.addAttribute("hello", message);
-//    model.addAttribute("bankAccount", bankAccount);
+//    model.addAttribute("bankAccount", bankServices.getAccounts());
 //    return "show";
 //  }
 
