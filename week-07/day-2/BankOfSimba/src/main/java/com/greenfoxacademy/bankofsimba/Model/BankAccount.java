@@ -1,7 +1,5 @@
 package com.greenfoxacademy.bankofsimba.Model;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 
 public class BankAccount {
   private String name;
@@ -11,6 +9,14 @@ public class BankAccount {
   private boolean isAGoodGuy;
 
   public BankAccount() {
+  }
+
+  public BankAccount(String name, double balance, String animalType, boolean isAKing, boolean isAGoodGuy) {
+    this.name = name;
+    this.balance = balance;
+    this.animalType = animalType;
+    this.isAKing = isAKing;
+    this.isAGoodGuy= isAGoodGuy;
   }
 
   public String getName() {
@@ -35,14 +41,6 @@ public class BankAccount {
 
   public void setAnimalType(String animalType) {
     this.animalType = animalType;
-  }
-
-  public BankAccount(String name, double balance, String animalType, boolean isAKing, boolean isAGoodGuy) {
-    this.name = name;
-    this.balance = balance;
-    this.animalType = animalType;
-    this.isAKing = isAKing;
-    this.isAGoodGuy= isAGoodGuy;
   }
 
   public String isAKing() {

@@ -14,7 +14,6 @@ public class Fox {
   public List<String> getListOfTricks() {
     return listOfTricks;
   }
-
   List<String> listOfTricks;
 
   public Fox() {
