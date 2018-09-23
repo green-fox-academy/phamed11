@@ -34,7 +34,8 @@ public class BankServicesImpl implements BankServices {
   }
 
   @Override
-  public void addBankAccount(BankAccount account) {
+  public void addBankAccount(String name, String animalType, Double balance, boolean isKing, boolean isGoodGuy) {
+    BankAccount account = new BankAccount(name, balance, animalType, isKing, isGoodGuy);
     getAccounts().add(account);
   }
 

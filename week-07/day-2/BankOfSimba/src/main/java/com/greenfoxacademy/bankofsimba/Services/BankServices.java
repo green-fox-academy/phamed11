@@ -13,7 +13,7 @@ public interface BankServices {
 
   List<BankAccount> getAccounts();
 
-  void addBankAccount(BankAccount account);
+  void addBankAccount(String name, String animalType, Double balance, boolean isKing, boolean isGoodGuy);
 
   void removeBankAccount(BankAccount account);
 

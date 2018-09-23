@@ -66,6 +66,21 @@
         </tbody>
     </table>
 </div>
+Add new Animal account: <br>
+<form method="post" action="/newAccount">
+    <input type="text" name="name" placeholder="add name"><br>
+    <input type="number" name="balance" placeholder="add balance"><br>
+    <input type="text" name="animalType" placeholder="add animaltype"><br>
+    <select name="king">
+        <option value=true>King</option>
+        <option value=false>Food</option>
+    </select><br>
+    <select name="goodguy">
+        <option value=true>Good guy</option>
+        <option value=false>Bad guy</option>
+    </select><br>
+    <input type="submit" value="Add Account">
+</form>
 </body>
 </html>
 

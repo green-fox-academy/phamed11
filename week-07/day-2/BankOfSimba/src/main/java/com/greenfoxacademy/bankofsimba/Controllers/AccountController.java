@@ -27,7 +27,17 @@ public class AccountController {
 
   @PostMapping("/increase")
   public String addToBalance(@RequestParam(value = "index", required = false) int index) {
-  bankServices.increaseBalance(index);
+    bankServices.increaseBalance(index);
+    return ("redirect:/bank");
+  }
+
+  @PostMapping("/newAccount")
+  public String addNewAccount(@RequestParam(value = "name") String name,
+                              @RequestParam(value = "balance") Double balance,
+                              @RequestParam(value = "animalType") String animalType,
+                              @RequestParam(value = "king") boolean king,
+                              @RequestParam(value = "goodguy") boolean goodguy) {
+    bankServices.addBankAccount(name, animalType, balance, king, goodguy);
     return ("redirect:/bank");
   }
 
