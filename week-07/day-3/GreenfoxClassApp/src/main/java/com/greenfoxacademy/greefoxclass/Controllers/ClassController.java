@@ -19,7 +19,8 @@ public class ClassController {
   }
 
   @GetMapping("/gfa")
-  public String listOfAllStudents() {
+  public String listOfAllStudents(Model model) {
+    model.addAttribute("index", studentService.numberOfStudents());
     return "index";
   }
 

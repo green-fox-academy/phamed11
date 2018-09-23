@@ -30,4 +30,8 @@ public class StudentService {
   public String getName(int index) {
     return findAll().get(index);
   }
+
+  public int numberOfStudents() {
+    return names.size();
+  }
 }
