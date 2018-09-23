@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{/static/style.css}"/>
     <style>
         table {
-            font-family: arial, sans-serif;
+            font-family: Helvetica, sans-serif;
             border-collapse: collapse;
             width: 80%;
             margin: auto;
@@ -26,11 +26,28 @@
         th {
             background-color: chocolate;
         }
+
+        input {
+            font-size: 20px;
+            font-family: Helvetica;
+        }
+
+        input.button {
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            border: 2px solid black;
+            border-radius: 40px;
+
+        }
+        input.button:hover {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
     </style>
 </head>
 <body>
-<div>
-    <h1>Bank Account</h1>
+<div id="title1">
+    <h1 style="text-align: center">Bank Account</h1>
 </div>
 <div>
     <table>
@@ -66,20 +83,21 @@
         </tbody>
     </table>
 </div>
-Add new Animal account: <br>
-<form method="post" action="/newAccount">
-    <input type="text" name="name" placeholder="add name"><br>
-    <input type="number" name="balance" placeholder="add balance"><br>
-    <input type="text" name="animalType" placeholder="add animaltype"><br>
-    <select name="king">
-        <option value=true>King</option>
+
+<form method="post" action="/newAccount" style="padding: 50px 20px">
+    <p style="font-family: Helvetica; font-size: 30px">Add new Animal account: </p>
+    <input type="text" name="name" placeholder="add name" required><br>
+    <input type="number" name="balance" placeholder="add balance" required><br>
+    <input type="text" name="animalType" placeholder="add animaltype" required><br>
+    <select required style="font-size: 20px" name="king">
         <option value=false>Food</option>
+        <option value=true>King</option>
     </select><br>
-    <select name="goodguy">
+    <select required style="font-size: 20px;" name="goodguy">
         <option value=true>Good guy</option>
         <option value=false>Bad guy</option>
     </select><br>
-    <input type="submit" value="Add Account">
+    <input class="button" type="submit" value="Add Account">
 </form>
 </body>
 </html>
