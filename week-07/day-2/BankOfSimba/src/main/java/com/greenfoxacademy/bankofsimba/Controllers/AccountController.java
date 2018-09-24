@@ -46,18 +46,19 @@ public class AccountController {
     bankServices.removeBankAccount(index);
     return ("redirect:/bank");
   }
-//  @GetMapping("/show")
-//  public String showsBankAccount(Model model) {
-//    model.addAttribute("bankAccount", bankServices.);
-//    return "show";
-//  }
-//
-//  @GetMapping("/hello")
-//  public String hello(Model model) {
-//    String message = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
-//    model.addAttribute("hello", message);
-//    model.addAttribute("bankAccount", bankServices.getAccounts());
-//    return "show";
-//  }
+
+  @GetMapping("/show")
+  public String showsBankAccount(Model model) {
+    model.addAttribute("bankAccount", bankServices.getAccounts());
+    return "show";
+  }
+
+  @GetMapping("/hello")
+  public String hello(Model model) {
+    String message = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
+    model.addAttribute("hello", message);
+    model.addAttribute("bankAccount", bankServices.getAccounts());
+    return "show";
+  }
 
 }

@@ -19,9 +19,9 @@
         </thead>
         <tbody>
         <tr>
-            <td th:text="${bankAccount.getName()}"></td>
-            <td th:text="${bankAccount.getBalance()}"></td>
-            <td th:text="${bankAccount.getAnimalType()}"></td>
+            <td th:text="${bankAccount.get(0).getName()}"></td>
+            <td th:text="${bankAccount.get(0).getBalance()}"></td>
+            <td th:text="${bankAccount.get(0).getAnimalType()}"></td>
         </tr>
         </tbody>
     </table>
