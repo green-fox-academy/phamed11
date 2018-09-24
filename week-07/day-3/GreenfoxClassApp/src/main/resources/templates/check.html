@@ -11,7 +11,8 @@
         <input type="text" name="name" required>
         <input type="submit" value="Check student">
     </form>
-<p th:if="${isMember}? 'This Student is already a member' : 'This Student is not a member of the School'"></p>
+    <p th:text="${isMember}? 'This Student is already a member' : 'This Student is not a member of the School'"></p>
+</div>
 </div>
 </body>
 </html>

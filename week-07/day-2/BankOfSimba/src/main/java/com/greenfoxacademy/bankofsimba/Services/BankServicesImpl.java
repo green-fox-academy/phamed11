@@ -40,8 +40,8 @@ public class BankServicesImpl implements BankServices {
   }
 
   @Override
-  public void removeBankAccount(BankAccount account) {
-    getAccounts().remove(account);
+  public void removeBankAccount(int number) {
+    getAccounts().remove(getAccounts().get(number));
   }
 
   @Override

@@ -60,6 +60,7 @@
             <th>King</th>
             <th>Is A Good guy?</th>
             <th>Increase bank account</th>
+            <th>Remove bank account</th>
         </tr>
         </thead>
         <tbody>
@@ -77,6 +78,12 @@
                 <form method="post" action="/increase">
                     <input type="submit" value="Increase">
                     <input type="hidden" th:value="${accountsStat.index}" name="index">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="/remove">
+                    <input type="submit" value="Remove">
+                    <input type="hidden" th:value="${accountsStat.index}" name="remove">
                 </form>
             </td>
         </tr>

@@ -41,7 +41,11 @@ public class AccountController {
     return ("redirect:/bank");
   }
 
-
+  @PostMapping("/remove")
+  public String removeAccount(@RequestParam(value = "remove", required = false) int index) {
+    bankServices.removeBankAccount(index);
+    return ("redirect:/bank");
+  }
 //  @GetMapping("/show")
 //  public String showsBankAccount(Model model) {
 //    model.addAttribute("bankAccount", bankServices.);

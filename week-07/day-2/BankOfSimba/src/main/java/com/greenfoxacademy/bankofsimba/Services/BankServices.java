@@ -15,7 +15,7 @@ public interface BankServices {
 
   void addBankAccount(String name, String animalType, Double balance, boolean isKing, boolean isGoodGuy);
 
-  void removeBankAccount(BankAccount account);
+  void removeBankAccount(int number);
 
   BankAccount getAccountByName(String name);
 

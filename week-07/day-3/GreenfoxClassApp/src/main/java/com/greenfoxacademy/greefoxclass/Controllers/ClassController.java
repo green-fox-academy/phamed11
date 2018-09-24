@@ -41,14 +41,15 @@ public class ClassController {
   }
 
   @GetMapping("/check")
-  public String checkMain() {
+  public String checkMain(Model model) {
+    model.addAttribute("isMember", false);
     return "check";
   }
 
   @PostMapping("/info")
   public String checkStudent(Model model, @RequestParam(value = "name") String name) {
     model.addAttribute("isMember", studentService.isAStudent(name));
-    return "redirect:/check";
+    return "check";
   }
 
 }
