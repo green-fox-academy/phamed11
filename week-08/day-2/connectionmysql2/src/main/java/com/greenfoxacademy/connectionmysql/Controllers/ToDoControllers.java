@@ -34,8 +34,9 @@ public class ToDoControllers {
   }
 
   @PostMapping("/add")
-  public String todoPost(@RequestParam(value = "name") String title) {
-    toDoRespository.save(new ToDo(title, false, false));
+  public String todoPost(@RequestParam(value = "name") String title,
+                         @ModelAttribute(value = "urgent") boolean urgent) {
+    toDoRespository.save(new ToDo(title, urgent, false));
     return "redirect:/todo/";
   }
 

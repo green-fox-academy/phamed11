@@ -7,7 +7,9 @@
 <body>
 <form action="/todo/add/" method="post">
     <h1>Add new todo: </h1><br>
-    <input type="text" name="name" required>
+    <input type="text" name="name" required><br>
+    Urgent: <input type="checkbox" name="urgent" value="true"><br>
+    <input type="hidden" name="urgent" value="false">
     <input type="submit" value="Submit">
 </form>
 
