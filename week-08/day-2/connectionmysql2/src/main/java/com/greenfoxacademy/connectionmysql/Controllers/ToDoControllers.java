@@ -35,14 +35,29 @@ public class ToDoControllers {
 
   @PostMapping("/add")
   public String todoPost(@RequestParam(value = "name") String title) {
-  toDoRespository.save(new ToDo(title, false, false));
+    toDoRespository.save(new ToDo(title, false, false));
     return "redirect:/todo/";
   }
 
 
   @GetMapping("/{id}/delete")
   public String delete(@PathVariable(value = "id") Long idToDelete) {
-  toDoRespository.deleteById(idToDelete);
+    toDoRespository.deleteById(idToDelete);
     return "redirect:/todo/";
   }
+
+  @GetMapping("/{id}/edit")
+  public String getEdit() {
+    return "edit";
+  }
+
+  @PostMapping("/{id}/edit")
+  public String edit(@PathVariable(value = "id") Long toUpdate,
+                     @ModelAttribute(value = "name") String title,
+                     @ModelAttribute(value = "urgent") boolean urgent,
+                     @ModelAttribute(value = "done") boolean done) {
+    toDoRespository.save(new ToDo(toUpdate, title, urgent, done));
+    return "redirect:/todo/";
+  }
+
 }
