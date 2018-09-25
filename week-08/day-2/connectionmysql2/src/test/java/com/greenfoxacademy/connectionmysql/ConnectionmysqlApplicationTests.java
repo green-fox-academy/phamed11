@@ -1,4 +1,4 @@
-package com.greenfoxacademy.connectionwithmysql;
+package com.greenfoxacademy.connectionmysql;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ConnectionwithmysqlApplicationTests {
+public class ConnectionmysqlApplicationTests {
 
   @Test
   public void contextLoads() {

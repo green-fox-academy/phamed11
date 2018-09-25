@@ -1,6 +1,6 @@
-package com.greenfoxacademy.connectionwithmysql.Controllers;
+package com.greenfoxacademy.connectionmysql.Controllers;
 
-import com.greenfoxacademy.connectionwithmysql.Respositories.ToDoRespository;
+import com.greenfoxacademy.connectionmysql.Respositories.ToDoRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
