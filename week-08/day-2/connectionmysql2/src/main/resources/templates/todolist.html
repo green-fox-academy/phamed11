@@ -5,10 +5,10 @@
     <title>Todos</title>
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
-<body>
+<body id="body1">
 <h1 style="text-transform: uppercase">Todos for today: </h1>
 
-<a href="/todo/add">Add new todo..</a><br>
+
 <table>
     <thead>
     <tr>
@@ -27,6 +27,8 @@
         <td><a th:href="${todo.getId()} + '/delete'">delete</a></td>
         <td><a th:href="${todo.getId()} + '/edit'">edit</a></td>
     </tr>
+    <br>
+    <h2><a href="/todo/add">Add new todo..</a></h2><br>
 
     </tbody>
 
