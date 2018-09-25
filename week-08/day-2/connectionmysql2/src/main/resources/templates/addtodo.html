@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>Todo add</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+
 </head>
 <body id="body2">
 <form action="/todo/add/" method="post">
@@ -13,6 +14,7 @@
     <input type="hidden" name="urgent" value="false">
     <input type="submit" value="Submit">
 </form>
-
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
