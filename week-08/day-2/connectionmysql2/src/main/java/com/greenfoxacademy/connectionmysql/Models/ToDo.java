@@ -13,16 +13,16 @@ public class ToDo {
   private Long id;
   private String title;
   private boolean isUrgent;
-  private boolean isDone;
+  private boolean done;
 
   public ToDo() {
   }
 
-  public ToDo(String title, boolean isUrgent, boolean isDone) {
+  public ToDo(String title, boolean isUrgent, boolean done) {
     this.id = id;
     this.title = title;
     this.isUrgent = isUrgent;
-    this.isDone = isDone;
+    this.done = done;
   }
 
   public Long getId() {
@@ -49,11 +49,14 @@ public class ToDo {
     isUrgent = urgent;
   }
 
-  public boolean isDone() {
-    return isDone;
+  public boolean done() {
+    return done;
   }
 
   public void setDone(boolean done) {
-    isDone = done;
+    this.done = done;
   }
+
+
+
 }

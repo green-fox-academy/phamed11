@@ -23,9 +23,9 @@ public class ConnectionmysqlApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    toDoRespository.save(new ToDo("Start the day", true, false));
+    toDoRespository.save(new ToDo("Start the day", true, true));
     toDoRespository.save(new ToDo("Finish H2 workshop1", true, false));
-    toDoRespository.save(new ToDo("Finish JPA workshop2", true, false));
+    toDoRespository.save(new ToDo("Finish JPA workshop2", true, true));
     toDoRespository.save(new ToDo("Create a CRUD project", true, false));
     toDoRespository.save(new ToDo("Eat something good", false, false));
     toDoRespository.save(new ToDo("Learn something about Mysql", false, false));
