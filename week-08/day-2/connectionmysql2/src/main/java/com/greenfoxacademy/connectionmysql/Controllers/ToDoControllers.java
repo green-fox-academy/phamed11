@@ -48,7 +48,8 @@ public class ToDoControllers {
   }
 
   @GetMapping("/{id}/edit")
-  public String getEdit() {
+  public String getEdit(@ModelAttribute(value = "id") Long id, Model model) {
+    model.addAttribute("title", toDoRespository.findById(id).get());
     return "edit";
   }
 
