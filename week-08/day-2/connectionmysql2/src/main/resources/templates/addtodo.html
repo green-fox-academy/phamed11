@@ -7,12 +7,14 @@
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
 </head>
 <body id="body2">
-<form action="/todo/add/" method="post">
-    <h1>Add new todo: </h1><br>
-    <input type="text" name="name" required><br>
-    Urgent: <input type="checkbox" name="urgent" value="true"><br>
+<form class="form-group" action="/todo/add/" method="post">
+    <h1 align="center">Add new todo: </h1><br>
+    <label for="name">New todo: </label>
+    <input class="form-inline" id="name" type="text" name="name" required><br>
+    <label for="urgent">Urgent? </label>
+    <input class="checkbox" id="urgent"type="checkbox" name="urgent" value="true"><br>
     <input type="hidden" name="urgent" value="false">
-    <input type="submit" value="Submit">
+    <input class="btn btn-success" role="button" type="submit" value="Submit">
 </form>
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>

@@ -10,8 +10,8 @@
 <body id="body1">
 <h1 style="text-transform: uppercase" align="center">Todos for today</h1>
 
-<div class="table-responsive">
-    <table class="table">
+<div>
+    <table class="table table-hover">
         <thead>
         <tr>
             <th>ID</th>
@@ -28,12 +28,12 @@
             <td th:text="${todo.getId()}"></td>
             <td th:text="${todo.getTitle()}"></td>
             <div th:switch="${todo.done()}">
-                <td th:case="true"><span class="glyphicon glyphicon-thumbs-up"></span></td>
-                <td th:case="false"><span class="glyphicon glyphicon-remove"></span></td>
+                <td th:case="true"><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
+                <td th:case="false"><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
             </div>
             <div th:switch="${todo.isUrgent()}">
-                <td th:case="true"><span class="glyphicon glyphicon-thumbs-up"></span></td>
-                <td th:case="false"><span class="glyphicon glyphicon-remove"></span></td>
+                <td th:case="true"><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
+                <td th:case="false"><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
             </div>
             <td><a th:href="${todo.getId()} + '/delete'" class="btn btn-danger" role="button">delete</a></td>
             <td><a th:href="${todo.getId()} + '/edit'" class="btn btn-warning" role="button">edit</a></td>
