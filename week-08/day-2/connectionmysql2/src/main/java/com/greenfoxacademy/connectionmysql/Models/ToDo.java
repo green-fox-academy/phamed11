@@ -20,19 +20,9 @@ public class ToDo {
 
   public ToDo() {
   }
-
-  public ToDo(Long id, String title, boolean isUrgent, boolean done) {
-    this.id = id;
-    this.title = title;
-    this.isUrgent = isUrgent;
-    this.done = done;
-    LocalDateTime now = LocalDateTime.now();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MMMM dd. HH:mm:ss");
-    this.date = now.format(formatter);
-  }
+  
 
   public ToDo(String title, boolean isUrgent, boolean done) {
-    this.id = id;
     this.title = title;
     this.isUrgent = isUrgent;
     this.done = done;
