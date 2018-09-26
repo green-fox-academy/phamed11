@@ -5,13 +5,12 @@
     <title>Todos</title>
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
-
 </head>
-<body id="body1">
-<h1 style="text-transform: uppercase" align="center">Todos for today</h1>
+<body class="container">
+<h1 style="text-transform: uppercase; font-family: 'Courier New'; font-weight: bolder" align="center">Todos for today</h1>
 
 <div>
-    <table class="table table-hover">
+    <table style="font-family: 'Courier New'; font-weight: bold" class="table table-hover">
         <thead>
         <tr>
             <th>ID</th>
@@ -24,6 +23,8 @@
         </tr>
         </thead>
         <tbody>
+        <h2 align="center"><a href="/todo/add" class="btn btn-success" role="button" style="font-weight: bolder">Add new todo..</a></h2>
+
         <tr th:each="todo : ${todos}">
             <td th:text="${todo.getId()}"></td>
             <td th:text="${todo.getTitle()}"></td>
@@ -40,9 +41,14 @@
             <td th:text="${todo.getDate()}"></td>
         </tr>
         <br>
-        <h2 align="center"><a href="/todo/add" class="btn btn-success" role="button">Add new todo..</a></h2><br>
         </tbody>
     </table>
+    <br><br><br><br><br><br>
+    <div align="center">
+    <a href="/todo/?isActive=false" class="btn btn-primary" role="button">Acitve todos!</a>
+    <a href="/todo/?isActive=true" class="btn btn-info" role="button">All todos which are done</a>
+    <a href="/todo/" class="btn btn-success" role="button" >All todos</a>
+    </div>
 </div>
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>

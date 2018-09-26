@@ -6,13 +6,13 @@
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
 </head>
-<body id="body2">
+<body style="font-family: 'Courier New'" class="container">
 <form class="form-group" action="/todo/add/" method="post">
-    <h1 align="center">Add new todo: </h1><br>
+    <h1 align="center" style="font-weight: bolder">Add new todo: </h1><br>
     <label for="name">New todo: </label>
     <input class="form-inline" id="name" type="text" name="name" required><br>
     <label for="urgent">Urgent? </label>
-    <input class="checkbox" id="urgent"type="checkbox" name="urgent" value="true"><br>
+    <input class="checkbox-inline" id="urgent"type="checkbox" name="urgent" value="true"><br>
     <input type="hidden" name="urgent" value="false">
     <input class="btn btn-success" role="button" type="submit" value="Submit">
 </form>
