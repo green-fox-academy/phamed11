@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Todo edit</title>
-    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
-
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
 </head>
-<body id="body2">
-<form method="post">
-    <h1>Edit todo: </h1><br>
-    Edit description: <input th:value="${title.getTitle()}" type="text" name="name" required><br>
-    Urgent: <input type="checkbox" name="urgent" value="true"><br>
-            <input type="hidden" name="urgent" value="false">
-    Done: <input type="checkbox" name="done" value="true">
-            <input type="hidden" name="done" value="false"><br>
-    <input type="submit" value="Update">
-    <a href="/todo/list">Cancel</a>
+<body>
+
+<form method="post" th:object="${toDo}">
+    <h2>Edit todo</h2>
+   Change Title:  <input th:type="text" th:field="*{title}"><br>
+    Is it Urgent?: <input th:type="checkbox" id="labelurgent" th:field="*{urgent}"><br>
+   Is it Done?: <input th:type="checkbox" id="labeldone" th:field="*{done}"><br>
+    <input th:type="submit">
 </form>
+
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
