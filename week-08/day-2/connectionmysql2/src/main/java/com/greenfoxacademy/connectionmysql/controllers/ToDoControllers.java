@@ -21,11 +21,15 @@ public class ToDoControllers {
   }
 
   @GetMapping(value = {"/", "/list"})
-  public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean result) {
-    if (result == null) {
+  public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean result,
+                                  @RequestParam(value = "search", required = false) String search) {
+    if (result == null && search == null) {
       model.addAttribute("todos", toDoServices.allToDos());
-    } else {
+    } else if (search == null){
       model.addAttribute("todos", toDoServices.allToDosDone(!result));
+    } else if (result == null) {
+      List<ToDo> searchResult = toDoServices.searchString(search);
+      model.addAttribute("todos", searchResult);
     }
     return "todolist";
   }
@@ -59,13 +63,5 @@ public class ToDoControllers {
   public String edit(@ModelAttribute(value = "toDo") ToDo todo) {
     toDoServices.saveToDo(todo);
     return "redirect:/todo/";
-  }
-
-
-  @GetMapping("/search")
-  public String searchBar(@ModelAttribute(value = "search") String search, Model model) {
-    List<ToDo> searchResult = toDoServices.searchString(search);
-    model.addAttribute("todos", searchResult);
-    return "todolist";
   }
 }
