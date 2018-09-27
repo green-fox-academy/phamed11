@@ -9,7 +9,7 @@
 </head>
 <body class="container" >
 
-<form style="font-family: 'Courier New';" method="post" th:object="${toDo}">
+<form action="#" th:action="'/todo/' + ${toDo.id} + '/edit'"  style="font-family: 'Courier New';" method="post" th:object="${toDo}">
     <h2 style="font-weight: bolder" align="center">Edit todo</h2>
     <label for="text">New description</label>
    <input th:type="text" id="text" th:field="*{title}" size="50px"><br>
