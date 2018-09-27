@@ -21,16 +21,9 @@ public class ToDoControllers {
   }
 
   @GetMapping(value = {"/", "/list"})
-  public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean result,
-                                  @RequestParam(value = "search", required = false) String search) {
-    if (result == null && search == null) {
-      model.addAttribute("todos", toDoServices.allToDos());
-    } else if (search == null){
-      model.addAttribute("todos", toDoServices.allToDosDone(!result));
-    } else if (result == null) {
-      List<ToDo> searchResult = toDoServices.searchString(search);
-      model.addAttribute("todos", searchResult);
-    }
+  public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean isActive,
+                     @RequestParam(value = "search", required = false) String search) {
+      model.addAttribute("todos", toDoServices.startPage(isActive, search));
     return "todolist";
   }
 
@@ -45,7 +38,6 @@ public class ToDoControllers {
     toDoServices.saveToDo(new ToDo(title, urgent, false));
     return "redirect:/todo/";
   }
-
 
   @GetMapping("/{id}/delete")
   public String delete(@PathVariable(value = "id") Long idToDelete) {

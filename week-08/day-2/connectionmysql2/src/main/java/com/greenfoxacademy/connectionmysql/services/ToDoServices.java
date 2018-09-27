@@ -14,4 +14,6 @@ public interface ToDoServices {
   void deleteToDoById(Long idToDelete);
   ToDo findById(Long id);
   List<ToDo> searchString(String title);
+  List<ToDo> startPage(Boolean isActive, String search);
+
 }

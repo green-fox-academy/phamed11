@@ -53,4 +53,17 @@ public class ToDoServicesImpl implements ToDoServices{
     }
     return searchResult;
   }
+
+  @Override
+  public List<ToDo> startPage(Boolean isActive, String search) {
+    List<ToDo> result = new ArrayList<>();
+    if (isActive == null && search == null) {
+      result = allToDos();
+    } else if (search == null){
+      result =  allToDosDone(!isActive);
+    } else if (isActive == null) {
+      result = searchString(search);
+    }
+    return result;
+  }
 }
