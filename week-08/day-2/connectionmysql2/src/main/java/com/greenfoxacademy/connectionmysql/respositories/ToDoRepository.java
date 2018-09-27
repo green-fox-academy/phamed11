@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ToDoRespository extends CrudRepository<ToDo, Long> {
+public interface ToDoRepository extends CrudRepository<ToDo, Long> {
 
   List<ToDo> findByDone(boolean result);
   void deleteById(Long id);

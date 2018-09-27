@@ -1,7 +1,7 @@
 package com.greenfoxacademy.connectionmysql;
 
 import com.greenfoxacademy.connectionmysql.models.ToDo;
-import com.greenfoxacademy.connectionmysql.respositories.ToDoRespository;
+import com.greenfoxacademy.connectionmysql.respositories.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,11 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ConnectionmysqlApplication implements CommandLineRunner {
 
-  private ToDoRespository toDoRespository;
+  private ToDoRepository toDoRepository;
 
   @Autowired
-  public ConnectionmysqlApplication(ToDoRespository toDoRespository) {
-    this.toDoRespository = toDoRespository;
+  public ConnectionmysqlApplication(ToDoRepository toDoRepository) {
+    this.toDoRepository = toDoRepository;
   }
 
   public static void main(String[] args) {
@@ -23,12 +23,12 @@ public class ConnectionmysqlApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    toDoRespository.save(new ToDo("Start the day", true, true));
-    toDoRespository.save(new ToDo("Finish H2 workshop1", true, false));
-    toDoRespository.save(new ToDo("Finish JPA workshop2", true, true));
-    toDoRespository.save(new ToDo("Create a CRUD project", true, false));
-    toDoRespository.save(new ToDo("Eat something good", false, false));
-    toDoRespository.save(new ToDo("Learn something about Mysql", false, false));
-    toDoRespository.save(new ToDo("Have a large Hamburger", true, true));
+    toDoRepository.save(new ToDo("Start the day", true, true));
+    toDoRepository.save(new ToDo("Finish H2 workshop1", true, false));
+    toDoRepository.save(new ToDo("Finish JPA workshop2", true, true));
+    toDoRepository.save(new ToDo("Create a CRUD project", true, false));
+    toDoRepository.save(new ToDo("Eat something good", false, false));
+    toDoRepository.save(new ToDo("Learn something about Mysql", false, false));
+    toDoRepository.save(new ToDo("Have a large Hamburger", true, true));
   }
 }

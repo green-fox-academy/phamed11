@@ -1,7 +1,7 @@
 package com.greenfoxacademy.connectionmysql.services;
 
 import com.greenfoxacademy.connectionmysql.models.ToDo;
-import com.greenfoxacademy.connectionmysql.respositories.ToDoRespository;
+import com.greenfoxacademy.connectionmysql.respositories.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,36 +11,36 @@ import java.util.List;
 @Service
 public class ToDoServicesImpl implements ToDoServices{
 
-  private ToDoRespository toDoRespository;
+  private ToDoRepository toDoRepository;
 
   @Autowired
-  public ToDoServicesImpl(ToDoRespository toDoRespository) {
-    this.toDoRespository = toDoRespository;
+  public ToDoServicesImpl(ToDoRepository toDoRepository) {
+    this.toDoRepository = toDoRepository;
   }
 
   @Override
   public List<ToDo> allToDos() {
-    return toDoRespository.findAll();
+    return toDoRepository.findAll();
   }
 
   @Override
   public List<ToDo> allToDosDone(boolean result) {
-    return toDoRespository.findByDone(result);
+    return toDoRepository.findByDone(result);
   }
 
   @Override
   public void saveToDo(ToDo todo) {
-    toDoRespository.save(todo);
+    toDoRepository.save(todo);
   }
 
   @Override
   public void deleteToDoById(Long idToDelete) {
-  toDoRespository.deleteById(idToDelete);
+  toDoRepository.deleteById(idToDelete);
   }
 
   @Override
   public ToDo findById(Long id) {
-    return toDoRespository.findById(id).get();
+    return toDoRepository.findById(id).get();
   }
 
   @Override
