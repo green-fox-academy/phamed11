@@ -11,5 +11,6 @@ public interface ToDoRespository extends CrudRepository<ToDo, Long> {
 
   List<ToDo> findByDone(boolean result);
   void deleteById(Long id);
+  List<ToDo> findAll();
 
 }

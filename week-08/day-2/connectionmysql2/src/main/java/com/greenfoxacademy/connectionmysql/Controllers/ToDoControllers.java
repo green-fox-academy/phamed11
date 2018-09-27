@@ -2,11 +2,13 @@ package com.greenfoxacademy.connectionmysql.Controllers;
 
 import com.greenfoxacademy.connectionmysql.Models.ToDo;
 import com.greenfoxacademy.connectionmysql.Respositories.ToDoRespository;
-import com.sun.tools.javac.comp.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/todo")
@@ -59,5 +61,19 @@ public class ToDoControllers {
     toDoRespository.save(todo);
     return "redirect:/todo/";
   }
+
+
+  @GetMapping("/search")
+  public String searchBar(@ModelAttribute(value = "search") String search, Model model) {
+    List<ToDo> searchResult = new ArrayList<>();
+    for (int i = 0; i < toDoRespository.count(); i++) {
+      if (toDoRespository.findAll().get(i).getTitle().toLowerCase().contains(search.toLowerCase())) {
+        searchResult.add(toDoRespository.findAll().get(i));
+      }
+    }
+    model.addAttribute("todos", searchResult);
+    return "todolist";
+  }
+
 
 }
