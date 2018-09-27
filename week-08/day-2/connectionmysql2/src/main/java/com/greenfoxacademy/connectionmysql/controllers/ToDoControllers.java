@@ -1,32 +1,31 @@
-package com.greenfoxacademy.connectionmysql.Controllers;
+package com.greenfoxacademy.connectionmysql.controllers;
 
-import com.greenfoxacademy.connectionmysql.Models.ToDo;
-import com.greenfoxacademy.connectionmysql.Respositories.ToDoRespository;
+import com.greenfoxacademy.connectionmysql.models.ToDo;
+import com.greenfoxacademy.connectionmysql.services.ToDoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequestMapping("/todo")
 public class ToDoControllers {
 
-  private ToDoRespository toDoRespository;
+  private ToDoServices toDoServices;
 
   @Autowired
-  public ToDoControllers(ToDoRespository toDoRespository) {
-    this.toDoRespository = toDoRespository;
+  public ToDoControllers(ToDoServices toDoServices) {
+    this.toDoServices = toDoServices;
   }
 
   @GetMapping(value = {"/", "/list"})
   public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean result) {
     if (result == null) {
-      model.addAttribute("todos", toDoRespository.findAll());
+      model.addAttribute("todos", toDoServices.allToDos());
     } else {
-      model.addAttribute("todos", toDoRespository.findByDone(!result));
+      model.addAttribute("todos", toDoServices.allToDosDone(!result));
     }
     return "todolist";
   }
@@ -39,41 +38,34 @@ public class ToDoControllers {
   @PostMapping("/add")
   public String todoPost(@RequestParam(value = "name") String title,
                          @ModelAttribute(value = "urgent") boolean urgent) {
-    toDoRespository.save(new ToDo(title, urgent, false));
+    toDoServices.saveToDo(new ToDo(title, urgent, false));
     return "redirect:/todo/";
   }
 
 
   @GetMapping("/{id}/delete")
   public String delete(@PathVariable(value = "id") Long idToDelete) {
-    toDoRespository.deleteById(idToDelete);
+    toDoServices.deleteToDoById(idToDelete);
     return "redirect:/todo/";
   }
 
   @GetMapping("/{id}/edit")
   public String getEdit(@ModelAttribute(value = "id") Long id, Model model) {
-    model.addAttribute("toDo", toDoRespository.findById(id).get());
+    model.addAttribute("toDo", toDoServices.findById(id));
     return "edit";
   }
 
   @PostMapping("/{id}/edit")
   public String edit(@ModelAttribute(value = "toDo") ToDo todo) {
-    toDoRespository.save(todo);
+    toDoServices.saveToDo(todo);
     return "redirect:/todo/";
   }
 
 
   @GetMapping("/search")
   public String searchBar(@ModelAttribute(value = "search") String search, Model model) {
-    List<ToDo> searchResult = new ArrayList<>();
-    for (int i = 0; i < toDoRespository.count(); i++) {
-      if (toDoRespository.findAll().get(i).getTitle().toLowerCase().contains(search.toLowerCase())) {
-        searchResult.add(toDoRespository.findAll().get(i));
-      }
-    }
+    List<ToDo> searchResult = toDoServices.searchString(search);
     model.addAttribute("todos", searchResult);
     return "todolist";
   }
-
-
 }
