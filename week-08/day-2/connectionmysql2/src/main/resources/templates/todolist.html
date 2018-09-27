@@ -16,8 +16,8 @@
         <tr>
             <th>ID</th>
             <th>TITLE</th>
-            <th>DONE</th>
             <th>URGENT</th>
+            <th>DONE</th>
             <th>DELETE?</th>
             <th>EDIT</th>
             <th>DATE OF CREATION</th>
@@ -30,11 +30,11 @@
         <tr th:each="todo : ${todos}">
             <td th:text="${todo.getId()}"></td>
             <td th:text="${todo.getTitle()}"></td>
-            <div th:switch="${todo.done()}">
+            <div th:switch="${todo.isUrgent()}">
                 <td th:case="true"><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
                 <td th:case="false"><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
             </div>
-            <div th:switch="${todo.isUrgent()}">
+            <div th:switch="${todo.done()}">
                 <td th:case="true"><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
                 <td th:case="false"><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
             </div>
