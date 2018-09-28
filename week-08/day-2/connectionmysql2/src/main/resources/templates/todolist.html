@@ -5,6 +5,11 @@
     <title>Todos</title>
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: darkgrey;
+        }
+    </style>
 </head>
 <body class="container">
 <h1 style="text-transform: uppercase; font-family: 'Courier New'; font-weight: bolder" align="center">Todos for
@@ -49,7 +54,7 @@
     <div>
         <form action="/todo/?search=" method="get">
             <label for="searchbar">Search todos: </label>
-            <input type="text" name="search" id="searchbar"/>
+            <input type="text" name="search" placeholder="Search..." id="searchbar"/>
             <input class="btn btn-success" role="button" type="submit">
         </form>
     </div>

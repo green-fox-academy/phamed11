@@ -20,7 +20,7 @@ public class ToDoServicesImpl implements ToDoServices{
 
   @Override
   public List<ToDo> allToDos() {
-    return toDoRepository.findAll();
+    return toDoRepository.findAllByOrderByIdAsc();
   }
 
   @Override
