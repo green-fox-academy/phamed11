@@ -13,4 +13,8 @@ public interface PostService {
   void deletePostById(Long id);
 
   List<Post> AllPosts();
+
+  void upVotingByIdSave(Long id);
+
+  void downVotingByIdSave(Long id);
 }

@@ -37,4 +37,16 @@ public class PostServiceImpl implements PostService {
     return postRepository.findAllByOrderByIdAsc();
   }
 
+  @Override
+  public void upVotingByIdSave(Long id) {
+    postRepository.findById(id).get().setVotes(postRepository.findById(id).get().getVotes() + 1);
+    postRepository.save(postRepository.findById(id).get());
+  }
+
+  @Override
+  public void downVotingByIdSave(Long id) {
+    postRepository.findById(id).get().setVotes(postRepository.findById(id).get().getVotes() - 1);
+    postRepository.save(postRepository.findById(id).get());
+  }
+
 }
