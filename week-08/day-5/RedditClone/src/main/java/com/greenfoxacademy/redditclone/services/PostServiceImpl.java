@@ -16,7 +16,7 @@ public class PostServiceImpl implements PostService {
   public PostServiceImpl(PostRepository postRepository) {
     this.postRepository = postRepository;
   }
-  
+
   @Override
   public void savePost(Post post) {
     postRepository.save(post);
@@ -34,7 +34,7 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public List<Post> AllPosts() {
-    return postRepository.findAllByOrOrderByIdIdAsc();
+    return postRepository.findAllByOrderByIdAsc();
   }
 
 }

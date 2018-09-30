@@ -12,12 +12,12 @@ public class Post {
   Long id;
   String title;
   String url;
-  Long votes;
+  int votes;
 
   public Post() {
   }
 
-  public Post(String title, String url, Long votes) {
+  public Post(String title, String url, int votes) {
     this.title = title;
     this.url = url;
     this.votes = votes;
@@ -47,11 +47,11 @@ public class Post {
     this.url = url;
   }
 
-  public Long getVotes() {
+  public int getVotes() {
     return votes;
   }
 
-  public void setVotes(Long votes) {
+  public void setVotes(int votes) {
     this.votes = votes;
   }
 }
