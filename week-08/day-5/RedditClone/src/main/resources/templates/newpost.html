@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>New Post</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: ghostwhite;
+        }
+    </style>
+</head>
+<body class="container">
+<form class="form-group" action="/newpost/" method="post">
+    <h1 align="center" style="font-weight: bolder">Add new post: </h1><br>
+    <label for="name">New post: </label>
+    <input class="form-inline" id="name" type="text" placeholder="Add title..." name="title" required><br>
+    <label for="html">URL</label>
+    <input class="form-inline" id="html"type="text" name="url" placeholder="Add URL..." required><br>
+    <input class="btn btn-success" role="button" type="submit" value="Submit">
+    <a href="/" class="btn btn-danger" type="submit">Cancel</a>
+</form>
+
+
+
+
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Post {
@@ -13,6 +15,8 @@ public class Post {
   String title;
   String url;
   int votes;
+  private String date;
+
 
   public Post() {
   }
@@ -21,6 +25,9 @@ public class Post {
     this.title = title;
     this.url = url;
     this.votes = votes;
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MMMM dd. HH:mm:ss");
+    this.date = now.format(formatter);
   }
 
   public Long getId() {
@@ -53,5 +60,13 @@ public class Post {
 
   public void setVotes(int votes) {
     this.votes = votes;
+  }
+
+  public String getDate() {
+    return date;
+  }
+
+  public void setDate(String date) {
+    this.date = date;
   }
 }

@@ -18,7 +18,7 @@
     <h1>Trending posts</h1><br><br>
 
     <table class="table table-hover">
-        <a href="newpost" class="btn btn-primary">Submit new post</a><br>
+        <a href="/newpost" class="btn btn-primary">Submit new post</a><br>
         <thead>
         <tr>
             <br>
@@ -27,13 +27,15 @@
             <th>VOTE UP</th>
             <th>VOTE DOWN</th>
             <th>TITLE</th>
+            <th>CREATION DATE</th>
+            <th>DELETE</th>
         </tr>
 
         </thead>
         <tbody>
         <tr th:each="post : ${allposts}" th:object="${post}">
             <td th:text="*{id}"></td>
-            <td th:text="*{votes}"></td>
+            <td style="font-size: larger; font-weight: bolder" th:text="*{votes}"></td>
             <td>
                 <a th:href="@{'/upvote/' + *{id}}" th:method="post"><span class="glyphicon glyphicon-plus"
                                                                           style="color: green"></span></a>
@@ -42,7 +44,10 @@
                 <a th:href="@{'/downvote/' + *{id}}" th:method="post"><span class="glyphicon glyphicon-minus"
                                                                             style="color: red"></span></a>
             </td>
-            <td><a th:href="*{url}"><span th:text="*{title}"></span></a></td>
+            <td><a th:target="blank" th:href="*{url}"><span th:text="*{title}" style="font-size: larger; font-weight: bolder"></span></a></td>
+            <td th:text="*{date}"><</td>
+            <td><a th:href="'/delete/' + *{id} " class="btn btn-danger" role="button">delete</a></td>
+
 
 
         </tr>
