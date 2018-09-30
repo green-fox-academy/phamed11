@@ -29,8 +29,12 @@
         </tr>
         </thead>
         <tbody>
-        <h2 align="center"><a href="/todo/add" class="btn btn-success" role="button" style="font-weight: bolder">Add new
-            todo..</a></h2>
+        <div align="center">
+            <a href="/todo/add" class="btn btn-success" role="button" style="font-weight: bolder">Add new
+                todo..</a>
+            <a href="/todo/assignees" class="btn btn-primary" role="button" style="font-weight: bolder">List of
+                Assignees</a>
+        </div>
 
         <tr th:each="todo : ${todos}">
             <td th:text="${todo.getId()}"></td>
@@ -65,9 +69,7 @@
         <a href="/todo/" class="btn btn-success" role="button">All todos</a>
     </div>
     <br>
-    <div align="center">
-        <a href="/todo/assignees" class="btn btn-success" role="button">List of Assignees</a>
-    </div>
+
 </div>
 
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
