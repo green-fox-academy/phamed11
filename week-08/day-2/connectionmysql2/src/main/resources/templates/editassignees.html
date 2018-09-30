@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Todo edit</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: darkgrey;
+        }
+    </style>
+
+</head>
+<body class="container" >
+
+<form action="#" th:action="'/todo/assignees/' + ${assignee.getId()} + '/edit'"  style="font-family: 'Courier New';" method="post" th:object="${assignee}">
+    <h2 style="font-weight: bolder" align="center">Edit Assignee</h2>
+    <label for="text">New Name</label>
+    <input th:type="text" id="text" th:field="*{name}" size="50px" required><br>
+    <label for="email">New email </label>
+    <input th:type="email" id="email" th:field="*{email}" required><br>
+    <input class="btn btn-success" role="button" th:type="submit">
+    <a href="/todo/assignees" class="btn btn-danger" type="submit">Cancel</a>
+</form>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

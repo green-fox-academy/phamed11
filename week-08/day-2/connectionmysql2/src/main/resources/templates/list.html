@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of Assignees</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="font-family: 'Courier New'; font-weight: bold" >
+    <h1>List of Assignees</h1><br>
+    <table class="table table-hover">
+        <thead>
+        <h2 align="center"><a href="/todo/assignees/add" class="btn btn-success" role="button" style="font-weight: bolder">Add new
+            Assignee..</a></h2>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email address</th>
+            <th>DELETE?</th>
+            <th>EDIT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="assignee : ${assignees}">
+            <td th:text="${assignee.getId()}"></td>
+            <td th:text="${assignee.getName()}"></td>
+            <td th:text="${assignee.getEmail()}"></td>
+            <td><a th:href="'/todo/assignees/' + ${assignee.getId()} + '/delete'" class="btn btn-danger" role="button">delete</a></td>
+            <td><a th:href="'/todo/assignees/' + ${assignee.getId()} + '/edit'" class="btn btn-warning" role="button">edit</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/todo/" class="btn btn-success" type="submit">Go back to main page</a>
+</div>
+
+
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>
