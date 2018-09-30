@@ -15,9 +15,10 @@
 <form class="form-group" action="/newpost/" method="post">
     <h1 align="center" style="font-weight: bolder">Add new post: </h1><br>
     <label for="name">New post: </label>
-    <input class="form-inline" id="name" type="text" placeholder="Add title..." name="title" required><br>
+    <input class="form-control" id="name" type="text" placeholder="Add title..." name="title" required><br>
     <label for="html">URL</label>
-    <input class="form-inline" id="html"type="text" name="url" placeholder="Add URL..." required><br>
+    <input class="form-control" id="html"type="text" name="url" placeholder="Add URL...don't forget the Https:// prefix" required ><br>
+    <br>
     <input class="btn btn-success" role="button" type="submit" value="Submit">
     <a href="/" class="btn btn-danger" type="submit">Cancel</a>
 </form>

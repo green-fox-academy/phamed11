@@ -28,7 +28,7 @@ public class RedditcloneApplication implements CommandLineRunner {
     postService.savePost(new Post("NFL", "https://nfl.com", 20));
     postService.savePost(new Post("CNN", "https://cnn.com", 22));
     postService.savePost(new Post("Facebook ", "https://facebook.com", 3));
-    postService.savePost(new Post("Szanalmas.hu", "https://szanalmas.hu", 33));
+    postService.savePost(new Post("Greenfox", "https://greenfox.hu", 33));
 
 
   }
