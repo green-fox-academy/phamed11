@@ -1,5 +1,6 @@
 package com.greenfoxacademy.jsonexercises.services;
 
+import com.greenfoxacademy.jsonexercises.models.Appended;
 import com.greenfoxacademy.jsonexercises.models.Doubling;
 import com.greenfoxacademy.jsonexercises.models.ErrorMessage;
 import com.greenfoxacademy.jsonexercises.models.User;
@@ -44,5 +45,13 @@ public class ExerciseServiceImpl implements ExerciseService {
       error.setError("Please provide a title!");
     }
     return error;
+  }
+
+  @Override
+  public Appended append(String word) {
+    Appended toChange = new Appended();
+    String toAdd = word + "a";
+    toChange.setAppended(toAdd);
+    return toChange;
   }
 }
