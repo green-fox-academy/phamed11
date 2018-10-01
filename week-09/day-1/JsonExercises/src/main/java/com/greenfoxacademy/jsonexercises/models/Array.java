@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Array {
-  String what;
-  List<Integer> numbers;
+  private String what;
+  private List<Integer> numbers;
 
   public Array(String what) {
     numbers = new ArrayList<>();
@@ -30,6 +30,14 @@ public class Array {
 
   public void setNumbers(List<Integer> numbers) {
     this.numbers = numbers;
+  }
+
+  @Override
+  public String toString() {
+    return "Array{" +
+        "what='" + what + '\'' +
+        ", numbers=" + numbers +
+        '}';
   }
 }
 

@@ -1,6 +1,8 @@
 package com.greenfoxacademy.jsonexercises.services;
 
 import com.greenfoxacademy.jsonexercises.models.*;
+import com.greenfoxacademy.jsonexercises.repositories.LogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,6 +11,12 @@ import java.util.List;
 @Service
 public class ExerciseServiceImpl implements ExerciseService {
 
+  private LogRepository logRepository;
+
+  @Autowired
+  public ExerciseServiceImpl(LogRepository logRepository) {
+    this.logRepository = logRepository;
+  }
 
   @Override
   public Doubling doubling(Integer number) {
@@ -97,5 +105,17 @@ public class ExerciseServiceImpl implements ExerciseService {
     }
     return result;
   }
+
+  @Override
+  public void saveLog(String endpoint, String data) {
+    logRepository.save(new Log(endpoint, data));
+  }
+
+  @Override
+  public List<Log> allLogs() {
+    return logRepository.findAll();
+  }
+
+
 }
 

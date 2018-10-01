@@ -19,4 +19,11 @@ public class ErrorMessage {
   public void setError(String error) {
     this.error = error;
   }
+
+  @Override
+  public String toString() {
+    return "ErrorMessage{" +
+        "error='" + error + '\'' +
+        '}';
+  }
 }

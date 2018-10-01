@@ -26,6 +26,7 @@ public class ExerciseRestController {
     if (number == null) {
       return ResponseEntity.ok(exerciseService.error(number));
     }
+    exerciseService.saveLog("/doubling", exerciseService.doubling(number).toString());
     return ResponseEntity.ok(exerciseService.doubling(number));
   }
 
@@ -34,6 +35,7 @@ public class ExerciseRestController {
     if (name == null || title == null) {
       return exerciseService.nameTitleError(name, title);
     }
+    exerciseService.saveLog("/greeter", exerciseService.greeting(name, title).toString());
     return exerciseService.greeting(name, title);
   }
 
@@ -42,6 +44,7 @@ public class ExerciseRestController {
     if (word == null) {
       ResponseEntity.status(HttpStatus.NOT_FOUND);
     }
+    exerciseService.saveLog("/appenda/" + word, exerciseService.append(word).toString());
     return exerciseService.append(word);
   }
 
@@ -54,9 +57,11 @@ public class ExerciseRestController {
       return error;
     } else if (action.equals("factor")) {
       send.setResult(exerciseService.factor(until.getUntil()));
+      exerciseService.saveLog("/dountil/" + action, send.toString());
     } else if
     (action.equals("sum")) {
       send.setResult(exerciseService.summ(until.getUntil()));
+      exerciseService.saveLog("/dountil/" + action, send.toString());
     }
     return send;
   }
@@ -69,6 +74,12 @@ public class ExerciseRestController {
       error.setError("Please provide what to do with the numbers!");
       return error;
     }
+    exerciseService.saveLog("/arrays", exerciseService.arrayResult(array.getNumbers(),array.getWhat()).toString());
     return exerciseService.arrayResult(array.getNumbers(), array.getWhat());
+  }
+
+  @GetMapping("/log")
+  public Object logs() {
+    return exerciseService.allLogs();
   }
 }

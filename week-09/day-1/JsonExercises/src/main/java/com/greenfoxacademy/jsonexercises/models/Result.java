@@ -1,7 +1,7 @@
 package com.greenfoxacademy.jsonexercises.models;
 
 public class Result {
-  Object result;
+  private Object result;
 
   public Result(Object result) {
     this.result = result;
@@ -16,5 +16,12 @@ public class Result {
 
   public void setResult(Object result) {
     this.result = result;
+  }
+
+  @Override
+  public String toString() {
+    return "Result{" +
+        "result=" + result +
+        '}';
   }
 }

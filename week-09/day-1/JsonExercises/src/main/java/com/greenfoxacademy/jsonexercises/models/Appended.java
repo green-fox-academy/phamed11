@@ -17,4 +17,11 @@ public class Appended {
   public void setAppended(String appended) {
     this.appended = appended;
   }
+
+  @Override
+  public String toString() {
+    return "Appended{" +
+        "appended='" + appended + '\'' +
+        '}';
+  }
 }

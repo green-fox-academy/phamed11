@@ -30,4 +30,13 @@ public class Doubling {
     this.result = result;
   }
 
+  @Override
+  public String toString() {
+    return "Doubling{" +
+        "received=" + received +
+        ", result=" + result +
+        ", error='" + error + '\'' +
+        '}';
+  }
+
 }

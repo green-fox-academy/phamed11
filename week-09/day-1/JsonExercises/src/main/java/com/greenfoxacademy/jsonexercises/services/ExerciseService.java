@@ -14,5 +14,7 @@ public interface ExerciseService {
   int summ(Integer number);
   int factor(Integer number);
   Result arrayResult(List<Integer> numbers, String what);
+  void saveLog(String endpoint, String data);
+  List<Log> allLogs();
 
 }

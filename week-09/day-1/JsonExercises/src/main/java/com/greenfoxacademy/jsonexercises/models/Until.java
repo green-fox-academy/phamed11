@@ -1,7 +1,7 @@
 package com.greenfoxacademy.jsonexercises.models;
 
 public class Until {
-  Integer until;
+  private Integer until;
 
   public Until(Integer until) {
     this.until = until;
@@ -16,5 +16,12 @@ public class Until {
 
   public void setUntil(Integer until) {
     this.until = until;
+  }
+
+  @Override
+  public String toString() {
+    return "Until{" +
+        "until=" + until +
+        '}';
   }
 }
