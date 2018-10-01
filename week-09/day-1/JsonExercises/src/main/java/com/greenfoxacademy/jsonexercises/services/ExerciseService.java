@@ -1,9 +1,8 @@
 package com.greenfoxacademy.jsonexercises.services;
 
-import com.greenfoxacademy.jsonexercises.models.Appended;
-import com.greenfoxacademy.jsonexercises.models.Doubling;
-import com.greenfoxacademy.jsonexercises.models.ErrorMessage;
-import com.greenfoxacademy.jsonexercises.models.User;
+import com.greenfoxacademy.jsonexercises.models.*;
+
+import java.util.List;
 
 public interface ExerciseService {
 
@@ -14,5 +13,6 @@ public interface ExerciseService {
   Appended append(String word);
   int summ(Integer number);
   int factor(Integer number);
+  Result arrayResult(List<Integer> numbers, String what);
 
 }

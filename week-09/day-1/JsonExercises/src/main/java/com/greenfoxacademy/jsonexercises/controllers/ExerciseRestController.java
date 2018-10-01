@@ -1,6 +1,7 @@
 package com.greenfoxacademy.jsonexercises.controllers;
 
 
+import com.greenfoxacademy.jsonexercises.models.Array;
 import com.greenfoxacademy.jsonexercises.models.ErrorMessage;
 import com.greenfoxacademy.jsonexercises.models.Result;
 import com.greenfoxacademy.jsonexercises.models.Until;
@@ -54,9 +55,20 @@ public class ExerciseRestController {
     } else if (action.equals("factor")) {
       send.setResult(exerciseService.factor(until.getUntil()));
     } else if
-      (action.equals("sum")) {
-        send.setResult( exerciseService.summ(until.getUntil()));
+    (action.equals("sum")) {
+      send.setResult(exerciseService.summ(until.getUntil()));
     }
     return send;
+  }
+
+  @PostMapping("/arrays")
+  public Object arrays(@RequestBody(required = false) Array array) {
+    ErrorMessage error = new ErrorMessage();
+    Result result = new Result();
+    if (array == null) {
+      error.setError("Please provide what to do with the numbers!");
+      return error;
+    }
+    return exerciseService.arrayResult(array.getNumbers(), array.getWhat());
   }
 }
