@@ -12,5 +12,7 @@ public interface ExerciseService {
   User greeting(String name, String title);
   ErrorMessage nameTitleError(String name, String title);
   Appended append(String word);
+  int summ(Integer number);
+  int factor(Integer number);
 
 }

@@ -27,8 +27,6 @@ public class ExerciseServiceImpl implements ExerciseService {
     return error;
   }
 
-
-
   @Override
   public User greeting(String name, String title) {
     User petike = new User();
@@ -54,4 +52,24 @@ public class ExerciseServiceImpl implements ExerciseService {
     toChange.setAppended(toAdd);
     return toChange;
   }
+
+  @Override
+  public int summ(Integer number) {
+    int sum = 0;
+    for (int i = 0; i <= number ; i++) {
+      sum+=i;
+    }
+    return sum;
+  }
+
+  @Override
+  public int factor(Integer number) {
+    int sum = 1;
+    for (int i = 1; i <= number; i++) {
+      sum*=i;
+    }
+    return sum;
+  }
+
+
 }
