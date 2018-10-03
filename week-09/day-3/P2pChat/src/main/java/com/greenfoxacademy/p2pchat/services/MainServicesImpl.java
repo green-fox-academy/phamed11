@@ -49,4 +49,23 @@ public class MainServicesImpl implements MainServices {
     saveLog(log);
     System.out.println(log);
   }
+
+  @Override
+  public void updateUser(String name) {
+    User user = userRepository.findById(1L).get();
+    user.setUsername(name);
+    saveUser(user);
+  }
+
+  @Override
+  public User findUserByUsername(String name) {
+    return userRepository.findUserByUsername(name);
+  }
+
+  @Override
+  public User findUserById(Long id) {
+    return userRepository.findById(id).get();
+  }
+
+
 }

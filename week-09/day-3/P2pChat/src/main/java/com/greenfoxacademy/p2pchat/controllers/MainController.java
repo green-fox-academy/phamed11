@@ -1,12 +1,12 @@
 package com.greenfoxacademy.p2pchat.controllers;
 
-import com.greenfoxacademy.p2pchat.models.Log;
 import com.greenfoxacademy.p2pchat.models.User;
 import com.greenfoxacademy.p2pchat.services.MainServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,10 +23,11 @@ public class MainController {
   }
 
   @GetMapping("/")
-  public String mainPage(HttpServletRequest request) {
+  public String mainPage(HttpServletRequest request, Model model, @RequestParam(value = "name", required = false) String name) {
     if (mainServices.getAllUsers().size() == 0) {
       return "redirect:/register";
     }
+    model.addAttribute("user", mainServices.findUserById(1L).getUsername());
     mainServices.createLog(request, "INFO", "");
     return "index";
   }
@@ -51,5 +52,15 @@ public class MainController {
     mainServices.createLog(request, "INFO", user.toString());
     return "redirect:/";
   }
+
+
+  @PostMapping("/update")
+  public String updateUser(Model model, @RequestParam(value = "username") String user, HttpServletRequest request) {
+    mainServices.updateUser(user);
+    mainServices.createLog(request, "INFO", mainServices.findUserById(1L).toString());
+    return "redirect:/";
+  }
+
+
 
 }

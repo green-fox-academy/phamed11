@@ -13,4 +13,7 @@ public interface MainServices {
   void saveUser(User user);
   List<User> getAllUsers();
   void createLog(HttpServletRequest request, String logLevel, String requestData);
+  void updateUser(String name);
+  User findUserByUsername(String name);
+  User findUserById(Long id);
 }

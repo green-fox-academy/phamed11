@@ -8,8 +8,11 @@
 </head>
 <body>
 <h1 style="font-weight: bolder">Peer to Peer Chat program</h1>
-<a href="/register">Register new user...</a>
-
+<form method="post" action="/update">
+    <label for="nameuser">Your username: </label>
+    <input th:value="${user}" name="username" id="nameuser" >
+    <input type="submit" value="Update">
+</form>
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
