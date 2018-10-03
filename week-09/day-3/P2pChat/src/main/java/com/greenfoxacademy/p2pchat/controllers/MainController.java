@@ -56,7 +56,7 @@ public class MainController {
 
 
   @PostMapping("/update")
-  public String updateUser(Model model, @ModelAttribute(value = "username") String username, HttpServletRequest request) {
+  public String updateUser(Model model, @RequestParam(value = "username") String username, HttpServletRequest request) {
     if (username.isEmpty()) {
       model.addAttribute("errormain", "The username field is empty");
       mainServices.createLog(request, "ERROR", "The username field is empty!");
