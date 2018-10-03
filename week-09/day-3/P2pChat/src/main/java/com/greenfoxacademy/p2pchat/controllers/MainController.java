@@ -27,6 +27,7 @@ public class MainController {
     if (mainServices.getAllUsers().size() == 0) {
       return "redirect:/register";
     }
+    model.addAttribute("errormain", "");
     model.addAttribute("user", mainServices.findUserById(1L).getUsername());
     mainServices.createLog(request, "INFO", "");
     return "index";
@@ -44,7 +45,7 @@ public class MainController {
   public String registerIn(@RequestParam(value = "username", required = false) String username, Model model, HttpServletRequest request) {
     if (username.isEmpty()) {
       model.addAttribute("error", "The username field is empty");
-      mainServices.createLog(request, "ERROR", "The username is empty!");
+      mainServices.createLog(request, "ERROR", "The username field is empty!");
       return "register";
     }
     User user = new User(username);
@@ -55,8 +56,13 @@ public class MainController {
 
 
   @PostMapping("/update")
-  public String updateUser(Model model, @RequestParam(value = "username") String user, HttpServletRequest request) {
-    mainServices.updateUser(user);
+  public String updateUser(Model model, @ModelAttribute(value = "username") String username, HttpServletRequest request) {
+    if (username.isEmpty()) {
+      model.addAttribute("errormain", "The username field is empty");
+      mainServices.createLog(request, "ERROR", "The username field is empty!");
+      return "index";
+    }
+    mainServices.updateUser(username);
     mainServices.createLog(request, "INFO", mainServices.findUserById(1L).toString());
     return "redirect:/";
   }
