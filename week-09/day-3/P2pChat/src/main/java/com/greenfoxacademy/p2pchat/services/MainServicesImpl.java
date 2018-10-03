@@ -8,6 +8,9 @@ import com.greenfoxacademy.p2pchat.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
 @Service
 public class MainServicesImpl implements MainServices {
 
@@ -33,5 +36,17 @@ public class MainServicesImpl implements MainServices {
   @Override
   public void saveUser(User user) {
     userRepository.save(user);
+  }
+
+  @Override
+  public List<User> getAllUsers() {
+    return userRepository.findAll();
+  }
+
+  @Override
+  public void createLog(HttpServletRequest request, String logLevel, String requestData) {
+    Log log = new Log(request.getRequestURI(), request.getMethod(), logLevel, requestData);
+    saveLog(log);
+    System.out.println(log);
   }
 }

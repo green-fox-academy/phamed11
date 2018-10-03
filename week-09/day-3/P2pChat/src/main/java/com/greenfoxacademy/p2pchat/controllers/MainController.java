@@ -5,10 +5,12 @@ import com.greenfoxacademy.p2pchat.models.User;
 import com.greenfoxacademy.p2pchat.services.MainServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class MainController {
@@ -21,29 +23,33 @@ public class MainController {
   }
 
   @GetMapping("/")
-  public String mainPage() {
-    Log log = new Log("/", "GET", "INFO", "");
-    mainServices.saveLog(log);
-    System.out.println(mainServices.printLog(log));
+  public String mainPage(HttpServletRequest request) {
+    if (mainServices.getAllUsers().size() == 0) {
+      return "redirect:/register";
+    }
+    mainServices.createLog(request, "INFO", "");
     return "index";
   }
 
   @GetMapping("/register")
-    public String register() {
-    Log log = new Log("/register", "GET", "INFO", "");
-    mainServices.saveLog(log);
-    System.out.println(mainServices.printLog(log));
+  public String register(Model model, HttpServletRequest request) {
+    model.addAttribute("error", "");
+    mainServices.createLog(request, "INFO", "");
+
+    return "register";
+  }
+
+  @PostMapping("/register")
+  public String registerIn(@RequestParam(value = "username", required = false) String username, Model model, HttpServletRequest request) {
+    if (username.isEmpty()) {
+      model.addAttribute("error", "The username field is empty");
+      mainServices.createLog(request, "ERROR", "The username is empty!");
       return "register";
     }
-
-  @PostMapping ("/register")
-  public String registerIn(@RequestParam(value = "username", required = false) String username) {
     User user = new User(username);
     mainServices.saveUser(user);
-    Log log = new Log("/register", "POST", "INFO", user.toString());
-    mainServices.saveLog(log);
-    System.out.println(mainServices.printLog(log));
-    return "register";
+    mainServices.createLog(request, "INFO", user.toString());
+    return "redirect:/";
   }
 
 }
