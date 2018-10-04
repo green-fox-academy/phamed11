@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,7 +22,7 @@ public class MainController {
   }
 
   @GetMapping("/")
-  public String mainPage(HttpServletRequest request, Model model, @RequestParam(value = "name", required = false) String name) {
+  public String mainPage(HttpServletRequest request, Model model) {
     if (mainServices.getAllUsers().size() == 0) {
       return "redirect:/register";
     }
@@ -37,7 +36,6 @@ public class MainController {
   public String register(Model model, HttpServletRequest request) {
     model.addAttribute("error", "");
     mainServices.createLog(request, "INFO", "");
-
     return "register";
   }
 

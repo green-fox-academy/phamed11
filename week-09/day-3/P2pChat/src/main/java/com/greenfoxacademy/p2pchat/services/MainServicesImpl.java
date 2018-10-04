@@ -2,6 +2,7 @@ package com.greenfoxacademy.p2pchat.services;
 
 
 import com.greenfoxacademy.p2pchat.models.Log;
+import com.greenfoxacademy.p2pchat.models.LogList;
 import com.greenfoxacademy.p2pchat.models.User;
 import com.greenfoxacademy.p2pchat.repositories.LogRepository;
 import com.greenfoxacademy.p2pchat.repositories.UserRepository;
@@ -65,6 +66,24 @@ public class MainServicesImpl implements MainServices {
   @Override
   public User findUserById(Long id) {
     return userRepository.findById(id).get();
+  }
+
+  @Override
+  public LogList logList() {
+    LogList logList = new LogList();
+    logList.setLogList(logRepository.findAll());
+    logList.setLogCount(logRepository.findAll().size());
+    return logList;
+  }
+
+  @Override
+  public List<Log> allLogs() {
+    return logRepository.findAll();
+  }
+
+  @Override
+  public int allLogNumber() {
+    return logRepository.findAll().size();
   }
 
 
