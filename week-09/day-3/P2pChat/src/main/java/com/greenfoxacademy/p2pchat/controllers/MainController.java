@@ -41,7 +41,7 @@ public class MainController {
 
   @PostMapping("/register")
   public String registerIn(@RequestParam(value = "username", required = false) String username, Model model, HttpServletRequest request) {
-    if (username.isEmpty()) {
+    if (username == null || username.isEmpty()) {
       model.addAttribute("error", "The username field is empty");
       mainServices.createLog(request, "ERROR", "The username field is empty!");
       return "register";
@@ -55,7 +55,7 @@ public class MainController {
 
   @PostMapping("/update")
   public String updateUser(Model model, @RequestParam(value = "username") String username, HttpServletRequest request) {
-    if (username.isEmpty()) {
+    if (username == null || username.isEmpty()) {
       model.addAttribute("errormain", "The username field is empty");
       mainServices.createLog(request, "ERROR", "The username field is empty!");
       return "index";

@@ -1,7 +1,5 @@
 package com.greenfoxacademy.p2pchat.models;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
